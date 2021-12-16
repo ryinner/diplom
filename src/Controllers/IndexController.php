@@ -1,8 +1,8 @@
 <?php
 
-namespace Ryinner\ArtCrm\Controllers;
+namespace App\Controllers;
 
-use Ryinner\ArtCrm\Controllers\ControllerBase;
+use App\Controllers\ControllerBase;
 
 class IndexController extends ControllerBase
 {

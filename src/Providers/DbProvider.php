@@ -1,13 +1,13 @@
 <?php
 
-namespace Ryinner\ArtCrm\Providers;
+namespace App\Providers;
 
 use Phalcon\Config;
 use Phalcon\Db\Adapter\Pdo;
 use Phalcon\Di\DiInterface;
 use Phalcon\Di\ServiceProviderInterface;
 use RuntimeException;
-use function Ryinner\ArtCrm\root_path;
+use function App\root_path;
 
 class DbProvider implements ServiceProviderInterface
 {

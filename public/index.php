@@ -1,6 +1,6 @@
 <?php
 
-use Ryinner\ArtCrm\Application;
+use App\Application;
 
 error_reporting(E_ALL);
 $rootPath = dirname(__DIR__);

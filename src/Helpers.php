@@ -1,5 +1,5 @@
 <?php
-namespace Ryinner\ArtCrm;
+namespace App;
 
 use Phalcon\Di;
 use Phalcon\Di\DiInterface;

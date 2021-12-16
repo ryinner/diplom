@@ -1,5 +1,5 @@
 <?php
-namespace Ryinner\ArtCrm;
+namespace App;
 
 use Exception;
 use Phalcon\Di\DiInterface;

@@ -4,7 +4,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Ryinner\\ArtCrm\\": "src/"
+            "App\\": "src/"
         },
         "files": [
             "src/Helpers.php"

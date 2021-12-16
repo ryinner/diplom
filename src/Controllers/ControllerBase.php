@@ -1,6 +1,6 @@
 <?php
 
-namespace Ryinner\ArtCrm\Controllers;
+namespace App\Controllers;
 
 use Phalcon\Mvc\Controller;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Ryinner\ArtCrm\Providers;
+namespace App\Providers;
 
 use Phalcon\Config;
 use Phalcon\Di\DiInterface;

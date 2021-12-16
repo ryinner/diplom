@@ -1,6 +1,6 @@
 <?php
 use Phalcon\Logger;
-use function Ryinner\ArtCrm\root_path;
+use function App\root_path;
 
 return [
     'database'    => [
@@ -15,7 +15,7 @@ return [
         'baseUri'         => getenv('APP_BASE_URI'),
         'publicUrl'       => getenv('APP_PUBLIC_URL'),
         'cryptSalt'       => getenv('APP_CRYPT_SALT'),
-        'viewsDir'        => root_path('themes/artcrm/'),
+        'viewsDir'        => root_path('themes/base/'),
         'cacheDir'        => root_path('var/cache/'),
         'sessionSavePath' => root_path('var/cache/session/'),
     ],

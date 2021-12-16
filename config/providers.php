@@ -1,9 +1,9 @@
 <?php
 
-use Ryinner\ArtCrm\Providers\ConfigProvider;
-use Ryinner\ArtCrm\Providers\DbProvider;
-use Ryinner\ArtCrm\Providers\DispatcherProvider;
-use Ryinner\ArtCrm\Providers\ViewProvider;
+use App\Providers\ConfigProvider;
+use App\Providers\DbProvider;
+use App\Providers\DispatcherProvider;
+use App\Providers\ViewProvider;
 
 return [
     ConfigProvider::class,

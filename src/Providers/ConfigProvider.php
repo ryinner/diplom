@@ -1,11 +1,11 @@
 <?php
 
-namespace Ryinner\ArtCrm\Providers;
+namespace App\Providers;
 
 use Phalcon\Config;
 use Phalcon\Di\DiInterface;
 use Phalcon\Di\ServiceProviderInterface;
-use Ryinner\ArtCrm\Application;
+use App\Application;
 
 class ConfigProvider implements ServiceProviderInterface
 {
