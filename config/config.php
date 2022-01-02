@@ -1,5 +1,5 @@
 <?php
-use Phalcon\Logger;
+use Phalcon\Logger\Logger;
 use function App\root_path;
 
 return [

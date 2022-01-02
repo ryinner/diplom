@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use Phalcon\Config;
+use Phalcon\Config\Config;
 use Phalcon\Db\Adapter\Pdo;
 use Phalcon\Di\DiInterface;
 use Phalcon\Di\ServiceProviderInterface;

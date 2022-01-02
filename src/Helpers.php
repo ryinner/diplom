@@ -1,7 +1,7 @@
 <?php
 namespace App;
 
-use Phalcon\Di;
+use Phalcon\Di\Di;
 use Phalcon\Di\DiInterface;
 
 /**
