@@ -5,6 +5,7 @@ use App\Providers\ConfigProvider;
 use App\Providers\DbProvider;
 use App\Providers\DispatcherProvider;
 use App\Providers\RouterProvider;
+use App\Providers\UrlProvider;
 use App\Providers\ViewProvider;
 
 return [
@@ -13,5 +14,6 @@ return [
     DbProvider::class,
     RouterProvider::class,
     ViewProvider::class,
+    UrlProvider::class,
     AssetsProvider::class,
 ];
