@@ -4,16 +4,15 @@ namespace App\Controllers;
 
 use App\Controllers\ControllerBase;
 
-class IndexController extends ControllerBase
+class ErrorController extends ControllerBase
 {
     public function initialize() 
     {
         parent::initialize();
     }
 
-    public function indexAction()
+    public function error404Action()
     {
         
     }
-
 }

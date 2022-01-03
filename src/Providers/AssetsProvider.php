@@ -2,9 +2,12 @@
 
 namespace App\Providers;
 
-use Phalcon\Di\DiInterface;
-use Phalcon\Di\ServiceProviderInterface;
+use App\Application;
+use Phalcon\Html\Escaper;
 use Phalcon\Assets\Manager;
+use Phalcon\Di\DiInterface;
+use Phalcon\Html\TagFactory;
+use Phalcon\Di\ServiceProviderInterface;
 
 class AssetsProvider implements ServiceProviderInterface
 {
@@ -20,7 +23,17 @@ class AssetsProvider implements ServiceProviderInterface
      */
     public function register(DiInterface $di): void
     {
-        $assetManager = new Manager();
+        /** @var Application $application */
+        $application = $di->getShared(Application::APPLICATION_PROVIDER);
+        /** @var string $rootPath */
+        $rootPath = $application->getRootPath();
+
+        $assetManager = new Manager(new TagFactory(
+            new  Escaper()
+        ),
+            [
+            'sourceBasePath' => $rootPath . '/assets/',
+        ]);
 
         $di->setShared($this->providerName, function () use ($assetManager) {
             return $assetManager;
