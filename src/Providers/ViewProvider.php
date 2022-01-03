@@ -10,7 +10,7 @@ use Phalcon\Mvc\View\Engine\Volt;
 
 class ViewProvider  implements ServiceProviderInterface
 {
-      /**
+    /**
      * @var string
      */
     protected $providerName = 'view';

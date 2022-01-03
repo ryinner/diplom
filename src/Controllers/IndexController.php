@@ -6,7 +6,7 @@ use App\Controllers\ControllerBase;
 
 class IndexController extends ControllerBase
 {
-    public function IndexAction()
+    public function indexAction()
     {
         
     }

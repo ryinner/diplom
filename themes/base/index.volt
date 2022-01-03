@@ -7,6 +7,6 @@
     <title>Realtor</title>
 </head>
 <body>
-    
+    {{ content() }}
 </body>
 </html>

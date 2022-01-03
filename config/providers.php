@@ -1,5 +1,6 @@
 <?php
 
+use App\Providers\AssetsProvider;
 use App\Providers\ConfigProvider;
 use App\Providers\DbProvider;
 use App\Providers\DispatcherProvider;
@@ -10,4 +11,5 @@ return [
     DispatcherProvider::class,
     DbProvider::class,
     ViewProvider::class,
+    // AssetsProvider::class,
 ];
