@@ -1,7 +1,7 @@
 <?php
-$router = new Phalcon\Mvc\Router();
+$router = new Phalcon\Mvc\Router(false);
 $router->notFound(['controller' => 'error', 'action' => 'error404']);
+require 'web.php';
 // $router->mount(require 'api.php');
-// $router->mount(require 'web.php');
 
 return $router;
