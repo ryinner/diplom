@@ -32,9 +32,10 @@ class AssetsProvider implements ServiceProviderInterface
             new  Escaper()
         ),
             [
-            'sourceBasePath' => $rootPath . '/assets/',
-        ]);
-
+                'sourceBasePath' => $rootPath . '/assets/',
+                'targetBasePath' => $rootPath . '/public/assets/'
+            ]
+        );
         $di->setShared($this->providerName, function () use ($assetManager) {
             return $assetManager;
         });
