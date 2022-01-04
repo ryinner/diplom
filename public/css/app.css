@@ -1,1 +1,15 @@
-    
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Open-Sans, sans-serif;
+}
+
+/* --theme-color установка значения на цветовом круге для hsl */
+:root {
+    --theme-color: 110;
+}
+
+html {
+    background-color: var(--background-color);
+    color: var(--color);
+}

@@ -1,0 +1,15 @@
+/* Установка переменных для темы */
+[data-theme-style='colored'] {
+    --color: hsl(var(--theme-color), 15%, 44%);
+    --background-color: hsl(var(--theme-color), 30%, 10%);
+}
+
+[data-theme-style='dark'] {
+    --color: hsl(var(--theme-color), 70%, 100%);
+    --background-color: hsl(var(--theme-color), 3%, 3%);
+}
+
+[data-theme-style='normal'] {
+    --color: hsl(var(--theme-color), 3%, 2%);
+    --background-color: hsl(var(--theme-color), 95%, 100%);
+}

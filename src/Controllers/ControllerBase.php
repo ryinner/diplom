@@ -13,12 +13,13 @@ class ControllerBase extends Controller
     {
         $this->assets
             ->collection('main_css')
+            ->addCss('css/themes.css')
+            ->addCss('css/fonts.css')
             ->addCss('css/app.css')
             ->join(true);
         $this->assets
             ->collection('main_js')
             ->addJs('js/app.js')
             ->join(true);
-            // var_dump($this->assets);exit;
     }
 }
