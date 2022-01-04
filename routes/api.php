@@ -1,7 +1,7 @@
 <?php
 
 /* 
-$router->add('/api', [
+$router->add('/api/', [
     'controller' => '',
     'action'     => '',
 ]);
