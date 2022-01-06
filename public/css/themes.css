@@ -19,7 +19,7 @@
     --background-color: #0f0f0f;
 }
 
-[data-theme-style='light'] {
+[data-theme-style='master'] {
     --color: #0f0f0f;
     --background-color: #fafafa;
 }

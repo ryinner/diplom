@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Переделать на куку -->
-<html lang="ru" data-theme-style="colored__light">
+<html lang="ru" data-theme-style="master">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,6 @@
     {{ assets.outputCss('main_css') }}
 </head>
 <body>
-    hehe
     {{ content() }}
     {{ assets.outputJs('main_js') }}
 </body>

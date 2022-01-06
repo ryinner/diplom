@@ -21,5 +21,7 @@ class ControllerBase extends Controller
             ->collection('main_js')
             ->addJs('js/app.js')
             ->join(true);
+        // @todo Когда подключиться ACL сделать проверку от которой будет выбираться layout, либо как-то перенести на public и private контроллеры либо в модулях уже свои подключения, подумать
+        $this->view->setTemplateAfter('public');
     }
 }
