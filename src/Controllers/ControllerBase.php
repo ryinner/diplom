@@ -16,6 +16,7 @@ class ControllerBase extends Controller
             ->addCss('css/themes.css')
             ->addCss('css/fonts.css')
             ->addCss('css/app.css')
+            ->addCss('css/layouts/public.css')
             ->join(true);
         $this->assets
             ->collection('main_js')

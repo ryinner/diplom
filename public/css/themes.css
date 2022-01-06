@@ -1,4 +1,17 @@
 /* Установка переменных для темы */
+/* Осноные темы */
+
+[data-theme-style='dark'] {
+    --color: #fafafa;
+    --background-color: #0f0f0f;
+}
+
+[data-theme-style='master'] {
+    --color: #0f0f0f;
+    --background-color: #fafafa;
+}
+
+/* @todo если будет время пользовательские темы */
 [data-theme-style='colored'] {
     --color: hsl(var(--theme-color), 15%, 44%);
     --background-color: hsl(var(--theme-color), 30%, 10%);
@@ -14,12 +27,3 @@
     --background-color: hsl(var(--theme-color),96%,98%);;
 }
 
-[data-theme-style='dark'] {
-    --color: #fafafa;
-    --background-color: #0f0f0f;
-}
-
-[data-theme-style='master'] {
-    --color: #0f0f0f;
-    --background-color: #fafafa;
-}
