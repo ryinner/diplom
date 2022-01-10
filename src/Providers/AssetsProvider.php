@@ -28,16 +28,15 @@ class AssetsProvider implements ServiceProviderInterface
         /** @var string $rootPath */
         $rootPath = $application->getRootPath();
 
-        $assetManager = new Manager(new TagFactory(
-            new  Escaper()
-        ),
-            [
-                'sourceBasePath' => $rootPath . '/assets/',
-                'targetBasePath' => $rootPath . '/public/assets/'
-            ]
-        );
-        $di->setShared($this->providerName, function () use ($assetManager) {
-            return $assetManager;
+        $di->setShared($this->providerName, function () use ($rootPath) {
+            return new Manager(new TagFactory(
+                new  Escaper()
+            ),
+                [
+                    'sourceBasePath' => $rootPath . '/assets/',
+                    'targetBasePath' => $rootPath . '/public/assets/'
+                ]
+            );;
         });
     }
 }
