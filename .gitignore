@@ -3,3 +3,4 @@ vendor/
 var/logs
 var/cache
 composer.lock
+node_modules
