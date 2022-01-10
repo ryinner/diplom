@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Переделать на куку -->
-<html lang="ru" data-theme-style="master">
+<html lang="ru" data-theme-style="master" id="app">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
