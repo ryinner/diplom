@@ -39,7 +39,19 @@ module.exports = {
             },
         ]
     },
+    resolve: {
+        alias: {
+            'vue': 'vue/dist/vue.esm-bundler.js',
+        },
+        extensions: ['*', '.js', '.vue', '.json']
+    },
     plugins: [
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new webpack.DefinePlugin(
+            { 
+            __VUE_OPTIONS_API__: true, 
+            __VUE_PROD_DEVTOOLS__: false 
+            }
+        )
     ]
 }
