@@ -1,23 +1,13 @@
 header, footer {
     font-size: 1.2em;
-    display: flex;
-    justify-content: center;
 }
+
 /* Шапка */
 nav {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     padding: 4px 0;
-}
-
-.logo {
-    display: flex;
-    align-content: center;
-}
-
-.logo span {
-    margin-left: 4px;
 }
 
 /* Подвал */

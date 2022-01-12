@@ -16,8 +16,11 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {
-                    loaders: {}
+                    loaders: {},
                     // other vue-loader options go here
+                    compilerOptions: {
+                        isCustomElement: tag => tag === 'header-nav'
+                    }
                 }
             },
             {
@@ -37,6 +40,10 @@ module.exports = {
                     },
                 },
             },
+            {
+                test: /\.css$/,
+                use: ['vue-style-loader', 'css-loader']
+            }
         ]
     },
     resolve: {
