@@ -33,7 +33,7 @@ class AssetsProvider implements ServiceProviderInterface
                 new  Escaper()
             ),
                 [
-                    'sourceBasePath' => $rootPath . '/assets/',
+                    'sourceBasePath' => $rootPath . '/src/assets/',
                     'targetBasePath' => $rootPath . '/public/assets/'
                 ]
             );;
