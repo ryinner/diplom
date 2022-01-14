@@ -1,13 +1,11 @@
 <template>
-<div id="sidebar" class="center" v-show="isActive">
+<div id="sidebar" class="center" :class="{active:isActive}">
     <ul>
         <li>
-            <a @click="toogle">
-                <div class="logo">
-                    <img src="img/logo/logo.svg" alt="Риелтор"  />
-                    <span>Риелтор</span>
-                </div>
-            </a>
+            <div class="logo" @click="toogle">
+                <img src="img/logo/logo.svg" alt="Риелтор" />
+                <span>Риелтор</span>
+            </div>
         </li>
 
         <li>
@@ -19,7 +17,7 @@
         </li>
 
         <li>
-            <a href="/">Помощь</a>
+            <a href="/">Услуги</a>
         </li>
 
         <li>
@@ -34,12 +32,10 @@
             <div class="left">
                 <ul>
                     <li>
-                        <a @click="toogle">
-                            <div class="logo">
-                                <img src="img/logo/logo.svg" alt="Риелтор"  />
-                                <span>Риелтор</span>
-                            </div>
-                        </a>
+                        <div class="logo" @click="toogle">
+                            <img src="img/logo/logo.svg" alt="Риелтор"  />
+                            <span>Риелтор</span>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -61,11 +57,11 @@ export default{
     data() {
         return {
             isActive: false,
+            screenWidth: window.screen.width
         };
     },
     methods: {
         toogle(){
-            // document.querySelector("#sidebar").classList.toogle("active");
             this.isActive = !this.isActive
         }
     }
@@ -75,16 +71,47 @@ export default{
 <style lang="css" scoped>
 #sidebar ul li a {
     color: var(--background-color);
+    transition: 300ms ease all;
 }
 
-#sidebar ul:first-child {
+#sidebar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1em;
+    background: var(--second-color);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+    transform: translate3d(-100%, 0, 0);
+    overflow: hidden;
+}
+
+#sidebar ul li a:hover::after {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+#sidebar ul li a:hover {
+    color: var(--second-color);
+    transition: 200ms ease all;
+}
+
+#sidebar ul li .logo {
     margin-bottom: 12px;
+    font-size: 1.4em;
+}
+
+#sidebar ul li:not(:first-child) {
     font-size: 1.2em;
+    margin: 6px 0;
 }
 
 .logo {
     display: flex;
     align-content: center;
+    cursor: pointer;
 }
 
 .logo span {
@@ -93,16 +120,16 @@ export default{
 
 #sidebar {
     position: absolute;
-    /* margin-left: -25%; */
     width: 25%;
     height: 100%;
     background: var(--color);
     color: var(--background-color);
     transition: 500ms ease all;
+    transform: translateX(calc(-100%));
 }
 
 .active {
-    /* margin-left: 25%; */
     transition: 500ms ease all;
+    transform: translateX(calc(0%)) !important;
 }
 </style>

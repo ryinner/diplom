@@ -10,6 +10,7 @@ module.exports = {
         publicPath: '/js/',
         filename: "app.js"
     },
+    watch: true,
     module: {
         rules: [
             {
