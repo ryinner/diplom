@@ -5,8 +5,10 @@
 </div> -->
 <header-nav></header-nav>
 
-<div class="content">
-    {{ content() }}
+<div class="center">
+    <div class="content">
+        {{ content() }}
+    </div>
 </div>
 
 <footer>

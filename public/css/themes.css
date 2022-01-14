@@ -11,7 +11,7 @@
 [data-theme-style='dark'] {
     --color: #fafafa;
     --background-color: #0f0f0f;
-
+    --second-color: #b096e4;
 }
 
 /* @todo если будет время пользовательские темы */

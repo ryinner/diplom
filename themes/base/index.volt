@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Переделать на куку -->
+<!-- Переделать на куку data-theme-style -->
 <html lang="ru" data-theme-style="master">
 <head>
     <meta charset="UTF-8">

@@ -3,7 +3,7 @@
     <ul>
         <li>
             <div class="logo" @click="toogle">
-                <img src="img/logo/logo.svg" alt="Риелтор" />
+                <img src="img/logo/logo.svg" alt="Риелтор" draggable="false" />
                 <span>Риелтор</span>
             </div>
         </li>
@@ -33,7 +33,7 @@
                 <ul>
                     <li>
                         <div class="logo" @click="toogle">
-                            <img src="img/logo/logo.svg" alt="Риелтор" />
+                            <img src="img/logo/logo.svg" alt="Риелтор" draggable="false" />
                             <span>Риелтор</span>
                         </div>
                     </li>
