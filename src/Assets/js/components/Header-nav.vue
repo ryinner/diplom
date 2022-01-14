@@ -33,7 +33,7 @@
                 <ul>
                     <li>
                         <div class="logo" @click="toogle">
-                            <img src="img/logo/logo.svg" alt="Риелтор"  />
+                            <img src="img/logo/logo.svg" alt="Риелтор" />
                             <span>Риелтор</span>
                         </div>
                     </li>
@@ -69,28 +69,20 @@ export default{
 </script>
 
 <style lang="css" scoped>
+#sidebar {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background: var(--color);
+    color: var(--background-color);
+    transition: 500ms ease all;
+    transform: translateX(calc(-100%));
+}
+
 #sidebar ul li a {
     color: var(--background-color);
     transition: 300ms ease all;
-}
-
-#sidebar ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0.1em;
-    background: var(--second-color);
-    opacity: 0;
-    transition: opacity 300ms, transform 300ms;
-    transform: translate3d(-100%, 0, 0);
-    overflow: hidden;
-}
-
-#sidebar ul li a:hover::after {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+    position: relative;
 }
 
 #sidebar ul li a:hover {
@@ -108,6 +100,25 @@ export default{
     margin: 6px 0;
 }
 
+#sidebar ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 0.1em;
+    background: var(--second-color);
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+    transform: translate3d(-100%, 0, 0);
+    overflow: hidden;
+}
+
+#sidebar ul li a:hover::after {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
 .logo {
     display: flex;
     align-content: center;
@@ -118,15 +129,6 @@ export default{
     margin-left: 4px;
 }
 
-#sidebar {
-    position: absolute;
-    width: 25%;
-    height: 100%;
-    background: var(--color);
-    color: var(--background-color);
-    transition: 500ms ease all;
-    transform: translateX(calc(-100%));
-}
 
 .active {
     transition: 500ms ease all;
