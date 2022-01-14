@@ -1,8 +1,8 @@
 <template>
 <div id="sidebar" class="center" :class="{active:isActive}">
     <ul>
-        <li>
-            <div class="logo" @click="toogle">
+        <li class="max">
+            <div class="logo center" @click="toogle">
                 <img src="img/logo/logo.svg" alt="Риелтор" draggable="false" />
                 <span>Риелтор</span>
             </div>
@@ -32,7 +32,7 @@
             <div class="left">
                 <ul>
                     <li>
-                        <div class="logo" @click="toogle">
+                        <div class="logo center" @click="toogle">
                             <img src="img/logo/logo.svg" alt="Риелтор" draggable="false" />
                             <span>Риелтор</span>
                         </div>
@@ -120,8 +120,6 @@ export default{
 }
 
 .logo {
-    display: flex;
-    align-content: center;
     cursor: pointer;
 }
 
