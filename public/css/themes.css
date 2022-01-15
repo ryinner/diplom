@@ -15,6 +15,10 @@
 }
 
 /* @todo если будет время пользовательские темы */
+/* @todo --theme-color установка значения на цветовом круге для hsl прокидка js */
+/* :root {
+    --theme-color: 120;
+} */
 [data-theme-style='colored'] {
     --color: hsl(var(--theme-color), 15%, 44%);
     --background-color: hsl(var(--theme-color), 30%, 10%);
