@@ -77,6 +77,7 @@ export default{
     color: var(--background-color);
     transition: 500ms ease all;
     transform: translateX(calc(-100%));
+    z-index: 1;
 }
 
 #sidebar ul li a {

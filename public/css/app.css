@@ -101,7 +101,7 @@ blockquote {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate3d(-50%,50%,0);
+    transform: translate3d(-50%,-50%,0);
 }
 
 blockquote h1 {
@@ -114,7 +114,6 @@ blockquote h1, blockquote h2 {
 }
 
 .main-img {
-    position: absolute;
     z-index: -1;
     max-height: 800px;
 }
