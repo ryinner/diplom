@@ -1,7 +1,7 @@
 <template>
 <div id="sidebar" class="center" :class="{active:isActive}">
-    <ul>
-        <li class="max">
+    <ul class="column">
+        <li class="center">
             <div class="logo center" @click="toogle">
                 <img src="img/logo/logo.svg" alt="Риелтор" draggable="false" />
                 <span>Риелтор</span>
