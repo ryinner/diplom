@@ -151,17 +151,6 @@ img {
     justify-content: flex-end;
 }
 
-/* Скролл */
-
-.scroll {
-    scroll-snap-type: y mandatory;
-    overflow-y: auto;
-}
-
-.scroll section {
-    scroll-snap-align: start;
-}
-
 /* Оригинальные */
 
 /* index */
