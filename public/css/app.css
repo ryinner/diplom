@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     font-family: Open-Sans, sans-serif;
+    box-sizing: border-box;
 }
 
 html {
@@ -55,6 +56,12 @@ img {
     transform: rotate(135deg);
 }
 
+/* Границы */
+
+.border-2px {
+    border-bottom: 2px solid var(--color);
+}
+
 /* Основные контейнеры */
 
 .content {
@@ -92,6 +99,11 @@ img {
 .xy-center {
     display: flex;
     align-content: center;
+    align-items: center;
+}
+
+.y-center {
+    display: flex;
     align-items: center;
 }
 
@@ -196,4 +208,16 @@ blockquote h1, blockquote h2 {
 
 .goodside img {
     border-radius: 15px;
+}
+
+/* Третья секция */
+
+.contact-us {
+    padding: 1%;
+    background-color: var(--color);
+    color: var(--background-color);
+}
+
+.margin__contact-us {
+    margin-top: 50px;
 }
