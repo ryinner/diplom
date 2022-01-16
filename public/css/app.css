@@ -39,10 +39,6 @@ img {
     max-width: 1600px;
 }
 
-section {
-    height: 100vh;
-}
-
 /* Переиспользуемое */
 
 /* Стрелки */
@@ -127,6 +123,10 @@ section {
     width: 60%;
 }
 
+.max-70 {
+    width: 70%;
+}
+
 .max-80 {
     width: 80%;
 }
@@ -141,6 +141,14 @@ section {
 
 .space-beetwen {
     justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.flex-end {
+    justify-content: flex-end;
 }
 
 /* Скролл */
@@ -182,6 +190,10 @@ blockquote h1, blockquote h2 {
 }
 
 /* Вторая секция */
+
+.goodside {
+    margin: 12px 0;
+}
 
 .goodside .counter {
     font-size: 4em;

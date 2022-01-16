@@ -14,13 +14,13 @@
         <div class="max-80">
             <div class="column">
                 <div class="goodside d-flex space-beetwen">
-                    <div class="left column">
+                    <div class="left column max-60">
                         <div class="counter">01</div>
                         <h3>Собственная база покупателей</h3>
                         <ul>
                             <li>Создаем спрос еще до размещения в рекламе</li>
                             <li>Используем закрытые базы риэлторов</li>
-                            <li>Имеем тысячи портнеров</li>
+                            <li>Имеем тысячи партнеров</li>
                         </ul>
                     </div>
                     <div class="right max-40">
@@ -29,21 +29,22 @@
                 </div>
         
                 <div class="goodside d-flex space-beetwen">
-                    <div class="left max-40">
-                        <img src="/img/index/goodside/room.jpg">
+                    <div class="left max-60">
+                        <img src="/img/index/goodside/room.jpg" class="max-70">
                     </div>
-                    <div class="right column">
+                    <div class="right column max-40">
                         <div class="counter">02</div>
-                        <h3>Бесплатная оценка жилья</h3>
+                        <h3>Бесплатная оценка и помощь</h3>
                         <ul>
                             <li>Наш специалист поможет подобрать цену</li>
-                            <li>Штатный фотограф сдеает профиссиональный фотосет</li>
+                            <li>Штатный фотограф сделает профиссиональный фотосет</li>
+                            <li>Подберем жилье по всем нуждам</li>
                         </ul>
                     </div>
                 </div>
         
                 <div class="goodside d-flex space-beetwen">
-                    <div class="left column">
+                    <div class="left column max-60">
                         <div class="counter">03</div>
                         <h3>Имеем собственных юристов</h3>
                         <ul>
