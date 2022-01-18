@@ -83,7 +83,9 @@
 
 	<div class="d-flex flex-end">
 		<div class="contact-us width-60">
-
+			<input type="text" class="width-60" placeholder="Ваше имя" />
+			<input type="text" class="width-60" placeholder="Ваше номер" />
+			<textarea class="width-80" placeholder="Ваш комментарий"></textarea>
         </div>
 	</div>
 

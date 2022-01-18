@@ -40,8 +40,59 @@ img {
     max-width: 1600px;
 }
 
+input {
+    outline: none;
+    min-width: 150px;
+    max-width: 800px;
+    font-size: 1.25em;
+    padding: 8px 10px;
+    border-radius: 4px;
+    outline-offset: none;
+    box-sizing: border-box;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--text-color);
+}
+
+input:focus {
+    transition: 100ms ease all;
+    border: 1px solid var(--background-color);
+}
+
+input::placeholder {
+    color: var(--placeholderColor);
+}
+
+textarea {
+    resize: none;
+    outline: none;
+    overflow: auto;
+    min-width: 150px;
+    max-width: 800px;
+    min-height: 120px;
+    max-height: 500px;
+    font-size: 1.25em;
+    padding: 8px 10px;
+    border-radius: 4px;
+    outline-offset: none;
+    box-sizing: border-box;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    border: 1px solid var(--text-color);
+}
+
+textarea:focus {
+    transition: 100ms ease all;
+    border: 1px solid var(--background-color);
+}
+
+textarea::placeholder {
+    color: var(--placeholderColor);
+}
+
 /* Переменные */
 :root {
+    --placeholderColor: #505050;
     --columns-count: 12;
 }
 
@@ -212,6 +263,10 @@ img {
 
 .d-flex {
     display: flex;
+}
+
+.d-none {
+    display: none;
 }
 
 /* Позиционирование */
