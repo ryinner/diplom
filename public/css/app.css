@@ -119,6 +119,10 @@ img {
     max-width: 100%;
 }
 
+.width-10 {
+    width: 10%;
+}
+
 .width-20 {
     width: 20%;
 }
@@ -131,6 +135,10 @@ img {
     width: 40%;
 }
 
+.width-50 {
+    width: 50%;
+}
+
 .width-60 {
     width: 60%;
 }
@@ -141,6 +149,10 @@ img {
 
 .width-80 {
     width: 80%;
+}
+
+.width-90 {
+    width: 90%;
 }
 
 /* Дисплеи */
