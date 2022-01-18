@@ -8,7 +8,7 @@
 
 html {
     background-color: var(--background-color);
-    color: var(--color);
+    color: var(--text-color);
 }
 
 h1 {
@@ -28,7 +28,7 @@ h3 {
 
 a {
     text-decoration: none;
-    color: var(--color);
+    color: var(--text-color);
 }
 
 li {
@@ -40,6 +40,11 @@ img {
     max-width: 1600px;
 }
 
+/* Переменные */
+:root {
+    --columns-count: 12;
+}
+
 /* Переиспользуемое */
 
 /* Стрелки */
@@ -47,8 +52,8 @@ img {
 .arrow {
     width: 30px;
     height: 30px;
-    border-top: 5px solid var(--color);
-    border-right: 5px solid var(--color);
+    border-top: 5px solid var(--text-color);
+    border-right: 5px solid var(--text-color);
     margin-left: 10px;
 }
 
@@ -59,7 +64,7 @@ img {
 /* Границы */
 
 .border-2px {
-    border-bottom: 2px solid var(--color);
+    border-bottom: 2px solid var(--text-color);
 }
 
 /* Основные контейнеры */
@@ -113,7 +118,7 @@ img {
     position: relative;
 }
 
-/* Максимум ширины и высоты */
+/* Максимум высоты */
 
 .width-max {
     max-width: 100%;
@@ -155,6 +160,54 @@ img {
     width: 90%;
 }
 
+/* Колонки */
+.col-1 {
+    width: calc(100% / var(--columns-count) * 1);
+}
+
+.col-2 {
+    width: calc(100% / var(--columns-count) * 2);
+}
+
+.col-3 {
+    width: calc(100% / var(--columns-count) * 3);
+}
+
+.col-4 {
+    width: calc(100% / var(--columns-count) * 4);
+}
+
+.col-5 {
+    width: calc(100% / var(--columns-count) * 5);
+}
+
+.col-6 {
+    width: calc(100% / var(--columns-count) * 6);
+}
+
+.col-7 {
+    width: calc(100% / var(--columns-count) * 7);
+}
+
+.col-8 {
+    width: calc(100% / var(--columns-count) * 8);
+}
+
+.col-9 {
+    width: calc(100% / var(--columns-count) * 9);
+}
+
+.col-10 {
+    width: calc(100% / var(--columns-count) * 10);
+}
+
+.col-11 {
+    width: calc(100% / var(--columns-count) * 11);
+}
+
+.col-12 {
+    width: calc(100% / var(--columns-count) * 12);
+}
 /* Дисплеи */
 
 .d-flex {
@@ -226,7 +279,7 @@ blockquote h1, blockquote h2 {
 
 .contact-us {
     padding: 1%;
-    background-color: var(--color);
+    background-color: var(--text-color);
     color: var(--background-color);
 }
 

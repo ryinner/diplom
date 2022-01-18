@@ -2,26 +2,26 @@
 /* Осноные темы */
 
 [data-theme-style='master'] {
-    --color: #0f0f0f;
+    --text-color: #0f0f0f;
     --background-color: #fafafa;
     --second-color: #b096e4;
 }
 
 
 [data-theme-style='dark'] {
-    --color: #fafafa;
+    --text-color: #fafafa;
     --background-color: #0f0f0f;
     --second-color: #b096e4;
 }
 
 /* Перенести в отдельный ксс исключений */
 html[data-theme-style='dark'] blockquote h1, html[data-theme-style='dark'] blockquote h2 {
-    color: var(--color);
+    color: var(--text-color);
 }
 
 html[data-theme-style='dark'] blockquote h1 {
-    border-top: 2px solid var(--color);
-    border-bottom: 2px solid var(--color);
+    border-top: 2px solid var(--text-color);
+    border-bottom: 2px solid var(--text-color);
 }
 
 /* @todo если будет время пользовательские темы */
@@ -30,16 +30,16 @@ html[data-theme-style='dark'] blockquote h1 {
     --theme-color: 120;
 } */
 [data-theme-style='colored'] {
-    --color: hsl(var(--theme-color), 15%, 44%);
+    --text-color: hsl(var(--theme-color), 15%, 44%);
     --background-color: hsl(var(--theme-color), 30%, 10%);
 }
 
 [data-theme-style='colored__dark'] {
-    --color: hsl(var(--theme-color), 70%, 31%);
+    --text-color: hsl(var(--theme-color), 70%, 31%);
     --background-color: hsl(var(--theme-color), 3%, 3%);
 }
 
 [data-theme-style='colored__light'] {
-    --color: hsl(var(--theme-color),4%,5%);;
+    --text-color: hsl(var(--theme-color),4%,5%);;
     --background-color: hsl(var(--theme-color),96%,98%);;
 }

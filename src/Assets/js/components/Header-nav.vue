@@ -73,7 +73,7 @@ export default{
     position: absolute;
     width: 25%;
     height: 100%;
-    background: var(--color);
+    background: var(--text-color);
     color: var(--background-color);
     transition: 500ms ease all;
     transform: translateX(calc(-100%));

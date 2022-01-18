@@ -12,6 +12,6 @@ nav {
 
 /* Подвал */
 footer {
-    background: var(--color);
+    background: var(--text-color);
     color: var(--background-color);
 }
