@@ -260,10 +260,15 @@ textarea::placeholder {
 .col-12 {
     width: calc(100% / var(--columns-count) * 12);
 }
+
 /* Дисплеи */
 
 .d-flex {
     display: flex;
+}
+
+.d-block {
+    display: block;
 }
 
 .d-none {
@@ -332,12 +337,17 @@ blockquote h1, blockquote h2 {
 }
 
 /* Третья секция */
+.question__h1 {
+    margin: 0;
+    font-weight: normal;
+}
 
 .contact-us {
     padding: 1%;
     background-color: var(--dark);
     color: var(--background-color);
     border-radius: 4px;
+    min-height: 65vh;
 }
 
 .margin__contact-us {

@@ -1,4 +1,4 @@
-<section>
+<section id="index">
 	<div class="index__block pos-relative">
 		<img src="/img/index/city.jpg" class="main-img" draggable="false">
 		<blockquote class="xy-center column">
@@ -9,7 +9,7 @@
 	</div>
 </section>
 
-<section class="center">
+<section class="center" id="goodSides">
 	<div class="width-80">
 		<div class="column">
 			<div class="goodside d-flex space-beetwen">
@@ -60,33 +60,38 @@
 	</div>
 </section>
 
-<section>
+<section id="contact-us">
 
-	<div class="d-flex y-center">
-		<div class="width-80">
-			<h1>Появились</h1>
-			<h1 class="width d-flex flex-end">вопросы?</h1>
+	<div class="row">
+		<div class="col-6">
+			<h1 class="question__h1">Появились</h1>
 		</div>
 
-		<div>
-			<div class="column">
-				<div class="center">
-					<span class="width-40 border-2px"></span>
-				</div>
+		<div class="col-6 xy-center center">
+			{# <div class="width-40 border-2px">
+			</div> #}
+		</div>
 
-				<div class="center margin__contact-us">
+		<div class="col-6">
+			<h1 class="width-100 d-flex flex-end question__h1">вопросы?</h1>
+		</div>
+		<div class="col-6 xy-center">
+			{# <div>
+				<div class="center">
 					<span class="width-40">Отправьте свой вопрос, предложение или жалобу, через форму обратной связи наш специалист свяжиться с вами в течение 15 минут</span>
 				</div>
-			</div>
+			</div> #}
 		</div>
 	</div>
 
 	<div class="d-flex flex-end">
 		<div class="contact-us width-60">
-			<form>
-				<input type="text" class="width-100" placeholder="Ваше имя" />
-				<input type="text" class="width-100" placeholder="Ваше номер" />
-				<textarea class="width-100" placeholder="Ваш комментарий"></textarea>
+			<form class="d-flex">
+				<div class="container">
+					<input type="text" class="width-60" placeholder="Ваше имя" />
+					<input type="text" class="width-60" placeholder="Ваше номер" />
+					<textarea class="width-60" placeholder="Ваш комментарий"></textarea>
+				</div>
 			</form>
         </div>
 	</div>
