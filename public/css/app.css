@@ -90,6 +90,24 @@ textarea::placeholder {
     color: var(--placeholderColor);
 }
 
+button {
+    outline: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    border-radius: 2px;
+    transition: 200ms ease all;
+    color: var(--background-color);
+    background-color: 1px var(--text-color);
+    border: 1px solid var(--background-color);
+}
+
+button:hover {
+    color: var(--text-color);
+    transition: 200ms ease all;
+    background-color: var(--background-color);
+    border: 1px solid var(--text-color);
+}
+
 /* Переменные */
 :root {
     --dark: #0f0f0f;
@@ -116,6 +134,11 @@ textarea::placeholder {
 /* Границы */
 
 .border-2px {
+    border-bottom: 2px solid var(--text-color);
+}
+
+
+.border-2px-negative {
     border-bottom: 2px solid var(--background-color);
 }
 
@@ -287,4 +310,30 @@ textarea::placeholder {
 
 .flex-end {
     justify-content: flex-end;
+}
+
+/* Отступы */
+
+/* Лево-право */
+
+.margin-row-4px {
+    margin: 0 4px;
+}
+
+.margin-row-6px {
+    margin: 0 6px;
+}
+
+.margin-row-10px {
+    margin: 0 10px;
+}
+
+/* Вверх-низ */
+
+.margin-column-10px {
+    margin: 10px 0;
+}
+
+.margin-column-25px {
+    margin: 25px 0;
 }

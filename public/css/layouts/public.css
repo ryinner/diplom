@@ -66,14 +66,15 @@ blockquote h1, blockquote h2 {
 /* Третья секция */
 .question__h1 {
     margin: 0;
-    font-weight: normal;
+    font-weight: bold;
+    font-size: 5.5em;
 }
 
 .contact-us {
     padding: 1%;
     background-color: var(--dark);
     color: var(--background-color);
-    border-radius: 4px;
+    border-radius: 54px 54px 0 0;
     min-height: 65vh;
 }
 
@@ -83,4 +84,8 @@ blockquote h1, blockquote h2 {
 
 .contact-us input {
     margin-bottom: 6px;
+}
+
+.contact-us .btn-container {
+    margin-top: 50px;
 }

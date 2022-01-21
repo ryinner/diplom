@@ -80,18 +80,33 @@
 	</div>
 
 	<div class="d-flex flex-end">
-		<div class="contact-us width-60">
-			<form class="d-flex">
+		<div class="contact-us width-40 xy-center center">
+			<form class="d-flex center width-80">
 				<div class="container">
 					<div class="column">
-						<div class=" width-60 border-2px"></div>
-							<span class="width-60">Отправьте свой вопрос, предложение или жалобу, через форму обратной связи наш специалист свяжиться с вами в течение 15 минут</span>
-						<div class="width-60 border-2px"></div>
+						<h2 class="text-center">Всегда на связи</h2>
+						<div class=" width-100 border-2px-negative margin-column-10px"></div>
+							<span class="width-100 text-center">Отправьте свой вопрос, предложение или жалобу, через форму обратной связи, наш специалист свяжиться с вами в течение 15 минут</span>
+						<div class="width-100 border-2px-negative margin-column-10px"></div>
 					</div>
 
-					<input type="text" class="width-60" placeholder="Ваше имя" />
-					<input type="text" class="width-60" placeholder="Ваше номер" />
-					<textarea class="width-60" placeholder="Ваш комментарий"></textarea>
+					<div class="forn-controll margin-column-10px">
+						<input type="text" class="width-100" placeholder="Ваше имя" />
+					</div>
+
+					<div class="forn-controll margin-column-10px">
+						<input type="text" class="width-100" placeholder="Ваше номер" />
+					</div>
+
+					<div class="forn-controll margin-column-10px">
+						<textarea class="width-100" placeholder="Ваш комментарий"></textarea>
+					</div>
+
+					<div class="btn-container width-100 center">
+						<button>
+							Отправить
+						</button>
+					</div>
 				</div>
 			</form>
         </div>
