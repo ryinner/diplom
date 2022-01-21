@@ -15,3 +15,72 @@ footer {
     background: var(--text-color);
     color: var(--background-color);
 }
+
+/* Страницы */
+
+/* index */
+
+/* Первая секция */
+
+blockquote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);
+}
+
+blockquote h1 {
+    border-top: 2px solid var(--background-color);
+    border-bottom: 2px solid var(--background-color);
+}
+
+blockquote h1, blockquote h2 {
+    color: var(--background-color);
+}
+
+.main-img {
+    z-index: -1;
+    max-height: 800px;
+}
+
+/* Вторая секция */
+
+.goodside {
+    margin: 12px 0;
+}
+
+.goodside .counter {
+    font-size: 4em;
+    font-weight: 900;
+    opacity: 0.6;
+}
+
+.goodside li {
+    margin: 10px 0;
+}
+
+.goodside img {
+    border-radius: 15px;
+}
+
+/* Третья секция */
+.question__h1 {
+    margin: 0;
+    font-weight: normal;
+}
+
+.contact-us {
+    padding: 1%;
+    background-color: var(--dark);
+    color: var(--background-color);
+    border-radius: 4px;
+    min-height: 65vh;
+}
+
+.margin__contact-us {
+    margin-top: 50px;
+}
+
+.contact-us input {
+    margin-bottom: 6px;
+}
