@@ -68,8 +68,6 @@
 		</div>
 
 		<div class="col-6 xy-center center">
-			{# <div class="width-40 border-2px">
-			</div> #}
 		</div>
 
 		<div class="col-6">
