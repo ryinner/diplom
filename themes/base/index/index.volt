@@ -60,8 +60,15 @@
 	</div>
 </section>
 
-<section id="contact-us">
+<section id="adv">
+	<div class="row">
+		<div class="col-5 m-r-10"></div>
+		<div class="col-5 m-r-10"></div>
+		<div class="col-5 m-r-10"></div>
+	</div>
+</section>
 
+<section id="contact-us">
 	<div class="row">
 		<div class="col-6">
 			<h1 class="question__h1">Появились</h1>
@@ -109,5 +116,4 @@
 			</form>
         </div>
 	</div>
-
 </section>

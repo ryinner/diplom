@@ -18,6 +18,24 @@ return [
         'cacheDir'        => root_path('var/cache/'),
         'sessionSavePath' => root_path('var/cache/session/'),
     ],
+    'auth'         => [
+        'defaults'        => [
+            'guard'              => 'web',
+            'passwords'          => 'users',
+        ],
+        'guards'          => [
+            'web'                => [
+                'driver'                => 'session',
+                'provider'              => 'users',
+            ],
+            'providers'    => [
+                'users'          => [
+                    'driver'            => 'model',
+                    'model'             => \App\Models\Users::class,
+                ],
+            ],
+        ],
+    ],
     'mail'        => [
 
     ],
