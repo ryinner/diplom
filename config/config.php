@@ -1,4 +1,5 @@
 <?php
+use App\Models\Users;
 use Phalcon\Logger\Logger;
 use function App\root_path;
 
@@ -31,7 +32,7 @@ return [
             'providers'    => [
                 'users'          => [
                     'driver'            => 'model',
-                    'model'             => \App\Models\Users::class,
+                    'model'             => Users::class,
                 ],
             ],
         ],
