@@ -4,7 +4,7 @@ namespace App\Migrations;
 
 use Phinx\Migration\AbstractMigration;
 
-class CreateTableUsersRememberTokens extends AbstractMigration
+class CreateTableTypes extends AbstractMigration
 {
     /**
      * Change Method.
@@ -33,16 +33,11 @@ class CreateTableUsersRememberTokens extends AbstractMigration
      */
     public function change()
     {
-        $usersRemembersTokens = $this->table('users_remember_tokens', ['id' => 'id', 'key' =>['token', 'user_id']]);
+        $typesTable = $this->table('types', ['id' => 'id']);
 
-        $usersRemembersTokens->addColumn('user_id', 'integer')
-                                ->addForeignKey('user_id', 'users', 'id', ['delete'=>'cascade','update' => 'cascade'])
-                                ->addColumn('token', 'string')
-                                ->addColumn('ip', 'string', ['limit'=> 18])
-                                ->addColumn('user_agent', 'string')
-                                ->addColumn('expired_at', 'timestamp')
-                                ->addColumn('created_at', 'timestamp')
-                                ->addColumn('updated_at', 'timestamp')
-                                ->create();
+        $typesTable->addColumn('type','string', ['limit' => 56])
+                    ->addColumn('created_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
+                    ->addColumn('updated_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
+                    ->create();
     }
 }
