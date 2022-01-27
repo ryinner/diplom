@@ -3,7 +3,7 @@
     <ul class="column">
         <li class="center">
             <div class="logo center" @click="toogle">
-                <img src="img/logo/logo.svg" alt="Риелтор" draggable="false" />
+                <img src="img/logo/logo_dark.svg" alt="Риелтор" draggable="false" />
                 <span>Риелтор</span>
             </div>
         </li>

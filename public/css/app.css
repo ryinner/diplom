@@ -316,24 +316,24 @@ button:hover {
 
 /* Лево-право */
 
-.margin-row-4px {
+.m-r-4 {
     margin: 0 4px;
 }
 
-.margin-row-6px {
+.m-r-6 {
     margin: 0 6px;
 }
 
-.margin-row-10px {
+.m-r-10 {
     margin: 0 10px;
 }
 
 /* Вверх-низ */
 
-.margin-column-10px {
+.m-c-10 {
     margin: 10px 0;
 }
 
-.margin-column-25px {
+.m-c-25 {
     margin: 25px 0;
 }
