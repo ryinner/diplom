@@ -70,7 +70,7 @@ export default{
 
 <style lang="css" scoped>
 #sidebar {
-    position: absolute;
+    position: fixed;
     width: 25%;
     height: 100%;
     background: var(--text-color);
