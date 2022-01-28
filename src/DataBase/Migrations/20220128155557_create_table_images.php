@@ -4,7 +4,7 @@ namespace App\Migrations;
 
 use Phinx\Migration\AbstractMigration;
 
-class CreateTableHouses extends AbstractMigration
+class CreateTableImages extends AbstractMigration
 {
     /**
      * Change Method.
@@ -33,18 +33,11 @@ class CreateTableHouses extends AbstractMigration
      */
     public function change()
     {
-        $housesTable = $this->table('houses', ['id' => 'id']);
+        $imagesTable = $this->table('images', ['id' => 'id']);
 
-        $housesTable->addColumn('price', 'integer')
-                        ->addColumn('description', 'string', ['limit' => 516])
-                        ->addColumn('rooms', 'integer', ['limit' => 56])
-                        ->addColumn('adress', 'string')
-                        ->addColumn('square', 'integer')
-                        ->addColumn('floor', 'string')
-                        ->addColumn('isNew','boolean')
-                        ->addColumn('type_id', 'integer')->addForeignKey('type_id', 'types', 'id', ['delete'=>'cascade', 'update' => 'cascade'])
-                        ->addColumn('status_id', 'integer')->addForeignKey('status_id', 'statuses', 'id', ['delete'=>'cascade', 'update' => 'cascade'])
-                        ->addColumn('user_id', 'integer')->addForeignKey('user_id', 'users', 'id', ['delete'=>'cascade', 'update' => 'cascade'])
+        $imagesTable->addColumn('path', 'string')
+                        ->addColumn('alt', 'string', ['null' => true])
+                        ->addColumn('house_id', 'integer')->addForeignKey('house_id', 'houses', 'id', ['delete'=>'cascade','update' => 'cascade'])
                         ->addColumn('created_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
                         ->addColumn('updated_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
                         ->create();
