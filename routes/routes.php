@@ -6,6 +6,6 @@ $router->removeExtraSlashes(true);
 $router->notFound(['controller' => 'error', 'action' => 'error404']);
 // Подключение всех уникальных маршрутов
 require 'web.php';
-// $router->mount(require 'api.php');
+require 'api.php';
 
 return $router;

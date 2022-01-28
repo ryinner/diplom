@@ -4,6 +4,9 @@ namespace App\Models;
 
 class Houses extends BaseModel
 {
+    public const OLD_HOUSE = 0;
+    public const NEW_HOUSE = 1;
+
     public int $id;
 
     public int $price;
@@ -31,5 +34,10 @@ class Houses extends BaseModel
     public function initialize()
     {
         $this->setSource('houses');
+
+        $this->hasMany('id', Images::class, 'houses_id', ['alias' => 'images']);
+        $this->belongsTo('type_id', Types::class, 'id', ['alias' => 'types']);
+        $this->belongsTo('status_id', Statuses::class, 'id', ['alias' => 'statuses']);
+        $this->belongsTo('user_id', Users::class, 'id', ['alias' => 'users']);
     }
 }

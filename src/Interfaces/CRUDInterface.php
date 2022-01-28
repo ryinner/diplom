@@ -6,11 +6,11 @@ use App\Models\BaseModel;
 
 interface CRUDInterface
 {
-    public function getAction(): BaseModel;
+    public function getAction(): void;
 
     public function createAction(): void;
 
-    public function updateAction(): void;
+    public function updateAction(int $id): void;
 
-    public function deleteAction(): void;
+    public function deleteAction(int $id): void;
 }

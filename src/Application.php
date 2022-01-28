@@ -43,6 +43,7 @@ class Application
         $this->di->setShared(self::APPLICATION_PROVIDER, $this);
 
         $this->initializeProviders();
+        $this->initializeModules();
     }
 
     /**
@@ -97,5 +98,12 @@ class Application
             $provider = new $providerClass;
             $provider->register($this->di);
         }
+    }
+
+    protected function initializeModules(): void
+    {
+        $modulesname = include_once $this->rootPath . '/config/modules.php';
+
+        $this->app->registerModules($modulesname);
     }
 }
