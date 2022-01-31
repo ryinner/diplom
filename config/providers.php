@@ -7,6 +7,7 @@ use App\Providers\DispatcherProvider;
 use App\Providers\RouterProvider;
 use App\Providers\UrlProvider;
 use App\Providers\ViewProvider;
+use Sinbadxiii\PhalconAuth\AuthProvider;
 
 return [
     ConfigProvider::class,
@@ -16,4 +17,5 @@ return [
     ViewProvider::class,
     UrlProvider::class,
     AssetsProvider::class,
+    AuthProvider::class,
 ];

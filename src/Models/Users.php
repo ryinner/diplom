@@ -39,23 +39,23 @@ class Users extends BaseModel
         $this->keepSnapshots(true);
     }
 
-    public function setPassword(string $password)
+    public function setPassword(string $password): Users
     {
         $this->password = Di::getDefault()->getShared("security")->hash($password);
         return $this;
     }
 
-    public function getAuthIdentifier()
+    public function getAuthIdentifier(): int
     {
         return $this->id;
     }
 
-    public function getAuthPassword()
+    public function getAuthPassword(): string
     {
         return $this->password;
     }
 
-    public function getRememberToken(string $token = null): ?RememberTokenInterface
+    public function getRememberToken(string $token = null)
     {
         return $this->getRelated('remember_token', [
             'token=:token:',
@@ -63,7 +63,7 @@ class Users extends BaseModel
         ]);
     }
 
-    public function setRememberToken(RememberTokenInterface $value)
+    public function setRememberToken(RememberTokenInterface $value): void
     {
         $this->remember_token = $value;
     }
