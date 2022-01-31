@@ -3,6 +3,7 @@
 namespace App\Modules\Api\Controllers;
 
 use App\Interfaces\CRUDInterface;
+use App\Models\Houses;
 
 class HousesController extends ControllerApiBase implements CRUDInterface
 {
@@ -13,12 +14,14 @@ class HousesController extends ControllerApiBase implements CRUDInterface
 
     public function getAction(): void
     {
-
+        echo json_encode(Houses::find());
     }
 
     public function createAction(): void
     {
-        
+        $request = $this->request->get();
+        $house = new Houses($request);
+        $house->save();
     }
 
     public function updateAction(int $id): void
