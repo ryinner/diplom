@@ -17,6 +17,14 @@
         }
     ],
     "minimum-stability": "dev",
+
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ryinner/api-package.git"
+        }
+    ],
+
     "require": {
         "ext-openssl": "*",
         "ext-phalcon": "~5.0.0",
@@ -31,6 +39,7 @@
         "vimeo/psalm": "^3.7",
         "codeception/module-phpbrowser": "^1.0",
         "codeception/module-asserts": "^1.2",
-        "sinbadxiii/phalcon-auth": "^v1.1.0"
+        "sinbadxiii/phalcon-auth": "^v1.1.0",
+        "ryinner/api-package": "dev-master"
     }
 }

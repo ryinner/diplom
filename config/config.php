@@ -19,6 +19,9 @@ return [
         'cacheDir'        => root_path('var/cache/'),
         'sessionSavePath' => root_path('var/cache/session/'),
     ],
+    'api' => [
+        'apiUri'    => getenv('APP_API_URI'),
+    ],
     'auth' => [
         'defaults' => [
             'guard' => 'web',

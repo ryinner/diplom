@@ -1,13 +1,14 @@
 <?php
 
-use App\Providers\AssetsProvider;
-use App\Providers\ConfigProvider;
 use App\Providers\DbProvider;
-use App\Providers\DispatcherProvider;
-use App\Providers\RouterProvider;
-use App\Providers\SessionProvider;
+use App\Providers\ApiProvider;
 use App\Providers\UrlProvider;
 use App\Providers\ViewProvider;
+use App\Providers\AssetsProvider;
+use App\Providers\ConfigProvider;
+use App\Providers\RouterProvider;
+use App\Providers\SessionProvider;
+use App\Providers\DispatcherProvider;
 use Sinbadxiii\PhalconAuth\AuthProvider;
 
 return [
@@ -20,4 +21,5 @@ return [
     AssetsProvider::class,
     SessionProvider::class,
     AuthProvider::class,
+    ApiProvider::class,
 ];
