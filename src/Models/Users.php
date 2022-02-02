@@ -14,11 +14,13 @@ class Users extends BaseModel
 
     public string $username;
 
-    public string $password;
+    protected string $password;
 
     public string $first_name;
 
     public string $last_name;
+
+    public int $role_id;
 
     public $created_at;
     
@@ -27,6 +29,10 @@ class Users extends BaseModel
     public function initialize(): void
     {
         $this->setSource('users');
+
+        $this->belongsTo('role_id', Roles::class, 'id', [
+            'alias' => 'roles'
+        ]);
 
         $this->hasOne(
             'id',
