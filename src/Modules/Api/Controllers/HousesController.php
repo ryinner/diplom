@@ -4,6 +4,7 @@ namespace App\Modules\Api\Controllers;
 
 use App\Interfaces\CRUDInterface;
 use App\Models\Houses;
+use stdClass;
 
 class HousesController extends ControllerApiBase implements CRUDInterface
 {
@@ -12,9 +13,9 @@ class HousesController extends ControllerApiBase implements CRUDInterface
         parent::initialize();
     }
 
-    public function getAction(): void
+    public function getAction(): string|false
     {
-        echo json_encode(Houses::find());
+        return json_encode(Houses::find());
     }
 
     public function createAction(): void
@@ -26,11 +27,32 @@ class HousesController extends ControllerApiBase implements CRUDInterface
 
     public function updateAction(int $id): void
     {
-        
+        $house = Houses::findFirst($id);
+
+        $house->save();
     }
 
     public function deleteAction(int $id): void
     {
-        
+        $house = Houses::findFirst($id);
+
+        $house->delete();
+    }
+
+    public function getForIndexAction(): void
+    {
+        $houses = new stdClass;
+
+        $houses->buyAble = Houses::find([
+            'type = 1',
+            'status' => 'created_at'
+        ]);
+
+        $houses->rentAble = Houses::find(
+            [
+                'type = 2',
+                'status' => 'created_at'
+            ]
+        );
     }
 }

@@ -6,7 +6,7 @@ use App\Models\BaseModel;
 
 interface CRUDInterface
 {
-    public function getAction(): void;
+    public function getAction(): string|false;
 
     public function createAction(): void;
 
