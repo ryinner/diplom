@@ -34,6 +34,6 @@ class ControllerBase extends Controller implements Accessicate
 
     public function authAccess(): bool
     {
-       return true; //or false, if you don't need to check authentication
+       return false; //check authentication
     }  
 }
