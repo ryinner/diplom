@@ -13,6 +13,11 @@ class IndexController extends ControllerBase
 
     public function indexAction()
     {
+        $houses = $this->api->get('Houses/GetForIndex');
 
+        $this->view->setVars(
+            compact(
+                'houses'
+            ));
     }
 }
