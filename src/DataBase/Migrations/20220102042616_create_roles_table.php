@@ -4,7 +4,7 @@ namespace App\Migrations;
 
 use Phinx\Migration\AbstractMigration;
 
-class CreateTableUsers extends AbstractMigration
+class CreateRolesTable extends AbstractMigration
 {
     /**
      * Change Method.
@@ -33,17 +33,10 @@ class CreateTableUsers extends AbstractMigration
      */
     public function change()
     {
-        $userTable = $this->table('users', ['id' => 'id']);
+        $rolesTable = $this->table('roles', ['id' => 'id']);
 
-        $userTable->addColumn('username', 'string', ['limit' => 60])
-                    ->addColumn('email', 'string', ['limit' => 120])
-                    ->addColumn('password', 'string', ['limit' => 50])
-                    ->addColumn('first_name', 'string', ['limit' => 50])
-                    ->addColumn('last_name', 'string', ['limit' => 50])
-                    ->addColumn('role', 'integer')
-                    ->addForeignKey('role', 'roles', 'id', ['delete'=>'cascade','update' => 'cascade', 'default' => 1])
-                    ->addColumn('created_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
-                    ->addColumn('updated_at', 'timestamp', ['null' => true])
+        $rolesTable->addColumn('role', 'string')
+                    ->addIndex('role',  ['unique' => true])
                     ->create();
     }
 }
