@@ -60,12 +60,8 @@
 	</div>
 </section>
 
-<section id="adv">
-	<div class="row">
-		<div class="col-5 m-r-10"></div>
-		<div class="col-5 m-r-10"></div>
-		<div class="col-5 m-r-10"></div>
-	</div>
+<section id="houses">
+	<h2>Последние дома:</h2>
 </section>
 
 <section id="contact-us">

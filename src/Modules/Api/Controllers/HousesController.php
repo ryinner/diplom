@@ -39,20 +39,26 @@ class HousesController extends ControllerApiBase implements CRUDInterface
         $house->delete();
     }
 
-    public function getForIndexAction(): void
+    public function getForIndexAction(): string|false
     {
         $houses = new stdClass;
 
         $houses->buyAble = Houses::find([
-            'type = 1',
-            'status' => 'created_at'
+            'type = 2',
+            'status = 1',
+            'order' => 'created_at',
+            'limit' => 4,
         ]);
 
         $houses->rentAble = Houses::find(
             [
-                'type = 2',
-                'status' => 'created_at'
+                'type = 1',
+                'status = 2',
+                'order' => 'created_at',
+                'limit' => 4,
             ]
         );
+
+        return json_encode($houses);
     }
 }
