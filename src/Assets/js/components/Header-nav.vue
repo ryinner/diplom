@@ -1,11 +1,11 @@
 <template>
-<modal tittle="Ваш вход">
+<modal tittle="Ваш вход" :isActive="modalOpen">
 А я тут
 </modal>
 <div id="sidebar" class="center" :class="{sidebar__active:isActive}">
     <ul class="column">
         <li class="center">
-            <div class="logo center" @click="toogle">
+            <div class="logo center" @click="toogleSidebar">
                 <img src="img/logo/logo_dark.svg" alt="Риелтор" draggable="false" />
                 <span>Риелтор</span>
             </div>
@@ -35,7 +35,7 @@
             <div class="left">
                 <ul>
                     <li>
-                        <div class="logo center" @click="toogle">
+                        <div class="logo center" @click="toogleSidebar">
                             <img src="img/logo/logo.svg" alt="Риелтор" draggable="false" />
                             <span>Риелтор</span>
                         </div>
@@ -45,7 +45,7 @@
             <div class="right">
                 <ul>
                     <li>
-                        <a href="/">Войти</a>
+                        <a href="/" @click.prevent="toogleModal">Войти</a>
                     </li>
                 </ul>
             </div>
@@ -56,6 +56,7 @@
 </template>
 
 <script>
+import { watch } from '@vue/runtime-core';
 import modal from "./Modal"
 export default{
     components: {
@@ -64,12 +65,27 @@ export default{
     data() {
         return {
             isActive: false,
-            screenWidth: window.screen.width
+            modalOpen: false,
+            screenWidth: window.screen.width,
         };
     },
     methods: {
-        toogle(){
+        toogleSidebar(){
             this.isActive = !this.isActive
+        }, 
+
+        toogleModal() {
+            this.modalOpen = !this.modalOpen
+        }
+    },
+
+    watch: {
+        modalOpen() {
+            if (this.modalOpen === true) {
+                document.body.style.overflow = "hidden"
+            } else {
+                document.body.style.overflow = "auto"
+            }
         }
     }
 }

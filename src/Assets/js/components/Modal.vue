@@ -3,7 +3,7 @@
         <div class="modal__content">
             <div class="modal__tittle d-flex space-beetwen xy-center">
                 <h3>{{ tittle }}</h3>
-                <div class="pos-relative icon xy-center center" @click="toogle">
+                <div class="pos-relative icon xy-center center" @click="toogleModal">
                     <span id="x-icon-left" class="x-icon"></span>
                     <span id="x-icon-right" class="x-icon"></span>
                 </div>
@@ -22,22 +22,21 @@
 
 <script>
 export default {
-    data() {
-        return {
-            isActive: false,
-        }
-    },
     props: {
         tittle: {
             type: String,
             required: true,
+        },
+        isActive: {
+            type: Boolean,
+            required: true,
         }
     },
     methods: {
-        toogle() {
-            this.isActive = !this.isActive;
+        toogleModal() {
+            this.$parent.toogleModal()
         }
-    },
+    }
 }
 </script>
 
@@ -47,9 +46,9 @@ export default {
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.384);
-            position: absolute;
+            position: fixed;
             z-index: 2000;
-            // display: none;
+            display: none;
         }
         &__content {
             position: absolute;
@@ -58,6 +57,7 @@ export default {
             transform: translate(-50%,-50%);
             background-color: #fafafa;
             padding: 16px;
+            min-width: 40%;
         }
         &__tittle {
             position: relative;
@@ -80,7 +80,6 @@ export default {
         height: 100%;
         width: 2px;
         background: #000;
-        cursor: pointer;
         margin-bottom: -8px;
     }
 
