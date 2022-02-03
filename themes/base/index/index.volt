@@ -59,25 +59,21 @@
 		</div>
 	</div>
 </section>
-
 <section id="houses">
 	<h2>Последние дома:</h2>
 </section>
-
 <section id="contact-us">
 	<div class="row">
 		<div class="col-6">
 			<h1 class="question__h1">Появились</h1>
 		</div>
 
-		<div class="col-6 xy-center center">
-		</div>
+		<div class="col-6 xy-center center"></div>
 
 		<div class="col-6">
 			<h1 class="width-100 d-flex flex-end question__h1">вопросы?</h1>
 		</div>
-		<div class="col-6 xy-center">
-		</div>
+		<div class="col-6 xy-center"></div>
 	</div>
 
 	<div class="d-flex flex-end">
@@ -87,16 +83,16 @@
 					<div class="column">
 						<h2 class="text-center">Всегда на связи</h2>
 						<div class=" width-100 border-2px-negative m-c-10"></div>
-							<span class="width-100 text-center">Отправьте свой вопрос, предложение или жалобу, через форму обратной связи, наш специалист свяжиться с вами в течение 15 минут</span>
+						<span class="width-100 text-center">Отправьте свой вопрос, предложение или жалобу, через форму обратной связи, наш специалист свяжиться с вами в течение 15 минут</span>
 						<div class="width-100 border-2px-negative m-c-10"></div>
 					</div>
 
 					<div class="forn-controll m-c-10">
-						<input type="text" class="width-100" placeholder="Ваше имя" />
+						<input type="text" class="width-100" placeholder="Ваше имя"/>
 					</div>
 
 					<div class="forn-controll m-c-10">
-						<input type="text" class="width-100" placeholder="Ваше номер" />
+						<input type="text" class="width-100" placeholder="Ваше номер"/>
 					</div>
 
 					<div class="forn-controll m-c-10">
@@ -110,6 +106,6 @@
 					</div>
 				</div>
 			</form>
-        </div>
+		</div>
 	</div>
 </section>

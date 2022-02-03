@@ -1,5 +1,8 @@
 <template>
-<div id="sidebar" class="center" :class="{active:isActive}">
+<modal tittle="Ваш вход">
+А я тут
+</modal>
+<div id="sidebar" class="center" :class="{sidebar__active:isActive}">
     <ul class="column">
         <li class="center">
             <div class="logo center" @click="toogle">
@@ -53,7 +56,11 @@
 </template>
 
 <script>
+import modal from "./Modal"
 export default{
+    components: {
+        modal
+    },
     data() {
         return {
             isActive: false,
@@ -68,7 +75,7 @@ export default{
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
 #sidebar {
     position: fixed;
     width: 25%;
@@ -129,7 +136,7 @@ export default{
 }
 
 
-.active {
+.sidebar__active {
     transition: 500ms ease all;
     transform: translateX(calc(0%)) !important;
 }
