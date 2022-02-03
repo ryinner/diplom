@@ -23,7 +23,7 @@ export default {
     },
     methods: {
         login() {
-            axios.post('/', {login: this.login, password: this.password});
+            axios.post('/Users/Login', {login: this.login, password: this.password});
         }
     },
 }

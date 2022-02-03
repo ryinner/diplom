@@ -6,13 +6,13 @@
 export default {
     data() {
         return {
-            login,
-            email,
-            firstname,
-            lastname,
-            password,
-            repeatedPassrord,
-            
+            login: null,
+            email: null,
+            firstname: null,
+            lastname: null,
+            phone: null,
+            password: null,
+            repeatedPassrord: null,
         }
     },
 }
