@@ -1,6 +1,6 @@
 <template>
-<modal tittle="Ваш вход" :isActive="modalOpen">
-А я тут
+<modal tittle="Ваши данные" :isActive="modalOpen">
+    <loginForm></loginForm>
 </modal>
 <div id="sidebar" class="center" :class="{sidebar__active:isActive}">
     <ul class="column">
@@ -56,11 +56,13 @@
 </template>
 
 <script>
-import { watch } from '@vue/runtime-core';
 import modal from "./Modal"
+import loginForm from "./forms/Login";
+
 export default{
     components: {
-        modal
+        modal,
+        loginForm
     },
     data() {
         return {

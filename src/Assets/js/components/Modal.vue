@@ -1,7 +1,7 @@
 <template>
     <div class="modal__background" :class="{modal__active:isActive}">
         <div class="modal__content">
-            <div class="modal__tittle d-flex space-beetwen xy-center">
+            <div class="modal__tittle d-flex space-beetwen xy-center border-2px">
                 <h3>{{ tittle }}</h3>
                 <div class="pos-relative icon xy-center center" @click="toogleModal">
                     <span id="x-icon-left" class="x-icon"></span>
@@ -13,8 +13,7 @@
                 <slot></slot>
             </div>
 
-            <div class="modal__footer">
-                <button></button>
+            <div class="modal__footer d-flex space-beetwen">
             </div>
         </div>
     </div>
@@ -50,23 +49,28 @@ export default {
             z-index: 2000;
             display: none;
         }
+
         &__content {
-            position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%,-50%);
-            background-color: #fafafa;
             padding: 16px;
             min-width: 40%;
+            position: absolute;
+            border-radius: 2px;
+            transform: translate(-50%,-50%);
+            background-color: #fafafa;
         }
+
         &__tittle {
             position: relative;
             color: #0f0f0f;
             min-width: 200px;
         }
+
         &__body {
             color: #0f0f0f;
         }
+
         &__active {
             display: block;
             transition: 500ms ease all;
@@ -75,10 +79,10 @@ export default {
     
 
     .x-icon {
+        width: 2px;
+        height: 100%;
         display: block;
         position: absolute;
-        height: 100%;
-        width: 2px;
         background: #000;
         margin-bottom: -8px;
     }
