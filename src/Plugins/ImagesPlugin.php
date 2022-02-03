@@ -6,7 +6,7 @@ class ImagesPlugin
 {
     protected string $img;
 
-    public function __construct (string $img)
+    public function __construct(string $img)
     {
         $this->img = $img;
     }
@@ -26,7 +26,7 @@ class ImagesPlugin
         return $answer['sucess'] === false ?  $answer :  $answer['sucess'] = true;
     }
 
-    public function checkSize(): bool
+    private function checkSize(): bool
     {
         if (filesize($this->img) <= 10485760) {
             return true;
@@ -35,7 +35,7 @@ class ImagesPlugin
         }
     }
 
-    public function checkExt(): bool
+    private function checkExt(): bool
     {
         $allowedExt = [
             'jpg',

@@ -42,9 +42,9 @@ module.exports = {
                 },
             },
             {
-                test: /\.css$/,
-                use: ['vue-style-loader', 'css-loader']
-            }
+                test: /\.(css|scss|sass)$/,
+                use: ['vue-style-loader', 'css-loader','sass-loader']
+            },
         ]
     },
     resolve: {

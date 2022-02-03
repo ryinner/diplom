@@ -4,8 +4,8 @@ namespace App\Models;
 
 class Houses extends BaseModel
 {
-    public const OLD_HOUSE = 0;
-    public const NEW_HOUSE = 1;
+    public const OLD_HOUSE = false;
+    public const NEW_HOUSE = true;
 
     public int $id;
 

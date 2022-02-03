@@ -17,10 +17,10 @@ class StatusesSeeder extends AbstractSeed
     {
         $data = [
             [
-                'status' => 'Продажа'
+                'status' => 'Продается'
             ],
             [
-                'status' => 'Аренда'
+                'status' => 'В аренду'
             ],
             [
                 'status' => 'Закрыто'

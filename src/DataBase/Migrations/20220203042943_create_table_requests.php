@@ -37,7 +37,7 @@ class CreateTableRequests extends AbstractMigration
 
         $requestTable->addColumn('name', 'string')
                         ->addColumn('phone', 'string')
-                        ->addColumn('problem', 'string')
+                        ->addColumn('problem', 'string', ['limit' => 516])
                         ->create();
     }
 }
