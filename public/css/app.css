@@ -147,7 +147,7 @@ button:hover {
     max-width: 1500px;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1600px) {
     .content {
         width: 95%;
     }
@@ -237,6 +237,12 @@ button:hover {
 
 .width-100 {
     width: 100%;
+}
+
+@media screen and (max-width:1200px) {
+    .width-mobile-100 {
+        width: 100% !important;
+    }
 }
 
 /* Колонки */

@@ -10,10 +10,10 @@
 </section>
 
 <section class="center" id="goodSides">
-	<div class="width-80">
+	<div class="width-80 width-mobile-100">
 		<div class="column">
 			<div class="goodside d-flex space-beetwen">
-				<div class="left column width-60">
+				<div class="left column width-40">
 					<div class="counter">01</div>
 					<h3>Собственная база покупателей</h3>
 					<ul>
@@ -28,8 +28,8 @@
 			</div>
 
 			<div class="goodside d-flex space-beetwen">
-				<div class="left width-60">
-					<img src="/img/index/goodside/room.jpg" class="width-70">
+				<div class="left width-40">
+					<img src="/img/index/goodside/room.jpg">
 				</div>
 				<div class="right column width-40">
 					<div class="counter">02</div>
@@ -43,7 +43,7 @@
 			</div>
 
 			<div class="goodside d-flex space-beetwen">
-				<div class="left column width-60">
+				<div class="left column width-40">
 					<div class="counter">03</div>
 					<h3>Имеем собственных юристов</h3>
 					<ul>
