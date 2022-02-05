@@ -5,6 +5,7 @@
     --text-color: #0f0f0f;
     --background-color: #fafafa;
     --second-color: #b096e4;
+    --darker-second-color: #8c62df;
 }
 
 
@@ -12,6 +13,7 @@
     --text-color: #fafafa;
     --background-color: #0f0f0f;
     --second-color: #b096e4;
+    --darker-second-color: #8c62df;
 }
 
 /* Перенести в отдельный ксс исключений */

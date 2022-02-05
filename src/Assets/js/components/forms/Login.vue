@@ -10,7 +10,7 @@
             <button type="submit" @click.prevent="loginUser">Войти</button>
         </div>
         <div class="form-controll center">
-            <a href="/Users/Create">Нет аккаунта? Создайте прямо сейчас</a>
+            <span>Нет аккаунта? <a href="/Users/Create" class="a__show">Создайте прямо сейчас</a></span>
         </div>
     </form>
 </template>

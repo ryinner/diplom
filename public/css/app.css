@@ -31,6 +31,17 @@ a {
     color: var(--text-color);
 }
 
+.a__show {
+    transition: 200ms ease all;
+    color: var(--second-color);
+}
+
+.a__show:hover {
+    transition: 200ms ease all;
+    color: var(--darker-second-color);
+    border-bottom: 1px solid var(--darker-second-color);
+}
+
 li {
     list-style: none;
 }
@@ -53,7 +64,7 @@ input:not([type=checkbox]):not([type="radio"]) {
     border: 1px solid var(--text-color);
 }
 
-input:focus {
+input:not([type=checkbox]):not([type="radio"]):focus {
     transition: 100ms ease all;
     border: 1px solid var(--second-color);
 }
@@ -411,6 +422,23 @@ button:hover {
     width: 24px;
     height: 24px;
     cursor: pointer;
+}
+
+.x-icon {
+    width: 2px;
+    height: 100%;
+    display: block;
+    position: absolute;
+    background: var(--text-color);
+    margin-bottom: -8px;
+}
+
+#x-icon-left {
+    transform: rotate(45deg);
+}
+
+#x-icon-right {
+    transform: rotate(-45deg);
 }
 
 /* Работа с текстом */

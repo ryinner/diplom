@@ -58,40 +58,22 @@ export default {
             position: absolute;
             border-radius: 2px;
             transform: translate(-50%,-50%);
-            background-color: #fafafa;
+            background-color: var(--background-color);
         }
 
         &__tittle {
             position: relative;
-            color: #0f0f0f;
+            color: var(--text-color);
             min-width: 200px;
         }
 
         &__body {
-            color: #0f0f0f;
+            color: var(--text-color);
         }
 
         &__active {
             display: block;
             transition: 500ms ease all;
         }
-    }
-    
-
-    .x-icon {
-        width: 2px;
-        height: 100%;
-        display: block;
-        position: absolute;
-        background: #000;
-        margin-bottom: -8px;
-    }
-
-    #x-icon-left {
-        transform: rotate(45deg);
-    }
-
-    #x-icon-right {
-        transform: rotate(-45deg);
     }
 </style>

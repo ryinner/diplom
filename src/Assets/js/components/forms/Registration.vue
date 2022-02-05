@@ -34,7 +34,7 @@
         <div class="form-control center m-c-10 xy-center">
             <input type="checkbox" id="agreement" value="true" v-model="checkbox" required>
             <label for="agreement" class="width-30">
-                <span>Я согласен с условиями <a href="/files/Персональные данные.docx" download>политики персональных данных</a></span>
+                <span>Я согласен с условиями политики <a href="/files/Персональные данные.docx" download class="a__show">персональных данных</a></span>
             </label>
         </div>
 
