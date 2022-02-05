@@ -6,7 +6,7 @@
     <ul class="column">
         <li class="center">
             <div class="logo center" @click="toogleSidebar">
-                <img src="img/logo/logo_dark.svg" alt="Риелтор" draggable="false" />
+                <img src="/img/logo/logo_dark.svg" alt="Риелтор" draggable="false" />
                 <span>Риелтор</span>
             </div>
         </li>
@@ -36,7 +36,7 @@
                 <ul>
                     <li>
                         <div class="logo center" @click="toogleSidebar">
-                            <img src="img/logo/logo.svg" alt="Риелтор" draggable="false" />
+                            <img src="/img/logo/logo.svg" alt="Риелтор" draggable="false" />
                             <span>Риелтор</span>
                         </div>
                     </li>
@@ -117,6 +117,7 @@ export default{
 }
 
 #sidebar ul li .logo {
+    padding: 16px;
     margin-bottom: 12px;
     font-size: 1.4em;
 }

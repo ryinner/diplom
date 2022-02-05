@@ -3,6 +3,10 @@ header, footer {
 }
 
 /* Шапка */
+header {
+    padding: 10px;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
