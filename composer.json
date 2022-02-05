@@ -29,7 +29,8 @@
         "ext-openssl": "*",
         "ext-phalcon": "~5.0.0",
         "robmorgan/phinx": "^0.11.1",
-        "vlucas/phpdotenv": "^3.6"
+        "vlucas/phpdotenv": "^3.6",
+        "phpmailer/phpmailer": "dev-master"
     },
     "require-dev": {
         "codeception/codeception": "^4.1.6",
