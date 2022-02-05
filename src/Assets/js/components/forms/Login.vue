@@ -7,7 +7,7 @@
             <input type="password" v-model="password" class="width-80" placeholder="Ваш пароль" required>
         </div>
         <div class="form-controll center m-c-10">
-            <button type="submit" @click.prevent="login">Войти</button>
+            <button type="submit" @click.prevent="loginUser">Войти</button>
         </div>
         <div class="form-controll center">
             <a href="/Users/Create">Нет аккаунта? Создайте прямо сейчас</a>
@@ -25,7 +25,7 @@ export default {
         }
     },
     methods: {
-        login() {
+        loginUser() {
             this.login = this.login.trim()
             this.password = this.password.trim()
 
