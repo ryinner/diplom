@@ -10,4 +10,9 @@ class ControllerApiBase extends Controller
     {
         $this->view->disable();
     }
+
+    public function authAccess(): bool
+    {
+       return false; //check authentication
+    }  
 }

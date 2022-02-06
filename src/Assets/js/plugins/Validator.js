@@ -10,8 +10,13 @@ export default class {
     }
 
     static validLogin(login) {
-        const loginRegular = /[\w]/i
+        const loginRegular = /^[\w]/i
         return loginRegular.test(login)
+    }
+
+    static validPhone(phone) {
+        const phoneRegular = /^[0-9]{9,}/i
+        return phoneRegular.test(phone)
     }
 
     static onlyNumbers(value) {
@@ -20,19 +25,13 @@ export default class {
     }
 
     static mediumPasswordDifficult (password) {
-        const medium_first = /[А-ЯA-Z]{9,}/i
-        const medium_second = /[0-9]{9,}/i
-
-        if (medium_first.test(password) && medium_second.test(password)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    static hardPasswordDifficult (password) {
+        const medium = /[0-9А-ЯA-Z]{8,}/i
         const hard = /[~!#$%\^&*+=\-\[\]\\;,/{}|\\@:<>\?]/i
 
-        return hard.test(password)
+        if (medium.test(password) && hard.test(password)) {
+            return true
+        } else {
+            return false
+        }
     }
 }

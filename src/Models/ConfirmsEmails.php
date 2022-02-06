@@ -22,4 +22,9 @@ class ConfirmsEmails extends BaseModel
 
         $this->belongsTo('user_id', Users::class, 'id', ['alias' => 'users']);
     }
+
+    public static function createToken()
+    {
+        return hash("sha256", date('d-m-y'));
+    }
 }

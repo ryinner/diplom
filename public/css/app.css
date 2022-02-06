@@ -26,6 +26,10 @@ h3 {
     font-size: 1.8em;
 }
 
+span {
+    font-size: 1.2em;
+}
+
 a {
     text-decoration: none;
     color: var(--text-color);
@@ -164,7 +168,7 @@ button:hover {
 
 /* Переменные */
 :root {
-    --red: #4b0000;
+    --red: #610000;
     --dark: #0f0f0f;
     --placeholderColor: #505050;
     --columns-count: 12;

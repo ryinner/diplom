@@ -41,8 +41,8 @@ class CreateTableUsers extends AbstractMigration
                     ->addColumn('first_name', 'string', ['limit' => 50])
                     ->addColumn('last_name', 'string', ['limit' => 50])
                     ->addColumn('phone', 'integer',)
-                    ->addColumn('role_id', 'integer')
-                    ->addForeignKey('role_id', 'roles', 'id', ['delete'=>'cascade','update' => 'cascade', 'default' => 1])
+                    ->addColumn('role_id', 'integer', ['default' => 1])
+                    ->addForeignKey('role_id', 'roles', 'id', ['delete'=>'cascade','update' => 'cascade'])
                     ->addColumn('created_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
                     ->addColumn('updated_at', 'timestamp', ['null' => true])
                     ->create();
