@@ -66,6 +66,9 @@
         <div class="form-control center m-c-10">
             <button @click.prevent="registration">Создать аккаунт</button>
         </div>
+        <div class="success center">
+            <span>{{ successMessage.message }}</span>
+        </div>
     </form>
 </template> 
 
@@ -95,7 +98,9 @@ export default {
             checkboxError: {class: false, message: ''},
 
             valid: '',
-            data: ''
+            data: {message: ''},
+            successMessage: {message: ''},
+            showModal: false,
         }
     },
 
@@ -182,10 +187,11 @@ export default {
                 phone: this.phone,
                 password: this.password,
             })
-            .then(function (response) {
-                data = JSON.parse(response.data)
-                if (data.success = false ) {
-                    usernameError = data.errors.usernameError
+            .then( (response) => {
+                if (response.data.success == false ) {
+                    this.usernameError = {class:true, message: response.data.errors.usernameError}
+                } else {
+                    this.successMessage = {message: response.data.message}
                 }
             })
 
@@ -193,7 +199,7 @@ export default {
                 console.log(error)
             })
         }
-    }
+    },
 }
 </script>
 

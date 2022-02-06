@@ -15,25 +15,27 @@ class UsersController extends ControllerApiBase
     public function createAction(): string|false
     {
         $data = json_decode(file_get_contents('php://input'));
-
+        
         $email = $data->email;
-        $username  = $data->username ;
+        $username  = $data->username;
+
         $checkUserEmail = Users::findFirst([
-            'email' => $email,
+            "email = '$email'"
         ]);
 
         $checkUserUsername = Users::findFirst([
-            'username ' => $username 
+            "username = '$username'"
         ]);
 
-        if ($checkUserUsername?->id || $checkUserEmail?->id) {
+        if ($checkUserUsername?->id !== null || $checkUserEmail?->id !== null) {
             return json_encode(
             ['success'=> false,
                 'errors' => [
-                    'loginError' => 'Такой пользователь уже есть.'
+                    'usernameError' => 'Такой пользователь уже есть.'
                 ]
             ]);
         } else {
+            try {
             $user = new Users();
             $user->assign((array)$data);
             $user->setPassword($data->password);
@@ -46,6 +48,11 @@ class UsersController extends ControllerApiBase
             ]);
 
             $emailVerify->save();
+
+            } catch (\Throwable $e) {
+                var_dump($e->getMessage());
+                var_dump($user->getMessages());
+            }
 
             return json_encode([
                 'success' => true,
