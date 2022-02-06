@@ -15,16 +15,16 @@ class ImagesSeeder extends AbstractSeed
      */
     public function run()
     {
-        $data = [
-            [
-                'path'   => '',
-                'alt'    => '',
-                'house_id' => ''
-            ]
-        ];
+        // $data = [
+        //     [
+        //         'path'   => '',
+        //         'alt'    => '',
+        //         'house_id' => ''
+        //     ]
+        // ];
 
-        $this->table('images')
-                ->insert($data)
-                ->saveData();
+        // $this->table('images')
+        //         ->insert($data)
+        //         ->saveData();
     }
 }

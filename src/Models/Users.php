@@ -8,19 +8,21 @@ use Sinbadxiii\PhalconAuth\RememberToken\RememberTokenModel;
 
 class Users extends BaseModel
 {
-    public int $id;
+    public $id;
 
-    public string $email;
+    public $email;
 
-    public string $username;
+    public $username;
 
-    protected string $password;
+    protected $password;
 
-    public string $first_name;
+    public $first_name;
 
-    public string $last_name;
+    public $last_name;
 
-    public int $role_id;
+    public $phone;
+
+    public $role_id;
 
     public $created_at;
     

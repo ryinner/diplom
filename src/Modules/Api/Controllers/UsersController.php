@@ -7,49 +7,50 @@ use App\Models\ConfirmsEmails;
 
 class UsersController extends ControllerApiBase
 {
-    public function initialize()
+    public function initialize(): void
     {
         parent::initialize();
     }
 
-    public function createAction()
+    public function createAction(): string|false
     {
         $data = json_decode(file_get_contents('php://input'));
 
         $email = $data->email;
-        $login = $data->login;
-
-        $checkUser = Users::find([
+        $username  = $data->username ;
+        $checkUserEmail = Users::findFirst([
             'email' => $email,
-            'login' => $login
         ]);
 
-        if (count((array)$checkUser) > 0) {
+        $checkUserUsername = Users::findFirst([
+            'username ' => $username 
+        ]);
+
+        if ($checkUserUsername?->id || $checkUserEmail?->id) {
             return json_encode(
             ['success'=> false,
                 'errors' => [
                     'loginError' => 'Такой пользователь уже есть.'
                 ]
             ]);
+        } else {
+            $user = new Users();
+            $user->assign((array)$data);
+            $user->setPassword($data->password);
+            $user->create();
+
+            $emailVerify = new ConfirmsEmails([
+                'user_id' => $user->id,
+                'status'  => 0,
+                'token'   => ConfirmsEmails::createToken()
+            ]);
+
+            $emailVerify->save();
+
+            return json_encode([
+                'success' => true,
+                'message' => 'На почту было отправлено письмо для подтверждения'
+            ]);
         }
-        
-        $user = new Users;
-
-        $user->assign((array)$data);
-        $user->save();
-
-        $emailVerify = new ConfirmsEmails;
-
-        $emailVerify->user_id = $user->id;
-        $emailVerify->status = 0;
-        $emailVerify->token = ConfirmsEmails::createToken();
-
-        $emailVerify->save();
-        
-        $answer = [
-            'success' => true,
-            'message' => 'На почту было отправлено письмо для подтверждения'
-        ];
-        return json_encode($answer);
     }
 }

@@ -4,10 +4,10 @@
         <h3 class="text-center">И пользуйся всем функционалом сайта, уже сейчас</h3>
 
         <div class="form-control center m-c-10">
-            <input type="text" v-model="login" class="width-30" placeholder="Ваш логин" :class="{errors__input:loginError.class}" required>
+            <input type="text" v-model="username" class="width-30" placeholder="Ваш логин" :class="{errors__input:usernameError.class}" required>
         </div>
-        <div class="errors center" v-if="loginError.class">
-                <span class="errors__text">{{ loginError.message }}</span>
+        <div class="errors center" v-if="usernameError.class">
+                <span class="errors__text">{{ usernameError.message }}</span>
         </div>
 
         <div class="form-control center m-c-10">
@@ -76,7 +76,7 @@ import axios from "axios"
 export default {
     data() {
         return {
-            login: '',
+            username: '',
             email: '',
             firstname: '',
             lastname: '',
@@ -85,7 +85,7 @@ export default {
             repeatedPassrord: '',
             checkbox: false,
 
-            loginError: {class: false, message: ''},
+            usernameError: {class: false, message: ''},
             emailError: {class: false, message: ''},
             firstnameError: {class: false, message: ''},
             lastnameError: {class: false, message: ''},
@@ -101,7 +101,7 @@ export default {
 
     methods: {
         registration () {
-            this.login = this.login.trim()
+            this.username = this.username.trim()
             this.email = this.email.trim()
             this.firstname = this.firstname.trim()
             this.lastname = this.lastname.trim()
@@ -115,7 +115,7 @@ export default {
         check () {
             this.valid = true
 
-            this.loginError = {class: false}
+            this.usernameError = {class: false}
             this.emailError = {class: false}
             this.firstnameError = {class: false}
             this.lastnameError = {class: false}
@@ -124,8 +124,8 @@ export default {
             this.repeatedPassrordError = {class: false}
             this.checkboxError = {class: false}
 
-            if (!Validator.validLogin(this.login)) {
-                this.loginError = {class:true, message: 'Введите только английские буквы и точки в логине'}
+            if (!Validator.validUsername(this.username)) {
+                this.usernameError = {class:true, message: 'Введите только английские буквы и точки в логине'}
                 this.valid = false
             }
 
@@ -175,15 +175,18 @@ export default {
 
         tryCreateUser() {
             axios.post('/Api/Users/Create', {
-                login: this.login,
+                username: this.username,
                 email: this.email,
-                firstname: this.firstname,
-                lastname: this.lastname,
+                first_name: this.firstname,
+                last_name: this.lastname,
                 phone: this.phone,
                 password: this.password,
             })
             .then(function (response) {
                 data = JSON.parse(response.data)
+                if (data.success = false ) {
+                    usernameError = data.errors.usernameError
+                }
             })
 
             .catch(function(error) {

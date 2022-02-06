@@ -36,11 +36,11 @@ class CreateTableUsers extends AbstractMigration
         $userTable = $this->table('users', ['id' => 'id']);
 
         $userTable->addColumn('username', 'string', ['limit' => 60])
-                    ->addColumn('email', 'string', ['limit' => 120])
-                    ->addColumn('password', 'string', ['limit' => 50])
-                    ->addColumn('first_name', 'string', ['limit' => 50])
-                    ->addColumn('last_name', 'string', ['limit' => 50])
-                    ->addColumn('phone', 'integer',)
+                    ->addColumn('email', 'string', ['limit' => 256])
+                    ->addColumn('password', 'string', ['limit' => 256])
+                    ->addColumn('first_name', 'string', ['limit' => 256])
+                    ->addColumn('last_name', 'string', ['limit' => 256])
+                    ->addColumn('phone', 'string')
                     ->addColumn('role_id', 'integer', ['default' => 1])
                     ->addForeignKey('role_id', 'roles', 'id', ['delete'=>'cascade','update' => 'cascade'])
                     ->addColumn('created_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])

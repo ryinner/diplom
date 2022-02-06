@@ -9,9 +9,9 @@ export default class {
         return nameRegular.test(name)
     }
 
-    static validLogin(login) {
-        const loginRegular = /^[\w]/i
-        return loginRegular.test(login)
+    static validUsername(username) {
+        const usernameRegular = /^[\w]/i
+        return usernameRegular.test(username)
     }
 
     static validPhone(phone) {

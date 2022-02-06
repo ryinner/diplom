@@ -4,13 +4,13 @@ namespace App\Models;
 
 class ConfirmsEmails extends BaseModel
 {
-    public int $id;
+    public $id;
 
-    protected string $token;
+    protected $token;
 
-    public bool $status;
+    public $status;
 
-    public int $user_id;
+    public $user_id;
 
     public $created_at;
 
@@ -25,6 +25,6 @@ class ConfirmsEmails extends BaseModel
 
     public static function createToken()
     {
-        return hash("sha256", date('d-m-y'));
+        return hash("sha256", date('YmdHis'));
     }
 }
