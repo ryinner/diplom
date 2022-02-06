@@ -20,11 +20,14 @@
         </div>
 
         <div class="form-control center m-c-10">
-            <input type="text" v-model="phone" class="width-30" placeholder="Ваш телефон" required>
+            <input type="text" v-model="phone" class="width-30" @input="onlyNumbers" placeholder="Ваш телефон" required>
         </div>
 
         <div class="form-control center m-c-10">
             <input type="text" v-model="password" class="width-30" placeholder="Ваш пароль" required>
+            <div class="password">
+                <div class="password__show-hard"></div>
+            </div>
         </div>
 
         <div class="form-control center m-c-10">
@@ -45,6 +48,7 @@
 </template> 
 
 <script>
+import Validator from './../../plugins/Validator'
 export default {
     data() {
         return {
@@ -56,6 +60,7 @@ export default {
             password: null,
             repeatedPassrord: null,
             checkbox: null,
+            validErrors: []
         }
     },
 
@@ -69,15 +74,33 @@ export default {
             this.password = this.password.trim()
             this.repeatedPassrord = this.repeatedPassrord.trim()
 
+            this.check ()
         },
 
         check () {
+            if (Validator.validLogin(this.login)) {
 
-        }, 
-        
-        validEmail(email) {
-            const regular = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return regular.test(email);
+            }
+
+            if (Validator.validEmail(this.email)) {
+                
+            }
+            
+            if (Validator.validName(this.firstname)) {
+
+            }
+            
+            if(Validator.validName(this.lastname)) {
+
+            }
+            
+            if (Validator.mediumPasswordDifficult(this.password)) {
+                
+            }
+        },
+
+        onlyNumbers () {
+            this.phone = Validator.onlyNumbers(this.phone)
         }
     }
 }
