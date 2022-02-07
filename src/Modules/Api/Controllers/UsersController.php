@@ -49,6 +49,16 @@ class UsersController extends ControllerApiBase
 
             $emailVerify->save();
 
+            $message = "
+                <h1>Спасибо, что прошли регистрацию</h1>
+                <p>Пройдите по ссылке,чтобы подтвердить правильность указанной почты, $email</p>
+                <p><a href='".$this->config->application->publicUrl."/Users/Emailconfirm?token=".$emailVerify->token."'>".$this->config->application->publicUrl."/Users/Emailconfirm?token=".$emailVerify->token."</a></p>
+                <p></p>
+                <p>** ЗАКЛЮЧЕНИЕ О КОНФИДЕНЦИАЛЬНОСТИ. Данное электронное сообщение, включая вложения, содержит конфиденциальную информацию, защищенную законодательством РФ. Оно предназначено исключительно адресату. Всем прочим лицам доступ к данному сообщению, включая вложения, запрещен. Несанкционированное его использование, распространение, публикация, воспроизведение или любые действия либо бездействие, повлекшее за собой это, запрещены и могут преследоваться по закону.</p>
+            ";
+
+            $this->mail->send($email, $username, "Подтверждение регистрации", $message);
+
             } catch (\Throwable $e) {
                 var_dump($e->getMessage());
                 var_dump($user->getMessages());

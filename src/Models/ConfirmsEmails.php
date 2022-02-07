@@ -6,7 +6,7 @@ class ConfirmsEmails extends BaseModel
 {
     public $id;
 
-    protected $token;
+    public $token;
 
     public $status;
 

@@ -9,6 +9,7 @@ use App\Providers\ConfigProvider;
 use App\Providers\RouterProvider;
 use App\Providers\SessionProvider;
 use App\Providers\DispatcherProvider;
+use App\Providers\MailProvider;
 use Sinbadxiii\PhalconAuth\AuthProvider;
 
 return [
@@ -22,4 +23,5 @@ return [
     SessionProvider::class,
     AuthProvider::class,
     ApiProvider::class,
+    MailProvider::class,
 ];

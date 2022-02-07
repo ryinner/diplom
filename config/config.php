@@ -41,7 +41,10 @@ return [
         ],
     ],    
     'mail'        => [
-
+        'host'      => getenv('MAIL_HOST'),
+        'username'  => getenv('MAIL_USERNAME'),
+        'password'  => getenv('MAIL_PASSWORD'),
+        'port'      => getenv('MAIL_PORT')
     ],
     'logger'      => [
         'path'     => root_path('var/logs/'),
