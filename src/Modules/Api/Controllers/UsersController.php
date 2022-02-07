@@ -70,4 +70,14 @@ class UsersController extends ControllerApiBase
             ]);
         }
     }
+
+    public function emailconfirmAction(): void
+    {
+        $token = $this->request->getQuery("token");
+        if (!empty($token)) {
+            $emailVerify = ConfirmsEmails::findFirst(["token = '$token'"]);
+            $emailVerify->status = ConfirmsEmails::EMAIL_CONFIRM;
+            $emailVerify->save();
+        } 
+    }
 }

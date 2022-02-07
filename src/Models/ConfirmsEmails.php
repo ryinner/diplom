@@ -4,6 +4,8 @@ namespace App\Models;
 
 class ConfirmsEmails extends BaseModel
 {
+    public const EMAIL_CONFIRM = 1;
+
     public $id;
 
     public $token;

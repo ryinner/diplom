@@ -29,7 +29,7 @@ class ApiProvider implements ServiceProviderInterface
         $di->setShared($this->providerName, function () use ($rootPath) {
             $config = include $rootPath . '/config/config.php';
 
-            return new ApiController($config['api']['apiUri']);
+            return new ApiController($config['application']['publicUrl'].$config['api']['apiUri']);
         });
     }
 }
