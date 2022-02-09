@@ -82,4 +82,49 @@ class UsersController extends ControllerApiBase
             $emailVerify->save();
         } 
     }
+
+    
+    public function loginAction(): string|false
+    {
+        $data = json_decode(file_get_contents('php://input'));
+
+        $username = $data->username;
+        $password = $data->password;
+        $remember = $data->remember ? true : false;
+
+        $checkUserUsername = Users::findFirst([
+            "conditions" => "username = :username:",
+            "bind"       => ["username" => $username],
+        ]);
+        
+        $emails_confirms = ConfirmsEmails::findFirst([
+            "conditions" => "user_id = :user_id:",
+            "bind"       => ["user_id" => $checkUserUsername->id],
+        ]);
+
+        if ($emails_confirms->status === ConfirmsEmails::EMAIL_CONFIRM) {
+            if ($this->auth->attempt(['username' => $username, 'password' => $password], $remember)) {
+                $answer = ['sucess' => true];
+            } else {
+                $answer = ['sucess' => false, 
+                    'errors' => [
+                        'loginError' => 'Неправильный логин или пароль.'
+                    ]
+                ];
+            } 
+        } else {
+            $answer = ['sucess' => false, 
+                'errors' => [
+                    'loginError' => 'У вас неподтверждена почта.'
+                ]
+            ];
+        }
+
+        return json_encode($answer);
+    }
+
+    public function logoutAction(): void
+    {
+        $this->auth->logout();
+    }
 }

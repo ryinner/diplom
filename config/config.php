@@ -18,6 +18,7 @@ return [
         'viewsDir'        => root_path('themes/base/'),
         'cacheDir'        => root_path('var/cache/'),
         'sessionSavePath' => root_path('var/cache/session/'),
+        'key'             => getenv('APP_KEY'),
     ],
     'api' => [
         'apiUri'    => getenv('APP_API_URI'),
@@ -52,5 +53,5 @@ return [
         'date'     => 'D j H:i:s',
         'logLevel' => Logger::DEBUG,
         'filename' => 'application.log',
-    ]
+    ], 
 ];

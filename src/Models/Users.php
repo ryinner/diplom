@@ -5,8 +5,9 @@ namespace App\Models;
 use Phalcon\Di\Di;
 use Sinbadxiii\PhalconAuth\Contracts\RememberTokenInterface;
 use Sinbadxiii\PhalconAuth\RememberToken\RememberTokenModel;
+use Sinbadxiii\PhalconAuth\Contracts\AuthenticatableInterface;
 
-class Users extends BaseModel
+class Users extends BaseModel implements AuthenticatableInterface
 {
     public $id;
 
@@ -32,9 +33,14 @@ class Users extends BaseModel
     {
         $this->setSource('users');
 
-        $this->belongsTo('role_id', Roles::class, 'id', [
-            'alias' => 'roles'
-        ]);
+        $this->belongsTo(
+            'role_id', 
+            Roles::class, 
+            'id', 
+            [
+                'alias' => 'roles'
+            ]
+        );
 
         $this->hasOne(
             'id',
@@ -44,6 +50,16 @@ class Users extends BaseModel
                 'alias' => "remember_token"
             ]
         );
+
+        $this->hasOne(
+            'id',
+            ConfirmsEmails::class,
+            'user_id',
+            [
+                'alias' => 'confirms_emails'
+            ]
+        );
+
         $this->keepSnapshots(true);
     }
 
@@ -63,7 +79,7 @@ class Users extends BaseModel
         return $this->password;
     }
 
-    public function getRememberToken(string $token = null)
+    public function getRememberToken(string $token = null): null|false|RememberTokenInterface
     {
         return $this->getRelated('remember_token', [
             'token=:token:',

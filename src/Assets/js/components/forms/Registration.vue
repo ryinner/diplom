@@ -64,7 +64,7 @@
         </div>
 
         <div class="form-control center m-c-10">
-            <button @click.prevent="registration">Создать аккаунт</button>
+            <button @click.prevent="registration" type="submit">Создать аккаунт</button>
         </div>
         <div class="success center">
             <span>{{ successMessage.message }}</span>
