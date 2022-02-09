@@ -20,11 +20,13 @@ class UsersController extends ControllerApiBase
         $username  = $data->username;
 
         $checkUserEmail = Users::findFirst([
-            "email = '$email'"
+            "conditions" => "email = :email:",
+            "bind"       => ["email" => $email]
         ]);
 
         $checkUserUsername = Users::findFirst([
-            "username = '$username'"
+            "conditions" => "username = :username:",
+            "bind"       => ["username" => $username],
         ]);
 
         if ($checkUserUsername?->id !== null || $checkUserEmail?->id !== null) {
