@@ -3,7 +3,7 @@
     <span></span>
     <span></span>
 </div> -->
-<header-nav></header-nav>
+<header-nav user={{ user }}></header-nav>
 
 <div class="center">
     <div class="content">

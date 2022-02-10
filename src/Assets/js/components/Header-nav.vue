@@ -1,5 +1,5 @@
 <template>
-<modal tittle="Ваши данные" :isActive="modalOpen">
+<modal v-if="!userConfig.auth" tittle="Ваши данные" :isActive="modalOpen">
     <loginForm></loginForm>
 </modal>
 <div id="sidebar" class="center" :class="{sidebar__active:isActive}">
@@ -49,7 +49,8 @@
             <div class="right">
                 <ul>
                     <li>
-                        <a href="/" @click.prevent="toogleModal">Войти</a>
+                        <a href="/" class="username" v-if="userConfig.auth">{{ userConfig.login }}</a>
+                        <a href="/" @click.prevent="toogleModal" v-else>Войти</a>
                     </li>
                 </ul>
             </div>
@@ -75,6 +76,20 @@ export default{
             screenWidth: window.screen.width,
         };
     },
+
+    props: {
+        user: {
+            type: String,
+            required: true
+        }
+    },
+
+    computed: {
+        userConfig() {
+            return JSON.parse(this.user)
+        }
+    },
+
     methods: {
         toogleSidebar(){
             this.isActive = !this.isActive
@@ -93,7 +108,9 @@ export default{
                 document.body.style.overflow = "auto"
             }
         }
-    }
+    },
+
+
 }
 </script>
 
@@ -158,6 +175,9 @@ export default{
     margin-left: 4px;
 }
 
+.username {
+    font-size: 1.2em;
+}
 
 .sidebar__active {
     transition: 500ms ease all;

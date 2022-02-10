@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use Phalcon\Mvc\Controller;
 use Sinbadxiii\PhalconAuth\Middlewares\Accessicate;
+use stdClass;
 
 /**
  * ControllerBase родительский класс для всех контроллеров.
@@ -23,8 +24,14 @@ class ControllerBase extends Controller implements Accessicate
             ->collection('main_js')
             ->addJs('js/app.js', null, true, ['type'=>'module'])
             ->join(true);
-        // @todo Когда подключиться ACL сделать проверку от которой будет выбираться layout, либо как-то перенести на public и private контроллеры либо в модулях уже свои подключения, подумать
+
         $this->view->setTemplateAfter('public');
+
+        $user = new stdClass;
+        $user->auth = $this->auth->check();
+        $user->login= $this->auth->user()->username;
+
+        $this->view->setVar('user', json_encode($user));
     }
 
     public function beforeDispatch()
