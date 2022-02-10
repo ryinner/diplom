@@ -104,16 +104,20 @@ class UsersController extends ControllerApiBase
 
         if ($emails_confirms->status === ConfirmsEmails::EMAIL_CONFIRM) {
             if ($this->auth->attempt(['username' => $username, 'password' => $password], $remember)) {
-                $answer = ['sucess' => true];
+                $answer = ['success' => true ,
+                    'errors' => [
+                        'loginError' => ''
+                    ]
+                ];
             } else {
-                $answer = ['sucess' => false, 
+                $answer = ['success' => false, 
                     'errors' => [
                         'loginError' => 'Неправильный логин или пароль.'
                     ]
                 ];
             } 
         } else {
-            $answer = ['sucess' => false, 
+            $answer = ['success' => false, 
                 'errors' => [
                     'loginError' => 'У вас неподтверждена почта.'
                 ]

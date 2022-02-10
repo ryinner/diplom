@@ -19,7 +19,7 @@
             </label>
         </div>
         <div class="form-controll center m-c-10">
-            <button type="submit" @click.prevent="loginUser">Войти</button>
+            <button @click.prevent="loginUser">Войти</button>
         </div>
         <div class="form-controll center">
             <span>Нет аккаунта? <a href="/Users/Create" class="a__show">Создайте прямо сейчас</a></span>
@@ -56,23 +56,19 @@ export default {
             }
 
             if (this.login  && this.password) {
-                this.sendData()
+                this.tryLogin()
             }
         },
 
-        sendData() {
+        tryLogin() {
             axios.post('/Api/Users/Login', {username: this.login, password: this.password, remember: this.checkbox})
 
             .then((response) => {
                 if (response.data.success === true) {
-                    window.location.href=window.location.href
+                    document.location.href = '/'
                 } else {
-                    this.loginError = {class: true, error: response.data.errors.loginError};
+                    this.loginError = {class: true, error: response.data.errors.loginError}
                 }
-            })
-
-            .catch(function(error) {
-                console.log(error)
             })
         }
     },
