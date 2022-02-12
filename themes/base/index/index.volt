@@ -78,34 +78,7 @@
 
 	<div class="d-flex flex-end">
 		<div class="contact-us width-40 xy-center center">
-			<form class="d-flex center width-80">
-				<div class="container">
-					<div class="column">
-						<h2 class="text-center">Всегда на связи</h2>
-						<div class=" width-100 border-2px-negative m-c-10"></div>
-						<span class="width-100 text-center">Отправьте свой вопрос, предложение или жалобу, через форму обратной связи, наш специалист свяжиться с вами в течение 15 минут</span>
-						<div class="width-100 border-2px-negative m-c-10"></div>
-					</div>
-
-					<div class="forn-controll m-c-10">
-						<input type="text" class="width-100" placeholder="Ваше имя"/>
-					</div>
-
-					<div class="forn-controll m-c-10">
-						<input type="text" class="width-100" placeholder="Ваше номер"/>
-					</div>
-
-					<div class="forn-controll m-c-10">
-						<textarea class="width-100" placeholder="Ваш комментарий"></textarea>
-					</div>
-
-					<div class="btn-container width-100 center">
-						<button>
-							Отправить
-						</button>
-					</div>
-				</div>
-			</form>
+			<index-requests />
 		</div>
 	</div>
 </section>

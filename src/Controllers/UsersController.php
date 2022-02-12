@@ -23,7 +23,6 @@ class UsersController extends ControllerBase
             $this->response->redirect("/Error/Error404")->send();
         } else {
             $this->api->get('Users/EmailConfirm?token='.$token);
-            $this->api->get('Users/EmailConfirm?token='.$token);
         }
     }
 }

@@ -18,25 +18,28 @@ class HousesController extends ControllerApiBase implements CRUDInterface
         return json_encode(Houses::find());
     }
 
-    public function createAction(): void
+    public function createAction(): string|false
     {
         $request = $this->request->get();
         $house = new Houses($request);
         $house->save();
+        return json_encode([]);
     }
 
-    public function updateAction(int $id): void
+    public function updateAction(int $id): string|false
     {
         $house = Houses::findFirst($id);
 
         $house->save();
+        return json_encode([]);
     }
 
-    public function deleteAction(int $id): void
+    public function deleteAction(int $id): string|false
     {
         $house = Houses::findFirst($id);
 
         $house->delete();
+        return json_encode([]);
     }
 
     public function getForIndexAction(): string|false

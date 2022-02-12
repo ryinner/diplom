@@ -8,9 +8,9 @@ interface CRUDInterface
 {
     public function getAction(): string|false;
 
-    public function createAction(): void;
+    public function createAction(): string|false;
 
-    public function updateAction(int $id): void;
+    public function updateAction(int $id): string|false;
 
-    public function deleteAction(int $id): void;
+    public function deleteAction(int $id): string|false;
 }
