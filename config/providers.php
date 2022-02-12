@@ -1,5 +1,4 @@
 <?php
-
 use App\Providers\DbProvider;
 use App\Providers\ApiProvider;
 use App\Providers\UrlProvider;

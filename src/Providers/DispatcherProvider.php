@@ -7,6 +7,7 @@ use Phalcon\Events\Event;
 use Phalcon\Di\DiInterface;
 use Phalcon\Mvc\Dispatcher;
 use App\Middleware\Authenticate;
+use App\Plugins\AccessControllList;
 use Phalcon\Di\ServiceProviderInterface;
 use Phalcon\Mvc\Dispatcher\Exception as DispatchException;
 
@@ -31,7 +32,7 @@ class DispatcherProvider implements ServiceProviderInterface
             /** Middleware */ 
             $eventsManager = $di->getShared('eventsManager');
             $eventsManager->attach('dispatch', new Authenticate());
-            
+            $eventsManager->attach('dispatch', new AccessControllList($di));
             $eventsManager->attach('dispatch:beforeException', function (
                 Event $event,
                 $dispatcher,

@@ -11,5 +11,12 @@ class Roles extends BaseModel
     public function initialize()
     {
         $this->setSource('roles');
+
+        $this->hasMany(
+            'id',
+            Users::class,
+            'role_id',
+            ['alias' => "users"]
+        );
     }
 }
