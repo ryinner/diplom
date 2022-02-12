@@ -59,9 +59,9 @@
 		</div>
 	</div>
 </section>
-<section id="houses">
+<!-- <section id="houses">
 	<h2>Последние дома:</h2>
-</section>
+</section> -->
 <section id="contact-us">
 	<div class="row">
 		<div class="col-6">
