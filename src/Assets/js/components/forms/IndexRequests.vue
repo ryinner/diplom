@@ -23,7 +23,7 @@
             </div>
 
             <div class="errors center" v-if="usernameError.class">
-                <span class="errors__text">{{ usernameError.error }}</span>
+                <span class="errors__text">{{ usernameError.message }}</span>
             </div>
 
             <div class="forn-controll m-c-10">
@@ -38,7 +38,7 @@
             </div>
 
             <div class="errors center" v-if="phoneError.class">
-                <span class="errors__text">{{ phoneError.error }}</span>
+                <span class="errors__text">{{ phoneError.message }}</span>
             </div>
 
             <div class="forn-controll m-c-10">
@@ -50,11 +50,19 @@
                 ></textarea>
             </div>
             <div class="errors center" v-if="messageError.class">
-                <span class="errors__text">{{ messageError.error }}</span>
+                <span class="errors__text">{{ messageError.message }}</span>
             </div>
 
             <div class="btn-container width-100 center">
-                <button @click="makeRequest">Отправить</button>
+                <button @click.prevent="throttleMakeRequest" :disabled="success">Отправить</button>
+            </div>
+
+            <div class="success text-center m-c-10" v-if="success">
+                <span>Скоро мы вам позвоним.</span>
+            </div>
+
+            <div class="errors text-center" v-if="errorResponse">
+                <span class="errors__text">Что-то пошло не так, повторите попытку позже</span>
             </div>
         </div>
     </form>
@@ -74,6 +82,8 @@ export default {
             phoneError: { class: false, message: "" },
             messageError: { class: false, message: "" },
             valid: null,
+            success: false,
+            errorResponse: false
         };
     },
 
@@ -81,7 +91,7 @@ export default {
         makeRequest() {
             this.check();
             if (this.valid == true) {
-                this.sendData;
+                this.sendData()
             }
         },
 
@@ -91,7 +101,7 @@ export default {
             this.phoneError = { class: false, message: "" }
             this.messageError = { class: false, message: "" }
 
-            if (Validator.validUsername(this.username)) {
+            if (Validator.validName(this.username)) {
                 this.username.trim();
             } else {
                 this.usernameError = { class: true, message: "Заполните имя" };
@@ -115,13 +125,22 @@ export default {
         },
 
         sendData() {
+            console.log('he');
             axios
                 .post("/Api/Requests/Create", {
                     username: this.username,
                     phone: this.phone,
                     message: this.message,
                 })
-                .then((response) => {})
+                .then((response) => {
+                    if (response.data.success === true) {
+                        this.success = true
+                        this.errorResponse = false
+                    } else {
+                        this.errorResponse = true
+                        this.success = false
+                    }
+                })
 
                 .catch((error) => {
                     console.log(error);
@@ -132,6 +151,10 @@ export default {
             this.phone = Validator.onlyNumbers(this.phone);
         },
     },
+
+    created() {
+        this.throttleMakeRequest = _.throttle(this.makeRequest, 500)
+    }
 };
 </script>
 

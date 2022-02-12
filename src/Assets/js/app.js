@@ -1,4 +1,5 @@
 import { createApp } from "vue"
+import _ from "lodash"
 
 const app = createApp({})
 
