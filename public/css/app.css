@@ -172,6 +172,7 @@ button:hover {
     --dark: #0f0f0f;
     --placeholderColor: #505050;
     --columns-count: 12;
+    --white: #fafafa;
 }
 
 /* Переиспользуемое */

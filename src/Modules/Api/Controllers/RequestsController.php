@@ -9,7 +9,15 @@ class RequestsController extends ControllerApiBase implements CRUDInterface
 {
     public function getAction(): string|false
     {
-        return json_encode([]);
+        $requests = Requests::find([
+            "conditions" => "status = :status:",
+            "bind"       => ["status" => Requests::NOTANSWERED]
+        ]);
+
+        return (json_encode([
+            'success' => true,
+            'requests' => $requests
+        ]));
     }
 
     public function createAction(): string|false
@@ -26,9 +34,14 @@ class RequestsController extends ControllerApiBase implements CRUDInterface
         return json_encode(['success' => true]);
     }
 
-    public function updateAction(int $id): string|false
+    public function updateAction($id): string|false
     {
-        return json_encode([]);
+        $request = Requests::findFirst((int)$id);
+
+        $request->status = Requests::ANSWERED;
+        $request->save();
+
+        return json_encode([true]);
     }
 
     public function deleteAction(int $id): string|false

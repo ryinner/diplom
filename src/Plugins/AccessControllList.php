@@ -42,9 +42,12 @@ class AccessControllList
         $usersResource  = [];
 
         $publicResource = [
-            '_Index'    =>  ['*'],
-            '_Users'    =>  ['create', 'emailconfirm'],
-            '_Error'    =>  ['*']
+            '_Index'        =>  ['*'],
+            '_Users'        =>  ['create', 'emailconfirm'],
+            '_Error'        =>  ['*'],
+            'api_Index'     =>  ['*'],
+            'api_Houses'    =>  ['*'],
+            'api_Requests'  =>  ['*'],
         ];
 
         foreach ($publicResource as $resource => $actions) {
@@ -70,12 +73,12 @@ class AccessControllList
         $controller = $dispatcher->getControllerName();
         $action     = $dispatcher->getActionName();
         $module     = $dispatcher->getModuleName();
-        $namespace  = $module ? ucfirst($module) . '\\Controllers\\' : '';
+        $namespace  = $module ? 'App\\Modules\\' . ucfirst($module) . '\\Controllers\\' : 'App\\Controllers\\';
 
-        $controller_exists = class_exists('App\\Modules\\' . $namespace . ucfirst($controller) . 'Controller');
-        $action_exists     = method_exists('App\\Modules\\' . $namespace . ucfirst($controller) . 'Controller', $action . 'Action');
+        $controller_exists = class_exists($namespace . ucfirst($controller) . 'Controller');
+        $action_exists     = method_exists($namespace . ucfirst($controller) . 'Controller', $action . 'Action');
 
-        if ($controller_exists && $action_exists) {
+        if ($controller_exists && $action_exists) { 
             $allowed = $acl->isAllowed($role, $module . '_' . ucfirst($controller), $action);
             if ($allowed === false) {
                 $this->_dependencyInjector->get('response')->redirect("/Error/Error404")->send();
