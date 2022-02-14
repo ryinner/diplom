@@ -6,6 +6,6 @@ class IndexController extends ControllerCmsBase
 {
     public function indexAction()
     {
-        var_dump($this->acl);
+        
     }
 }

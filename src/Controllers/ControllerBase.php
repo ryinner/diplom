@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 
+use stdClass;
 use Phalcon\Mvc\Controller;
 use Sinbadxiii\PhalconAuth\Middlewares\Accessicate;
-use stdClass;
 
 /**
  * ControllerBase родительский класс для всех контроллеров.
@@ -32,11 +32,6 @@ class ControllerBase extends Controller implements Accessicate
         $user->login= $this->auth->user()->username;
 
         $this->view->setVar('user', json_encode($user));
-    }
-
-    public function beforeDispatch()
-    {
-        // @todo проверка роли через ACL
     }
 
     public function authAccess(): bool

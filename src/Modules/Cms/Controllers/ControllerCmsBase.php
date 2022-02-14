@@ -2,6 +2,7 @@
 
 namespace App\Modules\Cms\Controllers;
 
+use stdClass;
 use Phalcon\Mvc\Controller;
 
 class ControllerCmsBase extends Controller
@@ -13,7 +14,7 @@ class ControllerCmsBase extends Controller
             ->addCss('css/themes.css')
             ->addCss('css/fonts.css')
             ->addCss('css/app.css')
-            ->addCss('css/layouts/public.css')
+            ->addCss('css/layouts/private.css')
             ->join(true);
         $this->assets
             ->collection('main_js')
@@ -21,6 +22,12 @@ class ControllerCmsBase extends Controller
             ->join(true);
 
         $this->view->setTemplateAfter('private');
+
+        $user = new stdClass;
+        $user->auth = $this->auth->check();
+        $user->login= $this->auth->user()->username;
+
+        $this->view->setVar('user', json_encode($user));
     }
 
     public function authAccess(): bool
