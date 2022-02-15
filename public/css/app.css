@@ -492,7 +492,7 @@ button:hover {
     /* Скрытие на мобильных устройствах */
 
     .no-mobile {
-        display: none;
+        display: none !important;
     }
 
     /* Только на мобильных устройствах */

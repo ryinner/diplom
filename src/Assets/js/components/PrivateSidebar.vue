@@ -1,7 +1,7 @@
 <template>
     <div class="leftbar d-table-cell">
         <div class="logo d-flex space-around y-center" :class="{leftbar__active: isActive}">
-            <a href="/cms/index/index" class="text-active"><h2 class="text-active">CMS</h2></a>
+            <a href="/Cms/index/index" class="text-active no-mobile"><h2 class="text-active">CMS</h2></a>
             <img src="/img/helpers/burger-menu.svg" class="logo-icon" @click.prevent="open">
         </div>
         <div class="navs" :class="{leftbar__active: isActive}">
@@ -13,7 +13,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/Cms/Houses/Get" class="d-flex">
+                    <a href="/Cms/Houses/Index" class="d-flex">
                         <img src="/img/helpers/houses_icon.svg" class="icon">
                         <span class="text-active">Работа с домами</span>
                     </a>
@@ -22,6 +22,12 @@
                     <a href="/Cms" class="d-flex">
                         <img src="/img/helpers/users_icon.svg" class="icon">
                         <span class="text-active">Работа с пользователями</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Cms" class="d-flex">
+                        <img src="/img/helpers/pages_icon.svg" class="icon">
+                        <span class="text-active">Работа с страницами</span>
                     </a>
                 </li>
             </ul>
@@ -33,7 +39,7 @@
 export default {
     data() {
         return {
-            isActive: true,
+            isActive: false,
         }
     },
 
@@ -57,7 +63,6 @@ export default {
 
             span {
                 margin-left: 4px;
-
                 display: none;
             }
         }
@@ -69,7 +74,7 @@ export default {
         color: var(--white);
 
         &__active  .text-active {
-            display: block !important;
+            display: block;
         }
     }
 
@@ -91,5 +96,11 @@ export default {
         .logo {
             justify-content: center !important;
         }
-    }
+
+        .navs {
+        & ul li a span {
+                font-size: 0.9em;
+            }
+        }
+    } 
 </style>

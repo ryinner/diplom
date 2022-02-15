@@ -34,7 +34,8 @@ class AccessControllList
         }
 
         $adminsResource = [
-            'Cms_Index'   => ['*']
+            'Cms_Index'   => ['*'],
+            'Cms_Houses'  => ['*']
         ];
 
         $managersResource  = [];
@@ -84,6 +85,8 @@ class AccessControllList
             if ($allowed === false) {
                 $this->_dependencyInjector->get('response')->redirect("/Error/Error404")->send();
             }
+        } else {
+            $this->_dependencyInjector->get('response')->redirect("/Error/Error404")->send();
         }
     }
 }

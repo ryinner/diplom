@@ -1,1 +1,3 @@
-<private user={{ user }} />
+<div class="d-table ">
+    <private user={{ user }} />
+</div>
