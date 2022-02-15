@@ -13,4 +13,10 @@ class HousesController extends ControllerCmsBase
     {
         
     }
+
+    
+    public function createAction()
+    {
+        
+    }
 }

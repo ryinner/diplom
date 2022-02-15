@@ -33,7 +33,7 @@
                     v-model="phone"
                     :class="{ errors__input: phoneError.class }"
                     @input="onlyNumbers"
-                    placeholder="Ваше номер"
+                    placeholder="Ваш телефон"
                 />
             </div>
 

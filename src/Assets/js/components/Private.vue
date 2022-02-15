@@ -1,6 +1,6 @@
 <template>
     <privatesidebar />
-    <div class="d-table-cell width-80">
+    <div class="d-table-cell width-100">
         <header>
             <div class="d-flex y-center">
                 <div class="user">
@@ -43,6 +43,7 @@
                 </div>
             </div>
         </header>
+        <slot></slot>
     </div>
 </template>
 
@@ -111,9 +112,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header {
-    max-height: 10%;
-}
 .user {
     padding: 8px;
 }

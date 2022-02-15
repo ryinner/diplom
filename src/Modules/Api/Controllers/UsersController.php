@@ -97,29 +97,37 @@ class UsersController extends ControllerApiBase
             "bind"       => ["username" => $username],
         ]);
         
-        $emails_confirms = ConfirmsEmails::findFirst([
-            "conditions" => "user_id = :user_id:",
-            "bind"       => ["user_id" => $checkUserUsername->id],
-        ]);
+        if ($checkUserUsername) {
+            $emails_confirms = ConfirmsEmails::findFirst([
+                "conditions" => "user_id = :user_id:",
+                "bind"       => ["user_id" => $checkUserUsername?->id],
+            ]);
 
-        if ($emails_confirms->status === ConfirmsEmails::EMAIL_CONFIRM) {
-            if ($this->auth->attempt(['username' => $username, 'password' => $password], $remember)) {
-                $answer = ['success' => true ,
-                    'errors' => [
-                        'loginError' => ''
-                    ]
-                ];
+            if ($emails_confirms->status === ConfirmsEmails::EMAIL_CONFIRM) {
+                if ($this->auth->attempt(['username' => $username, 'password' => $password], $remember)) {
+                    $answer = ['success' => true ,
+                        'errors' => [
+                            'loginError' => ''
+                        ]
+                    ];
+                } else {
+                    $answer = ['success' => false, 
+                        'errors' => [
+                            'loginError' => 'Неправильный логин или пароль.'
+                        ]
+                    ];
+                } 
             } else {
                 $answer = ['success' => false, 
                     'errors' => [
-                        'loginError' => 'Неправильный логин или пароль.'
+                        'loginError' => 'У вас неподтверждена почта.'
                     ]
                 ];
-            } 
+            }
         } else {
             $answer = ['success' => false, 
                 'errors' => [
-                    'loginError' => 'У вас неподтверждена почта.'
+                    'loginError' => 'Неправильный логин или пароль.'
                 ]
             ];
         }

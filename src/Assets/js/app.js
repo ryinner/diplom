@@ -8,4 +8,6 @@ app.component('index-requests', require('./components/forms/IndexRequests').defa
 app.component('registration', require('./components/forms/Registration').default)
 app.component('gotomain', require('./components/buttons/GoToMain').default)
 app.component('private', require('./components/Private').default)
+app.component('housescms', require('./components/forms/HousesCms').default)
+
 app.mount('#app')
