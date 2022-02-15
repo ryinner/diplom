@@ -93,3 +93,11 @@ blockquote h1, blockquote h2 {
 .contact-us .btn-container {
     margin-top: 50px;
 }
+
+@media screen and (max-width: 500px) {
+    .question__h1 {
+        margin: 0;
+        font-weight: bold;
+        font-size: 3em;
+    }
+}

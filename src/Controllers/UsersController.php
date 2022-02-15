@@ -25,4 +25,9 @@ class UsersController extends ControllerBase
             $this->api->get('Users/EmailConfirm?token='.$token);
         }
     }
+
+    public function logOutAction()
+    {
+        
+    }
 }

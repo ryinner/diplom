@@ -312,12 +312,6 @@ button:hover {
     width: 100%;
 }
 
-@media screen and (max-width: 1200px) {
-    .width-mobile-100 {
-        width: 100% !important;
-    }
-}
-
 /* Колонки */
 
 .col-1 {
@@ -451,4 +445,49 @@ button:hover {
 
 .text-break {
     word-break: break-word;
+}
+
+/* Мобильная Адаптация */
+.only-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 500px) {
+    /* Мобильный текст */
+
+    h1 {
+        margin: 8px 0;
+        font-size: 2.5em;
+    }
+
+    h2 {
+        margin: 4px 0;
+        font-size: 2em;
+    }
+
+    /* Мобильный перенос */
+    .wrap-mobile {
+        flex-direction: row;
+        flex-wrap: wrap !important;
+    }
+
+    /* Высота */
+    .width-mobile-50 {
+        width: 50% !important;
+    }
+
+    .width-mobile-100 {
+        width: 100% !important;
+    }
+
+    /* Скрытие на мобильных устройствах */
+
+    .no-mobile {
+        display: none;
+    }
+
+    /* Только на мобильных устройствах */
+    .only-mobile {
+        display: block;
+    }
 }
