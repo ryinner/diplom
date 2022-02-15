@@ -77,7 +77,7 @@ blockquote h1, blockquote h2 {
 .contact-us {
     padding: 20px;
     background-color: var(--dark);
-    color: var(--background-color);
+    color: var(--white);
     border-radius: 54px 54px 0 0;
     min-height: 50vh;
 }

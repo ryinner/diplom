@@ -34,7 +34,7 @@ class AccessControllList
         }
 
         $adminsResource = [
-            'cms_Index'   => ['*']
+            'Cms_Index'   => ['*']
         ];
 
         $managersResource  = [];
@@ -45,9 +45,9 @@ class AccessControllList
             '_Index'        =>  ['*'],
             '_Users'        =>  ['create', 'emailconfirm'],
             '_Error'        =>  ['*'],
-            'api_Index'     =>  ['*'],
-            'api_Houses'    =>  ['*'],
-            'api_Requests'  =>  ['*'],
+            'Api_Index'     =>  ['*'],
+            'Api_Houses'    =>  ['*'],
+            'Api_Requests'  =>  ['*'],
         ];
 
         foreach ($publicResource as $resource => $actions) {
@@ -79,7 +79,7 @@ class AccessControllList
         $action_exists     = method_exists($namespace . ucfirst($controller) . 'Controller', $action . 'Action');
 
         if ($controller_exists && $action_exists) { 
-            $allowed = $acl->isAllowed($role, $module . '_' . ucfirst($controller), $action);
+            $allowed = $acl->isAllowed($role, ucfirst($module) . '_' . ucfirst($controller), $action);
             if ($allowed === false) {
                 $this->_dependencyInjector->get('response')->redirect("/Error/Error404")->send();
             }

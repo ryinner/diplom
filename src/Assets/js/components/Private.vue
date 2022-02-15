@@ -5,7 +5,7 @@
             <div class="user">
                 <span class="user__login">{{ userConfig.login }}</span>
             </div>
-            <img src="/img/helpers/phone.svg" class="icon m-fix" @click="openDropdown">
+            <img src="/img/helpers/phone.svg" class="icon dropdown-fix" @click="openDropdown">
             <div class="user__notifications pos-relative">
                 <ul class="dropdown" :class="{dropdown__active:dropdownVisible}">
                     <li v-for="request in requests" :key="request.id">
@@ -102,14 +102,14 @@ export default {
         position: absolute;
         display: none;
         border: 1px solid var(--dark);
-    }
 
-    .dropdown__active {
-        display: block !important;
-    }
+        &__active {
+            display: block !important;
+        }
 
-    .m-fix {
-        margin-top: 3px;
+        &__fix {
+            margin-top: 3px;
+        }
     }
 
     .request {
