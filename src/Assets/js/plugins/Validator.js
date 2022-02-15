@@ -25,7 +25,7 @@ export default class {
     }
 
     static mediumPasswordDifficult (password) {
-        const medium = /[0-9А-ЯA-Z]{8,}/i
+        const medium = /[A-Z]{8,}/i
         const hard = /[~!#$%\^&*+=\-\[\]\\;,/{}|\\@:<>\?]/i
 
         if (medium.test(password) && hard.test(password)) {

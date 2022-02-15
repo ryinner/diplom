@@ -84,6 +84,7 @@ input[type=checkbox] {
 input[type=checkbox] + label {
     display: inline-flex;
     align-items: center;
+    min-width: 250px;
 }
 
 input[type="checkbox"] + label:before {

@@ -40,22 +40,22 @@
 
 
         <div class="form-control center m-c-10">
-            <input type="text" v-model="password" class="width-30" placeholder="Ваш пароль" :class="{errors__input:passwordError.class}" required>
+            <input type="password" v-model="password" class="width-30" placeholder="Ваш пароль" :class="{errors__input:passwordError.class}" required>
         </div>
         <div class="errors center"  v-if="passwordError.class">
             <span class="errors__text">{{ passwordError.message }}</span>
         </div>
 
         <div class="form-control center m-c-10">
-            <input type="text" v-model="repeatedPassrord" class="width-30" placeholder="Повтор пароля" :class="{errors__input:repeatedPassrordError.class}" required>
+            <input type="password" v-model="repeatedPassword" class="width-30" placeholder="Повтор пароля" :class="{errors__input:repeatedPasswordError.class}" required>
         </div>
-        <div class="errors center" v-if="repeatedPassrordError.class">
-            <span class="errors__text">{{ repeatedPassrordError.message }}</span>
+        <div class="errors center" v-if="repeatedPasswordError.class">
+            <span class="errors__text">{{ repeatedPasswordError.message }}</span>
         </div>
 
         <div class="form-control center m-c-10 xy-center">
             <input type="checkbox" id="agreement" value="true" v-model="checkbox" required>
-            <label for="agreement" class="width-30">
+            <label for="agreement" class="width-30 width-mobile-100">
                 <span>Я согласен с условиями политики <a href="/files/Персональные данные.docx" download class="a__show">персональных данных</a></span>
             </label>
         </div>
@@ -85,7 +85,7 @@ export default {
             lastname: '',
             phone: '',
             password: '',
-            repeatedPassrord: '',
+            repeatedPassword: '',
             checkbox: false,
 
             usernameError: {class: false, message: ''},
@@ -94,7 +94,7 @@ export default {
             lastnameError: {class: false, message: ''},
             phoneError: {class: false, message: ''},
             passwordError: {class: false, message: ''},
-            repeatedPassrordError: {class: false, message: ''},
+            repeatedPasswordError: {class: false, message: ''},
             checkboxError: {class: false, message: ''},
 
             valid: '',
@@ -112,7 +112,7 @@ export default {
             this.lastname = this.lastname.trim()
             this.phone = this.phone.trim()
             this.password = this.password.trim()
-            this.repeatedPassrord = this.repeatedPassrord.trim()
+            this.repeatedPassword = this.repeatedPassword.trim()
 
             this.check ()
         },
@@ -126,7 +126,7 @@ export default {
             this.lastnameError = {class: false}
             this.phoneError = {class: false}
             this.passwordError = {class: false}
-            this.repeatedPassrordError = {class: false}
+            this.repeatedPasswordError = {class: false}
             this.checkboxError = {class: false}
 
             if (!Validator.validUsername(this.username)) {
@@ -159,8 +159,8 @@ export default {
                 this.valid = false
             }
 
-            if (this.password !== this.repeatedPassrord) {
-                this.repeatedPassrordError = {class:true, message: 'Ваши пароли не совпадают'}
+            if (this.password !== this.repeatedPassword || this.repeatedPassword == null) {
+                this.repeatedPasswordError = {class:true, message: 'Ваши пароли не совпадают'}
                 this.valid = false
             }
 
