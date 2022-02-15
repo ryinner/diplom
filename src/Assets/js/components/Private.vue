@@ -140,7 +140,7 @@ export default {
 
 .request {
     width: 200px;
-    background: #ddd;
+    background: var(--background-color);
     padding: 10px;
 }
 </style>
