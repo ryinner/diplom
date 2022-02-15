@@ -26,8 +26,9 @@ class UsersController extends ControllerBase
         }
     }
 
-    public function logOutAction()
+    public function logoutAction()
     {
-        
+        $this->auth->logout();
+        $this->response->redirect('/');
     }
 }

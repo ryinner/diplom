@@ -43,11 +43,12 @@ class AccessControllList
 
         $publicResource = [
             '_Index'        =>  ['*'],
-            '_Users'        =>  ['create', 'emailconfirm'],
+            '_Users'        =>  ['*'],
             '_Error'        =>  ['*'],
             'Api_Index'     =>  ['*'],
             'Api_Houses'    =>  ['*'],
             'Api_Requests'  =>  ['*'],
+            'Api_Users'     =>  ['*'],
         ];
 
         foreach ($publicResource as $resource => $actions) {
@@ -67,7 +68,7 @@ class AccessControllList
     {
         $user = $this->_dependencyInjector->get('auth')->user();
 
-        $role = !$user ? 'guests' : $user->getRoles()->role;
+        $role = !$user ? 'guest' : $user->getRoles()->role;
         $acl  = $this->_acl;
 
         $controller = $dispatcher->getControllerName();
