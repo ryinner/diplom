@@ -29,8 +29,8 @@ class ControllerBase extends Controller implements Accessicate
 
         $user = new stdClass;
         $user->auth = $this->auth->check();
-        $user->login= $this->auth->user()->username;
-
+        $user->login = $this->auth->user()->username;
+        $user->isAdmin = $this->auth->user()->getRoles()->role;
         $this->view->setVar('user', json_encode($user));
     }
 

@@ -71,6 +71,9 @@
                             >
                                 <ul>
                                     <li><a href="/">Профиль</a></li>
+                                    <li
+                                        v-if="userConfig.isAdmin"
+                                    ><a href="/Cms/Index/Index">CMS</a></li>
                                     <li><a href="/Users/Logout">Выйти</a></li>
                                 </ul>
                             </div>

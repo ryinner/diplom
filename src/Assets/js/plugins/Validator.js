@@ -10,7 +10,7 @@ export default class {
     }
 
     static validUsername(username) {
-        const usernameRegular = /^[\w]/i
+        const usernameRegular = /^[\w]{3,}/i
         return usernameRegular.test(username)
     }
 
