@@ -377,6 +377,14 @@ button:hover {
     display: none;
 }
 
+.d-table {
+    display: table;
+}
+
+.d-table-cell {
+    display: table-cell;
+}
+
 /* Позиционирование */
 
 .space-beetwen {

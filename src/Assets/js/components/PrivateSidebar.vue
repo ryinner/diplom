@@ -1,15 +1,28 @@
 <template>
-    <div class="left-bar width-20">
-        <div class="logo d-flex space-around">
-            <div class="left"><a href="/cms/index/index"><h2>CMS</h2></a></div>
-            <div class="right xy-center width-10">
-                <img src="/img/helpers/burger-menu.svg">
-            </div>
+    <div class="leftbar d-table-cell">
+        <div class="logo d-flex space-around y-center" :class="{leftbar__active: isActive}">
+            <a href="/cms/index/index" class="text-active"><h2 class="text-active">CMS</h2></a>
+            <img src="/img/helpers/burger-menu.svg" class="logo-icon" @click.prevent="open">
         </div>
-        <div class="navs">
+        <div class="navs" :class="{leftbar__active: isActive}">
             <ul>
                 <li>
-
+                    <a href="/Cms/Index/Index" class="d-flex">
+                        <img src="/img/helpers/statistics_icon.svg" class="icon">
+                        <span class="text-active">Статистика</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Cms/Houses/Get" class="d-flex">
+                        <img src="/img/helpers/houses_icon.svg" class="icon">
+                        <span class="text-active">Работа с домами</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Cms" class="d-flex">
+                        <img src="/img/helpers/users_icon.svg" class="icon">
+                        <span class="text-active">Работа с пользователями</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -20,24 +33,63 @@
 export default {
     data() {
         return {
-            
+            isActive: true,
+        }
+    },
+
+    methods: {
+        open() {
+            this.isActive = !this.isActive
         }
     }
 }
 </script>
 
 <style lang="scss">
-    .left-bar {
+    .navs {
+        & ul li a {
+            color: var(--white);
+            padding: 10px 20px;
+            .icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            span {
+                margin-left: 4px;
+
+                display: none;
+            }
+        }
+    } 
+
+    .leftbar {
         height: 100%;
         background: var(--dark);
         color: var(--white);
+
+        &__active  .text-active {
+            display: block !important;
+        }
     }
 
-    .left h2 {
+    h2 {
         color: var(--white);
     }
 
-    .right {
-        min-width: 20px;
+    .logo a {
+        display: none;
+    }
+
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    @media screen and (max-width: 500px) {
+        .logo {
+            justify-content: center !important;
+        }
     }
 </style>

@@ -1,25 +1,33 @@
 <template>
-    <div class="d-flex">
+    <div class="d-table ">
         <privatesidebar />
-        <header class="d-flex xy-center space-between">
-            <div class="user">
-                <span class="user__login">{{ userConfig.login }}</span>
-            </div>
-            <img src="/img/helpers/phone.svg" class="icon dropdown-fix" @click="openDropdown">
-            <div class="user__notifications pos-relative">
-                <ul class="dropdown" :class="{dropdown__active:dropdownVisible}">
-                    <li v-for="request in requests" :key="request.id">
-                        <div class="request">
-                            <div :title="request.problem">
-                                <div class="request__name">{{ request.name }}</div>
-                                <div class="request__phone"><a :href="'tel:' + request.phone" @click="changeStatus(request.id)">{{ request.phone }}</a></div>
-                            </div>
-                        </div>
-                        
-                    </li>
-                </ul>
-            </div>
-        </header>
+        <div class="d-table-cell width-80">
+            <header>
+                <div class="d-flex y-center">
+                    <div class="user">
+                        <span class="user__login">{{ userConfig.login }}</span>
+                    </div>
+                    <img src="/img/helpers/phone.svg" class="icon dropdown-fix" @click="openDropdown">
+                    <div class="user__notifications pos-relative">
+                        <ul class="dropdown" :class="{dropdown__active:dropdownVisible}">
+                            <li v-for="request in requests" :key="request.id">
+                                <div class="request">
+                                    <div :title="request.problem">
+                                        <div class="request__name">{{ request.name }}</div>
+                                        <div class="request__phone"><a :href="'tel:' + request.phone" @click="changeStatus(request.id)">{{ request.phone }}</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li v-if="requestCountNull">
+                                <div class="request">
+                                    <div class="request__name">Сейчас заявок нет!</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+        </div>
     </div>
 </template>
 
@@ -34,7 +42,7 @@ export default {
 
     data() {
         return {
-            requests: {},
+            requests: [],
             dropdownVisible: false,
             interval: null
         }
@@ -50,6 +58,9 @@ export default {
     computed: {
         userConfig() {
             return JSON.parse(this.user)
+        },
+        requestCountNull() {
+            return (this.requests.length == 0) ? true : false
         }
     },
 
@@ -86,6 +97,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    header {
+        max-height: 10%;
+    }
     .user {
         padding: 8px;
     }
