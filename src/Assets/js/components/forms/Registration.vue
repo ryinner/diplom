@@ -11,7 +11,7 @@
         </div>
 
         <div class="form-control center m-c-10">
-            <input type="text" v-model="email" class="width-30" placeholder="Ваша почта" :class="{errors__input:emailError.class}" required>
+            <input type="text" v-model="email" class="width-30" placeholder="Ваш емейл" :class="{errors__input:emailError.class}" required>
         </div>
         <div class="errors center" v-if="emailError.class">
             <span class="errors__text">{{ emailError.message }}</span>
@@ -135,7 +135,7 @@ export default {
             }
 
             if (!Validator.validEmail(this.email)) {
-                this.emailError = {class:true, message: 'Введите почту'}
+                this.emailError = {class:true, message: 'Введите почту в формате me@smtp.domen'}
                 this.valid = false
             }
             

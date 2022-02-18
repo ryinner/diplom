@@ -1,7 +1,7 @@
 <?php
 
 // Base path
-$router->add('/','Index::index')->setName('index');
+$router->add('/','Index::Index')->setName('Index');
 
 // admin
 $router->add('/Cms/:controller/:action', [

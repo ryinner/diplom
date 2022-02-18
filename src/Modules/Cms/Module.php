@@ -22,7 +22,7 @@ class Module implements ModuleDefinitionInterface
 
         $viewsDir = $di->get('config')->path('application.viewsDir');
         $view = $di->get('view');
-        $view->setViewsDir($viewsDir . '/cms/');
+        $view->setViewsDir($viewsDir . '/Cms/');
 
         $di->set('dispatcher', $dispatcher);
     }

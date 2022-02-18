@@ -20,12 +20,12 @@ export default class {
     }
 
     static onlyNumbers(value) {
-        const onlyNumbers = /[^0-9]/g
+        const onlyNumbers = /[^0-9+]/g
         return value.replace(onlyNumbers, '')
     }
 
     static mediumPasswordDifficult (password) {
-        const medium = /[A-Z]{8,}/i
+        const medium = /[0-9A-Z]{8,}/i
         const hard = /[~!#$%\^&*+=\-\[\]\\;,/{}|\\@:<>\?]/i
 
         if (medium.test(password) && hard.test(password)) {
