@@ -55,6 +55,11 @@ img {
     max-width: 1600px;
 }
 
+hr {
+    margin: 6px 0;
+    background: var(--text-color);
+}
+
 input:not([type=checkbox]):not([type="radio"]) {
     outline: none;
     min-width: 250px;
@@ -216,6 +221,7 @@ button:hover {
     --placeholderColor: #505050;
     --columns-count: 12;
     --white: #fafafa;
+    --gray: #c0c0c0;
 }
 
 /* Переиспользуемое */
@@ -429,7 +435,7 @@ button:hover {
 
 /* Позиционирование */
 
-.space-beetwen {
+.space-between {
     justify-content: space-between;
 }
 

@@ -38,15 +38,24 @@
     </div>
 
     <div class="form-controll m-c-10">
-        <textarea class="width-60 textarea__big" placeholder="Описание"></textarea>
+        <div class="width-60">
+            <h3>Описание</h3>
+            <tiptap />
+        </div>
     </div>
+
+
 </div>
 
 </template>
 
 <script>
-export default {
+import Tiptap from './../Tiptap.vue'
 
+export default {
+    components: {
+        Tiptap
+    }
 }
 </script>
 

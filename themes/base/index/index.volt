@@ -12,7 +12,7 @@
 <section class="center" id="goodSides">
 	<div class="width-80 width-mobile-100">
 		<div class="column">
-			<div class="goodside d-flex space-beetwen wrap-mobile">
+			<div class="goodside d-flex space-between wrap-mobile">
 				<div class="left column width-40 width-mobile-100">
 					<div class="counter">01</div>
 					<h3>Собственная база покупателей</h3>
@@ -27,7 +27,7 @@
 				</div>
 			</div>
 
-			<div class="goodside d-flex space-beetwen wrap-mobile">
+			<div class="goodside d-flex space-between wrap-mobile">
 				<div class="left width-40 width-mobile-100">
 					<img src="/img/index/goodside/room.jpg">
 				</div>
@@ -42,7 +42,7 @@
 				</div>
 			</div>
 
-			<div class="goodside d-flex space-beetwen wrap-mobile">
+			<div class="goodside d-flex space-between wrap-mobile">
 				<div class="left column width-40 width-mobile-100">
 					<div class="counter">03</div>
 					<h3>Имеем собственных юристов</h3>

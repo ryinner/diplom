@@ -1,7 +1,7 @@
 <template>
     <div class="modal__background" :class="{modal__active:isActive}">
         <div class="modal__content">
-            <div class="modal__tittle d-flex space-beetwen xy-center border-2px">
+            <div class="modal__tittle d-flex space-between xy-center border-2px">
                 <h3>{{ tittle }}</h3>
                 <div class="pos-relative icon xy-center center" @click="toogleModal">
                     <span id="x-icon-left" class="x-icon"></span>
@@ -13,7 +13,7 @@
                 <slot></slot>
             </div>
 
-            <div class="modal__footer d-flex space-beetwen">
+            <div class="modal__footer d-flex space-between">
             </div>
         </div>
     </div>
