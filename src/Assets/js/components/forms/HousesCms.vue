@@ -16,24 +16,24 @@
     </div>
 
     <div class="form-controll m-c-10">
-        <input type="radio" name="type" id="house">
+        <input type="radio" name="type" id="house" value="2">
         <label for="house">Дом</label>
         
-        <input type="radio" name="type" id="apartment">
+        <input type="radio" name="type" id="apartment" value="1">
         <label for="apartment">Квартира</label>
     </div>
 
     <div class="form-controll m-c-10">
-        <input type="radio" name="status" id="rent">
+        <input type="radio" name="status" id="rent" value="2">
         <label for="rent">В аренду</label>
-        <input type="radio" name="status" id="sell">
+        <input type="radio" name="status" id="sell" value="1">
         <label for="sell">Продажа</label>
     </div>
 
     <div class="form-controll m-c-10">
-        <input type="radio" name="new" id="new">
+        <input type="radio" name="new" id="new" value="true">
         <label for="new">Новый</label>
-        <input type="radio" name="new" id="old">
+        <input type="radio" name="new" id="old" value="false">
         <label for="old">Старый</label>
     </div>
 
@@ -67,7 +67,7 @@ export default {
 
     methods: {
         parseData() {
-            console.log(this.description)
+            
         }
     }
 }

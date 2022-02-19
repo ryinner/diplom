@@ -19,13 +19,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/Cms" class="d-flex">
+                    <a href="/Cms/Users/Index" class="d-flex">
                         <img src="/img/helpers/users_icon.svg" class="icon">
                         <span class="text-active">Работа с пользователями</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/Cms" class="d-flex">
+                    <a href="/Cms/Pages/Index" class="d-flex">
                         <img src="/img/helpers/pages_icon.svg" class="icon">
                         <span class="text-active">Работа с страницами</span>
                     </a>
