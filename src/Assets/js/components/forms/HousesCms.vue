@@ -3,7 +3,7 @@
     <h3>Добавить жилплощадь</h3>
 
     <div class="form-controll m-c-10">
-        <input type="text" class="width-60" placeholder="Введите адрес">
+        <input type="text" class="width-60" placeholder="Формат адреса: ул. Улица, д. 1">
     </div>
 
     <div class="form-controll m-c-10">
@@ -40,11 +40,13 @@
     <div class="form-controll m-c-10">
         <div class="width-60">
             <h3>Описание</h3>
-            <tiptap />
+            <tiptap v-model="description" />
         </div>
     </div>
 
-
+    <div class="form-controll m-c-10">
+        <button @click.prevent="parseData">Создать</button>
+    </div>
 </div>
 
 </template>
@@ -55,6 +57,18 @@ import Tiptap from './../Tiptap.vue'
 export default {
     components: {
         Tiptap
+    },
+
+    data() {
+        return {
+            description: ''
+        }
+    },
+
+    methods: {
+        parseData() {
+            console.log(this.description)
+        }
     }
 }
 </script>

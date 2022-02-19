@@ -23,6 +23,11 @@ return [
     'api' => [
         'apiUri'    => getenv('APP_API_URI'),
     ],
+    'maps' => [
+        'yandex' => [
+            'key' => getenv('YANDEX_MAPS_KEY'),
+        ]
+    ],
     'auth' => [
         'defaults' => [
             'guard' => 'web',

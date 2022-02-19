@@ -63,8 +63,14 @@ export default {
     mounted() {
         this.editor = new Editor({
             extensions: [StarterKit],
-            content: ``,
+            onUpdate: () => {
+                this.$emit('update:modelValue', this.editor.getHTML())
+            }
         });
+    },
+
+    props: {
+        modelValue: {type: String, default: ''},
     },
 
     beforeUnmount() {
