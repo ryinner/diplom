@@ -36,7 +36,7 @@ class CreateConfirmsEmailsTable extends AbstractMigration
         $confirmEmails = $this->table('confirms_emails', ['id' => 'id']);
 
         $confirmEmails->addColumn('token', 'string')
-                        ->addColumn('status', 'boolean')
+                        ->addColumn('status', 'boolean', ['default' => '0'])
                         ->addColumn('user_id', 'integer')->addForeignKey('user_id', 'users', 'id', ['delete'=>'cascade','update' => 'cascade'])
                         ->addColumn('created_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
                         ->addColumn('updated_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])

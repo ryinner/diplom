@@ -64,7 +64,7 @@
         </div>
 
         <div class="form-control center m-c-10">
-            <button @click.prevent="registration" type="submit">Создать аккаунт</button>
+            <button @click.prevent="registration" type="submit" :disabled="isDisabled">Создать аккаунт</button>
         </div>
         <div class="success center">
             <span>{{ successMessage.message }}</span>
@@ -101,6 +101,7 @@ export default {
             data: {message: ''},
             successMessage: {message: ''},
             showModal: false,
+            isDisabled: false,
         }
     },
 
@@ -192,6 +193,7 @@ export default {
                     this.usernameError = {class:true, message: response.data.errors.usernameError}
                 } else {
                     this.successMessage = {message: response.data.message}
+                    this.isDisabled = true
                 }
             })
 
