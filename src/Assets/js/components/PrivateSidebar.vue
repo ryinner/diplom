@@ -15,19 +15,31 @@
                 <li>
                     <a href="/Cms/Houses/Index" class="d-flex">
                         <img src="/img/helpers/houses_icon.svg" class="icon">
-                        <span class="text-active">Работа с домами</span>
+                        <span class="text-active">Дома</span>
                     </a>
                 </li>
                 <li>
                     <a href="/Cms/Users/Index" class="d-flex">
                         <img src="/img/helpers/users_icon.svg" class="icon">
-                        <span class="text-active">Работа с пользователями</span>
+                        <span class="text-active">Пользователи</span>
                     </a>
                 </li>
                 <li>
                     <a href="/Cms/Pages/Index" class="d-flex">
                         <img src="/img/helpers/pages_icon.svg" class="icon">
-                        <span class="text-active">Работа с страницами</span>
+                        <span class="text-active">Страницы</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Cms/Invoices/Index" class="d-flex">
+                        <img src="/img/helpers/invoice_icon.svg" class="icon">
+                        <span class="text-active">Заказы</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Cms/Requests/Index" class="d-flex">
+                        <img src="/img/helpers/request_icon.svg" class="icon">
+                        <span class="text-active">Вопросы</span>
                     </a>
                 </li>
             </ul>

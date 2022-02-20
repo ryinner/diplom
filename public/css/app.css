@@ -508,6 +508,22 @@ button:hover {
     word-break: break-word;
 }
 
+/* Пагинация */
+
+.pagination {
+    display: flex;
+}
+
+.pagination li {
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--text-color);
+}
+
+.pagination li:not(:first-child) {
+    margin-left: 4px;
+}
+
 /* Мобильная Адаптация */
 .only-mobile {
     display: none;

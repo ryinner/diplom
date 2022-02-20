@@ -7,25 +7,23 @@ class Houses extends BaseModel
     public const OLD_HOUSE = false;
     public const NEW_HOUSE = true;
 
-    public int $id;
+    public $id;
 
-    public int $price;
+    public $price;
 
-    public string $description;
+    public $description;
 
-    public int $rooms;
+    public $rooms;
 
-    public string $adress;
+    public $adress;
 
-    public int $square;
+    public $square;
 
-    public bool $is_new;
+    public $is_new;
 
-    public int $type_id;
+    public $type_id;
 
-    public int $status_id;
-
-    public int $user_id;
+    public $status_id;
 
     public $created_at;
 

@@ -62,7 +62,6 @@
                 name="type"
                 id="apartment"
                 value="1"
-                checked
                 v-model="type"
             />
             <label for="apartment">Квартира</label>
@@ -82,7 +81,6 @@
                 name="status"
                 id="sell"
                 value="1"
-                checked
                 v-model="statuses"
             />
             <label for="sell">Продажа</label>
@@ -93,7 +91,7 @@
                 type="radio"
                 name="new"
                 id="new"
-                value="true"
+                value="1"
                 v-model="isNew"
             />
             <label for="new">Новый</label>
@@ -101,8 +99,7 @@
                 type="radio"
                 name="new"
                 id="old"
-                value="false"
-                checked
+                value="0"
                 v-model="isNew"
             />
             <label for="old">Старый</label>
@@ -138,9 +135,9 @@ export default {
             price: "",
             rooms: "",
             square: "",
-            type: "",
-            statuses: "",
-            isNew: "",
+            type: 2,
+            statuses: 2,
+            isNew: 1,
 
             adressError: { class: false, error: "" },
             priceError: { class: false, error: "" },
@@ -166,14 +163,14 @@ export default {
                     price: this.price,
                     rooms: this.rooms,
                     square: this.square,
-                    type: this.type,
-                    status: this.statuses,
-                    isNew: this.isNew,
+                    type_id: this.type,
+                    status_id: this.statuses,
+                    is_new: this.isNew,
                     description: this.description,
                 })
                 .then((response) => {
                     if (response.data.success === true) {
-                        document.location.href = '/Cms/Houses/Edit/' + response.data.id
+                        document.location.href = '/Cms/Houses/Index'
                     } else {
                         
                     }
@@ -186,6 +183,13 @@ export default {
 
         validData() {
             this.valid = true;
+
+            this.adressError = { class: false, error: "" }
+            this.priceError = { class: false, error: "" }
+            this.roomsError = { class: false, error: "" }
+            this.squareError = { class: false, error: "" }
+            this.descriptionError = { class: false, error: "" }
+
             if (this.adress == "") {
                 this.valid = false;
                 this.adressError = { class: true, error: "Заполните адрес" };

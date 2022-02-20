@@ -20,10 +20,14 @@ class HousesController extends ControllerApiBase implements CRUDInterface
 
     public function createAction(): string|false
     {
-        $request = $this->request->get();
-        $house = new Houses($request);
-        $house->save();
-        return json_encode([]);
+        $request = json_decode(file_get_contents('php://input'));
+        $house = new Houses();
+        $house->assign((array)$request);
+        if ($house->save()) {
+            return json_encode(['success' => true]);
+        } else {
+            return json_encode(['success' => false, 'error' => $house->getMessages()]);
+        }
     }
 
     public function updateAction(int $id): string|false

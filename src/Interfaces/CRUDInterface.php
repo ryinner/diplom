@@ -2,8 +2,6 @@
 
 namespace App\Interfaces;
 
-use App\Models\BaseModel;
-
 interface CRUDInterface
 {
     public function getAction(): string|false;
