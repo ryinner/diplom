@@ -36,7 +36,7 @@
                             <div class="request">
                                 <div>
                                     <div class="request__phone">
-                                        <a href="/Cms/Requests/Index">Все заявки</a>
+                                        <a href="/Cms/Requests/Index">Все вопросы</a>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +100,7 @@ export default {
 
     methods: {
         getRequests() {
-            axios.get("/Api/requests/get").then((response) => {
+            axios.get("/Api/Requests/Get").then((response) => {
                 if (response.data.success === true) {
                     this.requests = response.data.requests;
                 } else {
@@ -114,7 +114,7 @@ export default {
         },
 
         changeStatus(request_id) {
-            axios.get("/Api/requests/update/" + request_id);
+            axios.get("/Api/Requests/Update/" + request_id);
         },
     },
 };
@@ -151,5 +151,9 @@ export default {
     width: 200px;
     background: var(--background-color);
     padding: 10px;
+
+    &__phone {
+        cursor: pointer;
+    }
 }
 </style>

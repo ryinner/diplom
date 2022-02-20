@@ -1,3 +1,9 @@
+<div class="d-flex flex-end">
+    <form action="/Cms/Houses/Create" target="_blank">
+        <button>Создать</button>
+    </form>
+</div>
+
 <table class="width-100">
     <thead>
         <tr>

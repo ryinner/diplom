@@ -13,7 +13,7 @@ class RequestsController extends ControllerCmsBase
 
         $paginator = new Paginator([
             'model'  => Requests::class,
-            'limit' => 20,
+            'limit' => 30,
             'page'  => $currentPage
         ]);
 

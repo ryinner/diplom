@@ -18,7 +18,7 @@ class HousesController extends ControllerCmsBase
 
         $paginator = new Paginator([
             'model'  => Houses::class,
-            'limit' => 20,
+            'limit' => 30,
             'page'  => $currentPage
         ]);
 

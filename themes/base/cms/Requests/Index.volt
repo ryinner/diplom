@@ -17,19 +17,19 @@
     </thead>
 
     <tbody>
-        {% for request in paginator.items %}
+        {% for requests in paginator.items %}
             <tr class="text-center">
                 <td>
-                    <a href="tel:{{ request.phone }}"></a>{{ request.phone }}</a>
+                    <a href="tel:{{ requests.phone }}"></a>{{ requests.phone }}</a>
                 </td>
                 <td>
-                    {{ request.name }}
+                    {{ requests.name }}
                 </td>
                 <td>
-                    {{ request.problem }}
+                    {{ requests.problem }}
                 </td>
                 <td>
-                    {% if request.status == 1 %}
+                    {% if requests.status == 1 %}
                         Завершено
                     {% else %}
                         Ожидает

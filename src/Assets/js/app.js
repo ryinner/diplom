@@ -3,11 +3,11 @@ import _ from "lodash"
 
 const app = createApp({})
 
+app.component('goto', require('./components/GoTo').default)
 app.component('header-nav', require('./components/HeaderNav').default)
 app.component('index-requests', require('./components/forms/IndexRequests').default)
 app.component('registration', require('./components/forms/Registration').default)
 app.component('gotomain', require('./components/buttons/GoToMain').default)
 app.component('private', require('./components/Private').default)
 app.component('housescms', require('./components/forms/HousesCms').default)
-
 app.mount('#app')
