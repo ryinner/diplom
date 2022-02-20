@@ -2,40 +2,38 @@
     <thead>
         <tr>
             <th>
-                Ключ
+                Телефон
             </th>
             <th>
-                Адрес
+                Имя
             </th>
             <th>
-                Цена
+                Проблема
             </th>
             <th>
-                Комнаты
-            </th>
-            <th>
-                Площадь
+                Статус
             </th>
         </tr>
     </thead>
 
     <tbody>
-        {% for house in paginator.items %}
+        {% for request in paginator.items %}
             <tr class="text-center">
                 <td>
-                    <a href="/Cms/Houses/Edit/{{ house.id }}">{{ house.id }}</a>
+                    <a href="tel:{{ request.phone }}"></a>{{ request.phone }}</a>
                 </td>
                 <td>
-                    {{ house.adress }}
+                    {{ request.name }}
                 </td>
                 <td>
-                    {{ house.price }}
+                    {{ request.problem }}
                 </td>
                 <td>
-                    {{ house.rooms }}
-                </td>
-                <td>
-                    {{ house.square }}
+                    {% if request.status == 1 %}
+                        Завершено
+                    {% else %}
+                        Ожидает
+                    {% endif %}
                 </td>
             </tr>
         {% endfor %}
@@ -46,19 +44,19 @@
     {% if paginator.last != 1 %}
         {% if paginator.current != 1 %}
             <li>
-                <a href="/Cms/Houses/Index?page=1">&laquo;</a>
+                <a href="/Cms/Requests/Index?page=1">&laquo;</a>
             </li>
         {% endif %}
 
         {% for i in 1..paginator.last %}
             <li>
-                <a {% if i == paginator.current %} class="active" {% endif %} href="/Cms/Houses/Index?page={{ i }}">{{ i }}</a>
+                <a {% if i == paginator.current %} class="active" {% endif %} href="/Cms/Requests/Index?page={{ i }}">{{ i }}</a>
             </li>
         {% endfor %}
 
         {% if paginator.current != paginator.last %}
             <li>
-                <a href="/Cms/Houses/Index?page={{ paginator.last }}">&raquo;</a>
+                <a href="/Cms/Requests/Index?page={{ paginator.last }}">&raquo;</a>
             </li>
         {% endif %}
     {% endif %}

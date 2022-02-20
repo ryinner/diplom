@@ -11,7 +11,8 @@ class RequestsController extends ControllerApiBase implements CRUDInterface
     {
         $requests = Requests::find([
             "conditions" => "status = :status:",
-            "bind"       => ["status" => Requests::NOTANSWERED]
+            "bind"       => ["status" => Requests::NOTANSWERED],
+            "limit"      => 8
         ]);
 
         return (json_encode([

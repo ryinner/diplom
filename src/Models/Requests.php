@@ -18,7 +18,7 @@ class Requests extends BaseModel
 
     public $status;
 
-    public function initialize(): void
+    public function initialize()
     {
         $this->setSource('requests');
     }

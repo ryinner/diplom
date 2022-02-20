@@ -32,6 +32,15 @@
                                 </div>
                             </div>
                         </li>
+                        <li>
+                            <div class="request">
+                                <div>
+                                    <div class="request__phone">
+                                        <a href="/Cms/Requests/Index">Все заявки</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
                         <li v-if="requestCountNull">
                             <div class="request">
                                 <div class="request__name">
