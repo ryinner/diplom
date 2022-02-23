@@ -18,7 +18,6 @@ class ImagesSeeder extends AbstractSeed
         // $data = [
         //     [
         //         'path'   => '',
-        //         'alt'    => '',
         //         'house_id' => ''
         //     ]
         // ];
