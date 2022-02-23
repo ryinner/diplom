@@ -43,6 +43,7 @@ class CreateTableHouses extends AbstractMigration
                         ->addColumn('is_new','boolean')
                         ->addColumn('type_id', 'integer')->addForeignKey('type_id', 'types', 'id', ['delete'=>'cascade', 'update' => 'cascade'])
                         ->addColumn('status_id', 'integer')->addForeignKey('status_id', 'statuses', 'id', ['delete'=>'cascade', 'update' => 'cascade'])
+                        ->addColumn('user_id', 'integer')->addForeignKey('user_id', 'users', 'id', ['delete'=>'cascade', 'update' => 'cascade'])
                         ->addColumn('created_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
                         ->addColumn('updated_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
                         ->create();
