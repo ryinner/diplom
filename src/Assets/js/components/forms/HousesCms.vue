@@ -114,6 +114,13 @@
         </div>
 
         <div class="form-controll m-c-10">
+            <input type="file" multiple ref="fileInput">
+            <div class="errors" v-if="imagesError.class">
+                <span class="errors__text">{{ imagesError.error }}</span>
+            </div>
+        </div>
+
+        <div class="form-controll m-c-10">
             <button @click.prevent="parseData">Создать</button>
         </div>
     </div>
@@ -138,36 +145,51 @@ export default {
             type: 2,
             statuses: 2,
             isNew: 1,
+            images: '',
 
             adressError: { class: false, error: "" },
             priceError: { class: false, error: "" },
             roomsError: { class: false, error: "" },
             squareError: { class: false, error: "" },
             descriptionError: { class: false, error: "" },
+            imagesError: {class:false , error: ""},
             valid: "",
         };
     },
 
     methods: {
         parseData() {
-            this.validData();
+            this.validData()
+            this.parseFiles()
             if (this.valid === true) {
                 this.sendData();
             }
         },
 
         sendData() {
+            let formData = new FormData;
+
+            for (let i=0; i < this.images.length; i++ ) {
+                formData.append('files['+i+']', this.images[i])
+            }
+
+            formData.append('adress', this.adress)
+            formData.append('price', this.price)
+            formData.append('rooms', this.rooms)
+            formData.append('square', this.square)
+            formData.append('type_id', this.type)
+            formData.append('status_id', this.statuses)
+            formData.append('is_new', this.isNew)
+            formData.append('description', this.description)
+
             axios
-                .post("/Api/Houses/Create", {
-                    adress: this.adress,
-                    price: this.price,
-                    rooms: this.rooms,
-                    square: this.square,
-                    type_id: this.type,
-                    status_id: this.statuses,
-                    is_new: this.isNew,
-                    description: this.description,
+                .post("/Api/Houses/Create", formData, 
+                {
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    }
                 })
+
                 .then((response) => {
                     if (response.data.success === true) {
                         document.location.href = '/Cms/Houses/Index'
@@ -189,6 +211,7 @@ export default {
             this.roomsError = { class: false, error: "" }
             this.squareError = { class: false, error: "" }
             this.descriptionError = { class: false, error: "" }
+            this.imagesError = { class: false, error: "" }
 
             if (this.adress == "") {
                 this.valid = false;
@@ -220,7 +243,19 @@ export default {
                     error: "Заполните описание",
                 };
             }
+
+            if (this.images.length == 0) {
+                this.valid = false;
+                this.imagesError = {
+                    class: true,
+                    error: "Добавьте картинку",
+                };
+            }
         },
+
+        parseFiles() {
+            this.images = this.$refs.fileInput.files
+        }
     },
 };
 </script>

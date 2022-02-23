@@ -4,6 +4,8 @@ namespace App\Modules\Api\Controllers;
 
 use App\Interfaces\CRUDInterface;
 use App\Models\Houses;
+use App\Models\Images;
+use App\Plugins\ImagesPlugin;
 use stdClass;
 
 class HousesController extends ControllerApiBase implements CRUDInterface
@@ -20,9 +22,36 @@ class HousesController extends ControllerApiBase implements CRUDInterface
 
     public function createAction(): string|false
     {
-        $request = json_decode(file_get_contents('php://input'));
+        $files = $this->request->getUploadedFiles();
+
+        foreach ($files as $file) {
+            $checkAnswer = new ImagesPlugin($file);
+            if ($checkAnswer->check()['success'] === false) {
+                return json_encode(['success' => false, 'error' => $checkAnswer->check()]);
+                exit;
+            }
+        }
+
         $house = new Houses();
-        $house->assign((array)$request);
+        $house->assign((array)$this->request->getPost());
+
+        foreach ($files as $file) {
+            $filePath = rand() . $file->getName();
+
+            $file->moveTo(
+                'img/houses/' . $filePath
+            );
+
+            $image = new Images([
+                'name' => $file->getName(),
+                'path' => $filePath,
+                'house_id' => $house->id
+            ]);
+
+            $image->save();
+        }
+
+
         if ($house->save()) {
             return json_encode(['success' => true]);
         } else {

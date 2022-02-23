@@ -4,13 +4,11 @@ namespace App\Models;
 
 class Images extends BaseModel
 {
-    public int $id;
+    public $id;
 
-    public string $path;
+    public $path;
 
-    public string $alt;
-
-    public int $house_id;
+    public $house_id;
 
     public $created_at;
 

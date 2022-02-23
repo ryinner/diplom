@@ -36,7 +36,6 @@ class CreateTableImages extends AbstractMigration
         $imagesTable = $this->table('images', ['id' => 'id']);
 
         $imagesTable->addColumn('path', 'string')
-                        ->addColumn('alt', 'string', ['null' => true])
                         ->addColumn('house_id', 'integer')->addForeignKey('house_id', 'houses', 'id', ['delete'=>'cascade','update' => 'cascade'])
                         ->addColumn('created_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
                         ->addColumn('updated_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])

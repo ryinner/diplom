@@ -1,8 +1,9 @@
-<div class="d-flex flex-end">
-    <form action="/Cms/Houses/Create" target="_blank">
+
+<div class="d-flex m-c-10">
+    <form action="/Cms/Houses/Create"target="_blank">
         <button>Создать</button>
     </form>
-</div>
+</div>    
 
 <table class="width-100">
     <thead>
