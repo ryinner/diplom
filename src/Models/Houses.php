@@ -25,6 +25,8 @@ class Houses extends BaseModel
 
     public $status_id;
 
+    public $user_id;
+
     public $created_at;
 
     public $updated_at;
