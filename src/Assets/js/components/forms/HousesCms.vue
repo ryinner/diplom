@@ -20,6 +20,7 @@
                 class="width-60"
                 placeholder="Введите цену"
                 v-model="price"
+                @input="onlyNumbers"
             />
             <div class="errors" v-if="priceError.class">
                 <span class="errors__text">{{ priceError.error }}</span>
@@ -32,12 +33,14 @@
                 placeholder="Комнаты"
                 class="input__small"
                 v-model="rooms"
+                @input="onlyNumbers"
             />
             <input
                 type="text"
                 placeholder="Площадь"
                 class="input__small m-r-10"
                 v-model="square"
+                @input="onlyNumbers"
             />
             <div class="errors" v-if="roomsError.class">
                 <span class="errors__text">{{ roomsError.error }}</span>
@@ -129,6 +132,7 @@
 <script>
 import Tiptap from "./../Tiptap.vue";
 import axios from "axios";
+import Validator from './../../plugins/Validator'
 
 export default {
     components: {
@@ -159,8 +163,8 @@ export default {
 
     methods: {
         parseData() {
-            this.validData()
             this.parseFiles()
+            this.validData()
             if (this.valid === true) {
                 this.sendData();
             }
@@ -211,7 +215,6 @@ export default {
             this.roomsError = { class: false, error: "" }
             this.squareError = { class: false, error: "" }
             this.descriptionError = { class: false, error: "" }
-            this.imagesError = { class: false, error: "" }
 
             if (this.adress == "") {
                 this.valid = false;
@@ -254,7 +257,26 @@ export default {
         },
 
         parseFiles() {
+            this.imagesError = { class: false, error: "" }
             this.images = this.$refs.fileInput.files
+
+            for (let i = 0; i < this.images.length; i++) {
+                if (this.images[i].type !== 'image/jpeg' && this.images[i].type !== 'image/jpg' && this.images[i].type !== 'image/png') {
+                    this.valid = false;
+                    this.imagesError = {class:true , error: "Неверное расширение файла " + this.images[i].name}
+                }
+
+                if (this.images[i].size > 10485760) {
+                    this.valid = false;
+                    this.imagesError = {class:true , error: "Слишком большой файл " + this.images[i].name}
+                }
+            }
+        },
+
+        onlyNumbers() {
+            this.price = Validator.onlyNumbers(this.price)
+            this.rooms = Validator.onlyNumbers(this.rooms)
+            this.square = Validator.onlyNumbers(this.square)
         }
     },
 };

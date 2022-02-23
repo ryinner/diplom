@@ -32,8 +32,8 @@ class HousesController extends ControllerApiBase implements CRUDInterface
             }
         }
 
-        $house = new Houses();
-        $house->assign((array)$this->request->getPost());
+        $house = new Houses((array)$this->request->getPost());
+        $house->save();
 
         foreach ($files as $file) {
             $filePath = rand() . $file->getName();
@@ -50,13 +50,11 @@ class HousesController extends ControllerApiBase implements CRUDInterface
 
             $image->save();
         }
-
-
-        if ($house->save()) {
-            return json_encode(['success' => true]);
-        } else {
-            return json_encode(['success' => false, 'error' => $house->getMessages()]);
-        }
+        // if (true) {
+        //     return json_encode(['success' => true]);
+        // } else {
+        //     return json_encode(['success' => false, 'error' => [$house->getMessages(), $image->getMessages()]]);
+        // }
     }
 
     public function updateAction(int $id): string|false
