@@ -29,7 +29,7 @@
                     {{ user.phone }}
                 </td>
                 <td>
-                    {{ user.roles.role }}
+                    <change-role roles={{ roles }} userrole="{{ user.roles.id }}" userid="{{ user.id }}"></change-role>
                 </td>
             </tr>
         {% endfor %}
