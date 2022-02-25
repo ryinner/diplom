@@ -20,7 +20,7 @@
             </li>
 
             <li>
-                <a href="/">Недвижимость</a>
+                <a href="/Houses/Index">Недвижимость</a>
             </li>
 
             <li>

@@ -48,6 +48,7 @@ class AccessControllList
             '_Index'        =>  ['*'],
             '_Users'        =>  ['*'],
             '_Error'        =>  ['*'],
+            '_Houses'       =>  ['*'],
             'Api_Index'     =>  ['*'],
             'Api_Houses'    =>  ['*'],
             'Api_Requests'  =>  ['*'],

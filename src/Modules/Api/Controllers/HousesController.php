@@ -33,6 +33,7 @@ class HousesController extends ControllerApiBase implements CRUDInterface
         }
 
         $house = new Houses((array)$this->request->getPost());
+        $house->user_id = $this->auth->user()->id;
         $house->save();
 
         foreach ($files as $file) {

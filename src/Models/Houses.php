@@ -35,7 +35,7 @@ class Houses extends BaseModel
     {
         $this->setSource('houses');
 
-        $this->hasMany('id', Images::class, 'houses_id', ['alias' => 'images']);
+        $this->hasMany('id', Images::class, 'house_id', ['alias' => 'images']);
         $this->belongsTo('type_id', Types::class, 'id', ['alias' => 'types']);
         $this->belongsTo('status_id', Statuses::class, 'id', ['alias' => 'statuses']);
         $this->belongsTo('user_id', Users::class, 'id', ['alias' => 'users']);
