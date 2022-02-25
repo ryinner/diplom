@@ -26,6 +26,10 @@ html[data-theme-style='dark'] blockquote h1 {
     border-bottom: 2px solid var(--text-color);
 }
 
+html[data-theme-style='dark'] table th {
+    background: var(--placeholderColor);
+}
+
 /* @todo если будет время пользовательские темы */
 /* @todo --theme-color установка значения на цветовом круге для hsl прокидка js */
 /* :root {

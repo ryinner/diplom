@@ -20,7 +20,7 @@
         {% for requests in paginator.items %}
             <tr class="text-center">
                 <td>
-                    <a href="tel:{{ requests.phone }}"></a>{{ requests.phone }}</a>
+                    <update-requests id="{{ requests.id }}" status="{{ requests.status }}">{{ requests.phone }}</update-requests>
                 </td>
                 <td>
                     {{ requests.name }}
