@@ -1,7 +1,7 @@
 <template>
     <select @change="changeRole" v-model="pickedRole">
-        <option v-for="(role, key) in JSON.parse(roles)" :key="key" :value="key">
-            {{ role }}
+        <option v-for="role in JSON.parse(roles)" :key="role.id" :value="role.id">
+            {{ role.role }}
         </option>
     </select>
 </template>
@@ -12,7 +12,7 @@ import axios from "axios";
 export default {
     data() {
         return {
-            pickedRole: this.userRole,
+            pickedRole: this.userrole,
         };
     },
 
@@ -30,9 +30,9 @@ export default {
 
     methods: {
         changeRole() {
-            axios.post("/Cms/Roles/Change/" + this.userId, {
-                role_id: this.pickedRole,
-            });
+            let formData = new FormData
+            formData.append('role_id', this.pickedRole)
+            axios.post("/Cms/Roles/Change/" + this.userid, formData)
         },
     },
 };

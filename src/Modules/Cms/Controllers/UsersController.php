@@ -22,7 +22,8 @@ class UsersController extends ControllerCmsBase
         $roles = Roles::find();
 
         foreach ($roles as $role) {
-            $json_roles[$role->id] = $role->role;
+            $json_roles[$role->id]['id']   = $role->id;
+            $json_roles[$role->id]['role'] = $role->role;
         }
 
         $this->view->setVar('roles', json_encode($json_roles));

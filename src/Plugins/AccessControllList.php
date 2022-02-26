@@ -38,6 +38,7 @@ class AccessControllList
             'Cms_Houses'  => ['*'],
             'Cms_Requests'=> ['*'],
             'Cms_Users'   => ['*'],
+            'Cms_Roles'   => ['*'],
         ];
 
         $managersResource  = [];
