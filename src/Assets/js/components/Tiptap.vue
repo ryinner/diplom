@@ -1,5 +1,5 @@
 <template>
-    <div class="editor__menu d-flex space-between" v-if="editor">
+    <div class="editor__menu d-flex" v-if="editor">
         <div class="text">
             <button
                 @click="editor.chain().focus().toggleBold().run()"
@@ -28,9 +28,18 @@
             </button>
         </div>
 
+        <div class="ul">
+            <button @click="editor.chain().focus().toggleBulletList().run()" :class="{ 'is-active': editor.isActive('bulletList') }">
+                Маркированный
+            </button>
+            <button @click="editor.chain().focus().toggleOrderedList().run()" :class="{ 'is-active': editor.isActive('orderedList') }">
+                Нумерованный
+            </button>
+        </div>
+
         <div class="break">
             <button @click="editor.chain().focus().setHorizontalRule().run()">
-                Горизантольное разделение
+                Граница
             </button>
             <button @click="editor.chain().focus().setHardBreak().run()">
                 Новая строка
@@ -116,12 +125,19 @@ export default {
     border-radius: 4px 0 0 4px;
     border: 1px solid var(--dark);
 
-    li {
+    ul li {
         list-style-type: circle;
+        margin-left: 70px;
+
     }
 
-    ol {
+    ol li {
         list-style-type: decimal;
+        margin-left: 70px;
+    }
+
+    p {
+        text-indent: 30px;
     }
 }
 </style>

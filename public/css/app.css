@@ -299,6 +299,12 @@ table td {
     align-content: center;
 }
 
+/* Перенос */
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 /* Центрирование */
 
 .text-center {
@@ -451,6 +457,10 @@ table td {
 
 .d-table-cell {
     display: table-cell;
+}
+
+.d-grid {
+    display: grid;
 }
 
 /* Позиционирование */

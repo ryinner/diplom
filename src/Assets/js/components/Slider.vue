@@ -66,18 +66,18 @@ export default {
 
     methods: {
         parseSlides() {
-            const slides = JSON.parse(this.rawslides);
+            const slides = JSON.parse(this.rawslides)
 
-            for (let i = 0; i <= slides.length; i++) {
-                slides[i].image = "/img/houses/" + slides[i].path
-                this.slides = slides;
-            }
+            slides.forEach((slide) => {
+                slide.image = "/img/houses/" + slide.path
+            });
+
+            this.slides = slides
         },
     },
 
-    mounted() {
+    created() {
         this.parseSlides()
-        console.log(this.slides);
     }
 };
 </script>

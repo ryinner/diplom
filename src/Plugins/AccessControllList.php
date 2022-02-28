@@ -54,6 +54,7 @@ class AccessControllList
             'Api_Houses'    =>  ['*'],
             'Api_Requests'  =>  ['*'],
             'Api_Users'     =>  ['*'],
+            'Api_Orders'    =>  ['*'],
         ];
 
         foreach ($publicResource as $resource => $actions) {

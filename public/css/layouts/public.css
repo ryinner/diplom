@@ -101,6 +101,22 @@ blockquote h1, blockquote h2 {
     height: 300px;
 }
 
+.desription p, .desription ul li, .desription ol li{
+    text-indent: 30px;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.desription ul li {
+    list-style: circle;
+    margin-left: 70px;
+}
+
+.desription ol li {
+    list-style-type: decimal;
+    margin-left: 70px;
+}
+
 @media screen and (max-width: 500px) {
     .question__h1 {
         margin: 0;

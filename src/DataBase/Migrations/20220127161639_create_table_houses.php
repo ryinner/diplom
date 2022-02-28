@@ -36,7 +36,7 @@ class CreateTableHouses extends AbstractMigration
         $housesTable = $this->table('houses', ['id' => 'id']);
 
         $housesTable->addColumn('price', 'integer')
-                        ->addColumn('description', 'string', ['limit' => 516])
+                        ->addColumn('description', 'string', ['limit' => 4048])
                         ->addColumn('rooms', 'integer', ['limit' => 56])
                         ->addColumn('adress', 'string')
                         ->addColumn('square', 'integer')
