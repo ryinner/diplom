@@ -25,6 +25,13 @@ class HousesController extends ControllerBase
 
     public function showAction($id)
     {
-        
+        $house = Houses::findFirst($id);
+
+        foreach ($house->images as $image) {
+            $images[]['path'] = $image->path;
+        }
+
+        $this->view->setVar('house', $house);
+        $this->view->setVar('images', json_encode($images));
     }
 }

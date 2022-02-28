@@ -155,7 +155,7 @@ export default {
     color: var(--background-color);
     transition: 500ms ease all;
     transform: translateX(calc(-100%));
-    z-index: 1;
+    z-index: 9999;
 }
 
 #sidebar ul li a {

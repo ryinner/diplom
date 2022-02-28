@@ -1,6 +1,6 @@
 {
     "name": "ryinner/diplom",
-    "description": "This is a simple CRM-system with base functional.",
+    "description": "This is a simple diplom project.",
     "type": "project",
     "autoload": {
         "psr-4": {

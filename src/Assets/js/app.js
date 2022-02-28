@@ -12,5 +12,6 @@ app.component('private', require('./components/Private').default)
 app.component('housescms', require('./components/forms/HousesCms').default)
 app.component('update-requests', require('./components/RequestsUpdate').default)
 app.component('change-role', require('./components/ChangeRole').default)
+app.component('slider', require('./components/Slider').default)
 
 app.mount('#app')
