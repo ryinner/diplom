@@ -50,7 +50,7 @@ export default {
         },
 
         checkUser() {
-            if (!Number.isInteger(this.user)) {
+            if (!Number.isInteger(+this.user)) {
                 this.notAuth = true;
                 this.disabled = true;
             }
