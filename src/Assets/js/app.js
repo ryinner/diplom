@@ -14,5 +14,6 @@ app.component('update-requests', require('./components/RequestsUpdate').default)
 app.component('change-role', require('./components/ChangeRole').default)
 app.component('slider', require('./components/Slider').default)
 app.component('createorder', require('./components/buttons/CreateOrder').default)
+app.component('controll-orders', require('./components/ControllOrders').default)
 
 app.mount('#app')

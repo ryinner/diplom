@@ -6,12 +6,12 @@
         </div>
         <div class="navs" :class="{leftbar__active: isActive}">
             <ul>
-                <li>
+                <!-- <li>
                     <a href="/Cms/Index/Index" class="d-flex">
                         <img src="/img/helpers/statistics_icon.svg" class="icon">
                         <span class="text-active">Статистика</span>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="/Cms/Houses/Index" class="d-flex">
                         <img src="/img/helpers/houses_icon.svg" class="icon">
@@ -24,16 +24,16 @@
                         <span class="text-active">Пользователи</span>
                     </a>
                 </li>
-                <li>
+                <!-- <li>
                     <a href="/Cms/Pages/Index" class="d-flex">
                         <img src="/img/helpers/pages_icon.svg" class="icon">
                         <span class="text-active">Страницы</span>
                     </a>
-                </li>
+                </li> -->
                 <li>
-                    <a href="/Cms/Invoices/Index" class="d-flex">
+                    <a href="/Cms/Orders/Index" class="d-flex">
                         <img src="/img/helpers/invoice_icon.svg" class="icon">
-                        <span class="text-active">Заказы</span>
+                        <span class="text-active">Заявки</span>
                     </a>
                 </li>
                 <li>

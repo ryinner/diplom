@@ -12,6 +12,8 @@ class Orders extends BaseModel
 
     public $manager_id;
 
+    public $status;
+    
     public $created_at;
 
     public $updated_at;

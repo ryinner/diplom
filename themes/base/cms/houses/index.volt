@@ -23,6 +23,9 @@
             <th>
                 Площадь
             </th>
+            <th>
+                Статус
+            </th>
         </tr>
     </thead>
 
@@ -43,6 +46,9 @@
                 </td>
                 <td>
                     {{ house.square }}
+                </td>
+                <td>
+                    {{ house.statuses.status }}
                 </td>
             </tr>
         {% endfor %}

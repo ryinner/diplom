@@ -1283,6 +1283,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/ControllOrders.vue?vue&type=script&lang=js":
+/*!**************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/ControllOrders.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _buttons_AcceptOrder_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./buttons/AcceptOrder.vue */ \"./src/Assets/js/components/buttons/AcceptOrder.vue\");\n/* harmony import */ var _buttons_DeclineOrder_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./buttons/DeclineOrder.vue */ \"./src/Assets/js/components/buttons/DeclineOrder.vue\");\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  components: {\n    orderaccept: _buttons_AcceptOrder_vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"],\n    orderdecline: _buttons_DeclineOrder_vue__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n  },\n  props: {\n    order: {\n      required: true\n    }\n  },\n  emits: ['accepted'],\n  data: function data() {\n    return {\n      isShow: true\n    };\n  }\n});\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/ControllOrders.vue?./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet%5B0%5D");
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/GoTo.vue?vue&type=script&lang=js":
 /*!****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/GoTo.vue?vue&type=script&lang=js ***!
@@ -1371,6 +1382,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/AcceptOrder.vue?vue&type=script&lang=js":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/AcceptOrder.vue?vue&type=script&lang=js ***!
+  \*******************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  data: function data() {\n    return {\n      order: this.$parent.order\n    };\n  },\n  emits: {\n    success: null\n  },\n  methods: {\n    accept: function accept() {\n      var _this = this;\n\n      axios__WEBPACK_IMPORTED_MODULE_0___default().post('/Cms/Orders/Accept/' + this.order).then(function (response) {\n        if (response.data.success === true) {\n          _this.$emit('success', false);\n        }\n      });\n    }\n  }\n});\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/AcceptOrder.vue?./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet%5B0%5D");
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/CreateOrder.vue?vue&type=script&lang=js":
 /*!*******************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/CreateOrder.vue?vue&type=script&lang=js ***!
@@ -1379,6 +1401,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  props: {\n    house: {\n      required: true\n    },\n    user: {\n      required: true\n    },\n    manager: {\n      required: true\n    }\n  },\n  data: function data() {\n    return {\n      answer: \"\",\n      disabled: false,\n      notAuth: ''\n    };\n  },\n  methods: {\n    createOrder: function createOrder() {\n      var _this = this;\n\n      var formData = new FormData();\n      formData.append(\"house_id\", this.house);\n      formData.append(\"user_id\", this.user);\n      formData.append(\"manager_id\", this.manager);\n      axios__WEBPACK_IMPORTED_MODULE_0___default().post(\"/Api/Orders/Create\", formData).then(function (response) {\n        if (response.data.success === true) {\n          _this.answer = \"Заявка принята\";\n          _this.disabled = true;\n        } else {\n          _this.answer = \"Что пошло не так, повторите попытку позже\";\n        }\n      });\n    },\n    checkUser: function checkUser() {\n      if (!Number.isInteger(+this.user)) {\n        this.notAuth = true;\n        this.disabled = true;\n      }\n    }\n  },\n  created: function created() {\n    this.checkUser();\n  }\n});\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/CreateOrder.vue?./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet%5B0%5D");
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/DeclineOrder.vue?vue&type=script&lang=js":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/DeclineOrder.vue?vue&type=script&lang=js ***!
+  \********************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\n  data: function data() {\n    return {\n      order: this.$parent.order\n    };\n  },\n  emits: {\n    success: null\n  },\n  methods: {\n    decline: function decline() {\n      var _this = this;\n\n      axios__WEBPACK_IMPORTED_MODULE_0___default().post('/Cms/Orders/Decline/' + this.order).then(function (response) {\n        if (response.data.success === true) {\n          _this.$emit('success', false);\n        }\n      });\n    }\n  }\n});\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/DeclineOrder.vue?./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet%5B0%5D");
 
 /***/ }),
 
@@ -1448,6 +1481,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/ControllOrders.vue?vue&type=template&id=22cc8e8a":
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/ControllOrders.vue?vue&type=template&id=22cc8e8a ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* binding */ render)\n/* harmony export */ });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm-bundler.js\");\n\nfunction render(_ctx, _cache, $props, $setup, $data, $options) {\n  var _component_orderaccept = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)(\"orderaccept\");\n\n  var _component_orderdecline = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)(\"orderdecline\");\n\n  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(\"div\", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_orderaccept, {\n    onSuccess: _cache[0] || (_cache[0] = function ($event) {\n      return $data.isShow = false;\n    })\n  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_orderdecline, {\n    onSuccess: _cache[1] || (_cache[1] = function ($event) {\n      return $data.isShow = false;\n    })\n  })], 512\n  /* NEED_PATCH */\n  )), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $data.isShow]]);\n}\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/ControllOrders.vue?./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet%5B1%5D.rules%5B2%5D!./node_modules/vue-loader/dist/index.js??ruleSet%5B0%5D");
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/GoTo.vue?vue&type=template&id=285e08ce":
 /*!********************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/GoTo.vue?vue&type=template&id=285e08ce ***!
@@ -1499,7 +1543,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* binding */ render)\n/* harmony export */ });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm-bundler.js\");\n\n\nvar _withScopeId = function _withScopeId(n) {\n  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)(\"data-v-b6ed5c22\"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;\n};\n\nvar _hoisted_1 = {\n  \"class\": \"leftbar d-table-cell\"\n};\n\nvar _hoisted_2 = /*#__PURE__*/_withScopeId(function () {\n  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"a\", {\n    href: \"/Cms/index/index\",\n    \"class\": \"text-active no-mobile\"\n  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"h2\", {\n    \"class\": \"text-active\"\n  }, \"CMS\")], -1\n  /* HOISTED */\n  );\n});\n\nvar _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(\"<ul data-v-b6ed5c22><li data-v-b6ed5c22><a href=\\\"/Cms/Index/Index\\\" class=\\\"d-flex\\\" data-v-b6ed5c22><img src=\\\"/img/helpers/statistics_icon.svg\\\" class=\\\"icon\\\" data-v-b6ed5c22><span class=\\\"text-active\\\" data-v-b6ed5c22>Статистика</span></a></li><li data-v-b6ed5c22><a href=\\\"/Cms/Houses/Index\\\" class=\\\"d-flex\\\" data-v-b6ed5c22><img src=\\\"/img/helpers/houses_icon.svg\\\" class=\\\"icon\\\" data-v-b6ed5c22><span class=\\\"text-active\\\" data-v-b6ed5c22>Дома</span></a></li><li data-v-b6ed5c22><a href=\\\"/Cms/Users/Index\\\" class=\\\"d-flex\\\" data-v-b6ed5c22><img src=\\\"/img/helpers/users_icon.svg\\\" class=\\\"icon\\\" data-v-b6ed5c22><span class=\\\"text-active\\\" data-v-b6ed5c22>Пользователи</span></a></li><li data-v-b6ed5c22><a href=\\\"/Cms/Pages/Index\\\" class=\\\"d-flex\\\" data-v-b6ed5c22><img src=\\\"/img/helpers/pages_icon.svg\\\" class=\\\"icon\\\" data-v-b6ed5c22><span class=\\\"text-active\\\" data-v-b6ed5c22>Страницы</span></a></li><li data-v-b6ed5c22><a href=\\\"/Cms/Invoices/Index\\\" class=\\\"d-flex\\\" data-v-b6ed5c22><img src=\\\"/img/helpers/invoice_icon.svg\\\" class=\\\"icon\\\" data-v-b6ed5c22><span class=\\\"text-active\\\" data-v-b6ed5c22>Заказы</span></a></li><li data-v-b6ed5c22><a href=\\\"/Cms/Requests/Index\\\" class=\\\"d-flex\\\" data-v-b6ed5c22><img src=\\\"/img/helpers/request_icon.svg\\\" class=\\\"icon\\\" data-v-b6ed5c22><span class=\\\"text-active\\\" data-v-b6ed5c22>Вопросы</span></a></li></ul>\", 1);\n\nvar _hoisted_4 = [_hoisted_3];\nfunction render(_ctx, _cache, $props, $setup, $data, $options) {\n  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(\"div\", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"div\", {\n    \"class\": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([\"logo d-flex space-around y-center\", {\n      leftbar__active: $data.isActive\n    }])\n  }, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"img\", {\n    src: \"/img/helpers/burger-menu.svg\",\n    \"class\": \"logo-icon\",\n    onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {\n      return $options.open && $options.open.apply($options, arguments);\n    }, [\"prevent\"]))\n  })], 2\n  /* CLASS */\n  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"div\", {\n    \"class\": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([\"navs\", {\n      leftbar__active: $data.isActive\n    }])\n  }, _hoisted_4, 2\n  /* CLASS */\n  )]);\n}\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/PrivateSidebar.vue?./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet%5B1%5D.rules%5B2%5D!./node_modules/vue-loader/dist/index.js??ruleSet%5B0%5D");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* binding */ render)\n/* harmony export */ });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm-bundler.js\");\n\n\nvar _withScopeId = function _withScopeId(n) {\n  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.pushScopeId)(\"data-v-b6ed5c22\"), n = n(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.popScopeId)(), n;\n};\n\nvar _hoisted_1 = {\n  \"class\": \"leftbar d-table-cell\"\n};\n\nvar _hoisted_2 = /*#__PURE__*/_withScopeId(function () {\n  return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"a\", {\n    href: \"/Cms/index/index\",\n    \"class\": \"text-active no-mobile\"\n  }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"h2\", {\n    \"class\": \"text-active\"\n  }, \"CMS\")], -1\n  /* HOISTED */\n  );\n});\n\nvar _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)(\"<ul data-v-b6ed5c22><!-- &lt;li&gt;\\r\\n                    &lt;a href=&quot;/Cms/Index/Index&quot; class=&quot;d-flex&quot;&gt;\\r\\n                        &lt;img src=&quot;/img/helpers/statistics_icon.svg&quot; class=&quot;icon&quot;&gt;\\r\\n                        &lt;span class=&quot;text-active&quot;&gt;Статистика&lt;/span&gt;\\r\\n                    &lt;/a&gt;\\r\\n                &lt;/li&gt; --><li data-v-b6ed5c22><a href=\\\"/Cms/Houses/Index\\\" class=\\\"d-flex\\\" data-v-b6ed5c22><img src=\\\"/img/helpers/houses_icon.svg\\\" class=\\\"icon\\\" data-v-b6ed5c22><span class=\\\"text-active\\\" data-v-b6ed5c22>Дома</span></a></li><li data-v-b6ed5c22><a href=\\\"/Cms/Users/Index\\\" class=\\\"d-flex\\\" data-v-b6ed5c22><img src=\\\"/img/helpers/users_icon.svg\\\" class=\\\"icon\\\" data-v-b6ed5c22><span class=\\\"text-active\\\" data-v-b6ed5c22>Пользователи</span></a></li><!-- &lt;li&gt;\\r\\n                    &lt;a href=&quot;/Cms/Pages/Index&quot; class=&quot;d-flex&quot;&gt;\\r\\n                        &lt;img src=&quot;/img/helpers/pages_icon.svg&quot; class=&quot;icon&quot;&gt;\\r\\n                        &lt;span class=&quot;text-active&quot;&gt;Страницы&lt;/span&gt;\\r\\n                    &lt;/a&gt;\\r\\n                &lt;/li&gt; --><li data-v-b6ed5c22><a href=\\\"/Cms/Orders/Index\\\" class=\\\"d-flex\\\" data-v-b6ed5c22><img src=\\\"/img/helpers/invoice_icon.svg\\\" class=\\\"icon\\\" data-v-b6ed5c22><span class=\\\"text-active\\\" data-v-b6ed5c22>Заявки</span></a></li><li data-v-b6ed5c22><a href=\\\"/Cms/Requests/Index\\\" class=\\\"d-flex\\\" data-v-b6ed5c22><img src=\\\"/img/helpers/request_icon.svg\\\" class=\\\"icon\\\" data-v-b6ed5c22><span class=\\\"text-active\\\" data-v-b6ed5c22>Вопросы</span></a></li></ul>\", 1);\n\nvar _hoisted_4 = [_hoisted_3];\nfunction render(_ctx, _cache, $props, $setup, $data, $options) {\n  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(\"div\", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"div\", {\n    \"class\": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([\"logo d-flex space-around y-center\", {\n      leftbar__active: $data.isActive\n    }])\n  }, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"img\", {\n    src: \"/img/helpers/burger-menu.svg\",\n    \"class\": \"logo-icon\",\n    onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {\n      return $options.open && $options.open.apply($options, arguments);\n    }, [\"prevent\"]))\n  })], 2\n  /* CLASS */\n  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"div\", {\n    \"class\": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([\"navs\", {\n      leftbar__active: $data.isActive\n    }])\n  }, _hoisted_4, 2\n  /* CLASS */\n  )]);\n}\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/PrivateSidebar.vue?./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet%5B1%5D.rules%5B2%5D!./node_modules/vue-loader/dist/index.js??ruleSet%5B0%5D");
 
 /***/ }),
 
@@ -1536,6 +1580,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/AcceptOrder.vue?vue&type=template&id=64c40f72":
+/*!***********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/AcceptOrder.vue?vue&type=template&id=64c40f72 ***!
+  \***********************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* binding */ render)\n/* harmony export */ });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm-bundler.js\");\n\nfunction render(_ctx, _cache, $props, $setup, $data, $options) {\n  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(\"button\", {\n    onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {\n      return $options.accept && $options.accept.apply($options, arguments);\n    }, [\"prevent\"]))\n  }, \"Принять\");\n}\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/AcceptOrder.vue?./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet%5B1%5D.rules%5B2%5D!./node_modules/vue-loader/dist/index.js??ruleSet%5B0%5D");
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/CreateOrder.vue?vue&type=template&id=15fe55fe":
 /*!***********************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/CreateOrder.vue?vue&type=template&id=15fe55fe ***!
@@ -1544,6 +1599,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* binding */ render)\n/* harmony export */ });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm-bundler.js\");\n\nvar _hoisted_1 = {\n  \"class\": \"form-controll\"\n};\nvar _hoisted_2 = [\"disabled\"];\nvar _hoisted_3 = {\n  \"class\": \"server-answer\"\n};\nvar _hoisted_4 = {\n  key: 0,\n  \"class\": \"not-auth\"\n};\nfunction render(_ctx, _cache, $props, $setup, $data, $options) {\n  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(\"div\", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"button\", {\n    onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {\n      return $options.createOrder && $options.createOrder.apply($options, arguments);\n    }, [\"prevent\"])),\n    disabled: $data.disabled\n  }, \"Сделать заявку\", 8\n  /* PROPS */\n  , _hoisted_2), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)(\"div\", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.answer), 1\n  /* TEXT */\n  ), $data.notAuth ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(\"div\", _hoisted_4, \" Пожалуйста авторизируйтесь \")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(\"v-if\", true)]);\n}\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/CreateOrder.vue?./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet%5B1%5D.rules%5B2%5D!./node_modules/vue-loader/dist/index.js??ruleSet%5B0%5D");
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/DeclineOrder.vue?vue&type=template&id=7e55125c":
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/DeclineOrder.vue?vue&type=template&id=7e55125c ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* binding */ render)\n/* harmony export */ });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm-bundler.js\");\n\nfunction render(_ctx, _cache, $props, $setup, $data, $options) {\n  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(\"button\", {\n    \"class\": \"btn-danger\",\n    onClick: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {\n      return $options.decline && $options.decline.apply($options, arguments);\n    }, [\"prevent\"]))\n  }, \"Отказать\");\n}\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/DeclineOrder.vue?./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet%5B1%5D.rules%5B2%5D!./node_modules/vue-loader/dist/index.js??ruleSet%5B0%5D");
 
 /***/ }),
 
@@ -1609,7 +1675,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm-bundler.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvar app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)({});\napp.component('goto', (__webpack_require__(/*! ./components/GoTo */ \"./src/Assets/js/components/GoTo.vue\")[\"default\"]));\napp.component('header-nav', (__webpack_require__(/*! ./components/HeaderNav */ \"./src/Assets/js/components/HeaderNav.vue\")[\"default\"]));\napp.component('index-requests', (__webpack_require__(/*! ./components/forms/IndexRequests */ \"./src/Assets/js/components/forms/IndexRequests.vue\")[\"default\"]));\napp.component('registration', (__webpack_require__(/*! ./components/forms/Registration */ \"./src/Assets/js/components/forms/Registration.vue\")[\"default\"]));\napp.component('gotomain', (__webpack_require__(/*! ./components/buttons/GoToMain */ \"./src/Assets/js/components/buttons/GoToMain.vue\")[\"default\"]));\napp.component('private', (__webpack_require__(/*! ./components/Private */ \"./src/Assets/js/components/Private.vue\")[\"default\"]));\napp.component('housescms', (__webpack_require__(/*! ./components/forms/HousesCms */ \"./src/Assets/js/components/forms/HousesCms.vue\")[\"default\"]));\napp.component('update-requests', (__webpack_require__(/*! ./components/RequestsUpdate */ \"./src/Assets/js/components/RequestsUpdate.vue\")[\"default\"]));\napp.component('change-role', (__webpack_require__(/*! ./components/ChangeRole */ \"./src/Assets/js/components/ChangeRole.vue\")[\"default\"]));\napp.component('slider', (__webpack_require__(/*! ./components/Slider */ \"./src/Assets/js/components/Slider.vue\")[\"default\"]));\napp.component('createorder', (__webpack_require__(/*! ./components/buttons/CreateOrder */ \"./src/Assets/js/components/buttons/CreateOrder.vue\")[\"default\"]));\napp.mount('#app');\n\n//# sourceURL=webpack://diplom/./src/Assets/js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm-bundler.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash */ \"./node_modules/lodash/lodash.js\");\n/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_1__);\n\n\nvar app = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)({});\napp.component('goto', (__webpack_require__(/*! ./components/GoTo */ \"./src/Assets/js/components/GoTo.vue\")[\"default\"]));\napp.component('header-nav', (__webpack_require__(/*! ./components/HeaderNav */ \"./src/Assets/js/components/HeaderNav.vue\")[\"default\"]));\napp.component('index-requests', (__webpack_require__(/*! ./components/forms/IndexRequests */ \"./src/Assets/js/components/forms/IndexRequests.vue\")[\"default\"]));\napp.component('registration', (__webpack_require__(/*! ./components/forms/Registration */ \"./src/Assets/js/components/forms/Registration.vue\")[\"default\"]));\napp.component('gotomain', (__webpack_require__(/*! ./components/buttons/GoToMain */ \"./src/Assets/js/components/buttons/GoToMain.vue\")[\"default\"]));\napp.component('private', (__webpack_require__(/*! ./components/Private */ \"./src/Assets/js/components/Private.vue\")[\"default\"]));\napp.component('housescms', (__webpack_require__(/*! ./components/forms/HousesCms */ \"./src/Assets/js/components/forms/HousesCms.vue\")[\"default\"]));\napp.component('update-requests', (__webpack_require__(/*! ./components/RequestsUpdate */ \"./src/Assets/js/components/RequestsUpdate.vue\")[\"default\"]));\napp.component('change-role', (__webpack_require__(/*! ./components/ChangeRole */ \"./src/Assets/js/components/ChangeRole.vue\")[\"default\"]));\napp.component('slider', (__webpack_require__(/*! ./components/Slider */ \"./src/Assets/js/components/Slider.vue\")[\"default\"]));\napp.component('createorder', (__webpack_require__(/*! ./components/buttons/CreateOrder */ \"./src/Assets/js/components/buttons/CreateOrder.vue\")[\"default\"]));\napp.component('controll-orders', (__webpack_require__(/*! ./components/ControllOrders */ \"./src/Assets/js/components/ControllOrders.vue\")[\"default\"]));\napp.mount('#app');\n\n//# sourceURL=webpack://diplom/./src/Assets/js/app.js?");
 
 /***/ }),
 
@@ -1942,6 +2008,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/Assets/js/components/ControllOrders.vue":
+/*!*****************************************************!*\
+  !*** ./src/Assets/js/components/ControllOrders.vue ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _ControllOrders_vue_vue_type_template_id_22cc8e8a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ControllOrders.vue?vue&type=template&id=22cc8e8a */ \"./src/Assets/js/components/ControllOrders.vue?vue&type=template&id=22cc8e8a\");\n/* harmony import */ var _ControllOrders_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ControllOrders.vue?vue&type=script&lang=js */ \"./src/Assets/js/components/ControllOrders.vue?vue&type=script&lang=js\");\n/* harmony import */ var D_Programs_OpenServer2_domains_diplom_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ \"./node_modules/vue-loader/dist/exportHelper.js\");\n\n\n\n\n;\nconst __exports__ = /*#__PURE__*/(0,D_Programs_OpenServer2_domains_diplom_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_ControllOrders_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"], [['render',_ControllOrders_vue_vue_type_template_id_22cc8e8a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',\"src/Assets/js/components/ControllOrders.vue\"]])\n/* hot reload */\nif (false) {}\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/ControllOrders.vue?");
+
+/***/ }),
+
 /***/ "./src/Assets/js/components/GoTo.vue":
 /*!*******************************************!*\
   !*** ./src/Assets/js/components/GoTo.vue ***!
@@ -2030,6 +2107,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/Assets/js/components/buttons/AcceptOrder.vue":
+/*!**********************************************************!*\
+  !*** ./src/Assets/js/components/buttons/AcceptOrder.vue ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _AcceptOrder_vue_vue_type_template_id_64c40f72__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AcceptOrder.vue?vue&type=template&id=64c40f72 */ \"./src/Assets/js/components/buttons/AcceptOrder.vue?vue&type=template&id=64c40f72\");\n/* harmony import */ var _AcceptOrder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AcceptOrder.vue?vue&type=script&lang=js */ \"./src/Assets/js/components/buttons/AcceptOrder.vue?vue&type=script&lang=js\");\n/* harmony import */ var D_Programs_OpenServer2_domains_diplom_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ \"./node_modules/vue-loader/dist/exportHelper.js\");\n\n\n\n\n;\nconst __exports__ = /*#__PURE__*/(0,D_Programs_OpenServer2_domains_diplom_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_AcceptOrder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"], [['render',_AcceptOrder_vue_vue_type_template_id_64c40f72__WEBPACK_IMPORTED_MODULE_0__.render],['__file',\"src/Assets/js/components/buttons/AcceptOrder.vue\"]])\n/* hot reload */\nif (false) {}\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/AcceptOrder.vue?");
+
+/***/ }),
+
 /***/ "./src/Assets/js/components/buttons/CreateOrder.vue":
 /*!**********************************************************!*\
   !*** ./src/Assets/js/components/buttons/CreateOrder.vue ***!
@@ -2038,6 +2126,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _CreateOrder_vue_vue_type_template_id_15fe55fe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CreateOrder.vue?vue&type=template&id=15fe55fe */ \"./src/Assets/js/components/buttons/CreateOrder.vue?vue&type=template&id=15fe55fe\");\n/* harmony import */ var _CreateOrder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateOrder.vue?vue&type=script&lang=js */ \"./src/Assets/js/components/buttons/CreateOrder.vue?vue&type=script&lang=js\");\n/* harmony import */ var D_Programs_OpenServer2_domains_diplom_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ \"./node_modules/vue-loader/dist/exportHelper.js\");\n\n\n\n\n;\nconst __exports__ = /*#__PURE__*/(0,D_Programs_OpenServer2_domains_diplom_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_CreateOrder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"], [['render',_CreateOrder_vue_vue_type_template_id_15fe55fe__WEBPACK_IMPORTED_MODULE_0__.render],['__file',\"src/Assets/js/components/buttons/CreateOrder.vue\"]])\n/* hot reload */\nif (false) {}\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/CreateOrder.vue?");
+
+/***/ }),
+
+/***/ "./src/Assets/js/components/buttons/DeclineOrder.vue":
+/*!***********************************************************!*\
+  !*** ./src/Assets/js/components/buttons/DeclineOrder.vue ***!
+  \***********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _DeclineOrder_vue_vue_type_template_id_7e55125c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DeclineOrder.vue?vue&type=template&id=7e55125c */ \"./src/Assets/js/components/buttons/DeclineOrder.vue?vue&type=template&id=7e55125c\");\n/* harmony import */ var _DeclineOrder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DeclineOrder.vue?vue&type=script&lang=js */ \"./src/Assets/js/components/buttons/DeclineOrder.vue?vue&type=script&lang=js\");\n/* harmony import */ var D_Programs_OpenServer2_domains_diplom_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ \"./node_modules/vue-loader/dist/exportHelper.js\");\n\n\n\n\n;\nconst __exports__ = /*#__PURE__*/(0,D_Programs_OpenServer2_domains_diplom_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(_DeclineOrder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"], [['render',_DeclineOrder_vue_vue_type_template_id_7e55125c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',\"src/Assets/js/components/buttons/DeclineOrder.vue\"]])\n/* hot reload */\nif (false) {}\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/DeclineOrder.vue?");
 
 /***/ }),
 
@@ -2104,6 +2203,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_index_js_ruleSet_0_ChangeRole_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_index_js_ruleSet_0_ChangeRole_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0]!./ChangeRole.vue?vue&type=script&lang=js */ \"./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/ChangeRole.vue?vue&type=script&lang=js\");\n \n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/ChangeRole.vue?");
+
+/***/ }),
+
+/***/ "./src/Assets/js/components/ControllOrders.vue?vue&type=script&lang=js":
+/*!*****************************************************************************!*\
+  !*** ./src/Assets/js/components/ControllOrders.vue?vue&type=script&lang=js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_index_js_ruleSet_0_ControllOrders_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_index_js_ruleSet_0_ControllOrders_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0]!./ControllOrders.vue?vue&type=script&lang=js */ \"./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/ControllOrders.vue?vue&type=script&lang=js\");\n \n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/ControllOrders.vue?");
 
 /***/ }),
 
@@ -2195,6 +2305,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/Assets/js/components/buttons/AcceptOrder.vue?vue&type=script&lang=js":
+/*!**********************************************************************************!*\
+  !*** ./src/Assets/js/components/buttons/AcceptOrder.vue?vue&type=script&lang=js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_index_js_ruleSet_0_AcceptOrder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_index_js_ruleSet_0_AcceptOrder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0]!./AcceptOrder.vue?vue&type=script&lang=js */ \"./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/AcceptOrder.vue?vue&type=script&lang=js\");\n \n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/AcceptOrder.vue?");
+
+/***/ }),
+
 /***/ "./src/Assets/js/components/buttons/CreateOrder.vue?vue&type=script&lang=js":
 /*!**********************************************************************************!*\
   !*** ./src/Assets/js/components/buttons/CreateOrder.vue?vue&type=script&lang=js ***!
@@ -2203,6 +2324,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_index_js_ruleSet_0_CreateOrder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_index_js_ruleSet_0_CreateOrder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0]!./CreateOrder.vue?vue&type=script&lang=js */ \"./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/CreateOrder.vue?vue&type=script&lang=js\");\n \n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/CreateOrder.vue?");
+
+/***/ }),
+
+/***/ "./src/Assets/js/components/buttons/DeclineOrder.vue?vue&type=script&lang=js":
+/*!***********************************************************************************!*\
+  !*** ./src/Assets/js/components/buttons/DeclineOrder.vue?vue&type=script&lang=js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_index_js_ruleSet_0_DeclineOrder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])\n/* harmony export */ });\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_index_js_ruleSet_0_DeclineOrder_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0]!./DeclineOrder.vue?vue&type=script&lang=js */ \"./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/DeclineOrder.vue?vue&type=script&lang=js\");\n \n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/DeclineOrder.vue?");
 
 /***/ }),
 
@@ -2269,6 +2401,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_ChangeRole_vue_vue_type_template_id_128bde5c__WEBPACK_IMPORTED_MODULE_0__.render)\n/* harmony export */ });\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_ChangeRole_vue_vue_type_template_id_128bde5c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0]!./ChangeRole.vue?vue&type=template&id=128bde5c */ \"./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/ChangeRole.vue?vue&type=template&id=128bde5c\");\n\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/ChangeRole.vue?");
+
+/***/ }),
+
+/***/ "./src/Assets/js/components/ControllOrders.vue?vue&type=template&id=22cc8e8a":
+/*!***********************************************************************************!*\
+  !*** ./src/Assets/js/components/ControllOrders.vue?vue&type=template&id=22cc8e8a ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_ControllOrders_vue_vue_type_template_id_22cc8e8a__WEBPACK_IMPORTED_MODULE_0__.render)\n/* harmony export */ });\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_ControllOrders_vue_vue_type_template_id_22cc8e8a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0]!./ControllOrders.vue?vue&type=template&id=22cc8e8a */ \"./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/ControllOrders.vue?vue&type=template&id=22cc8e8a\");\n\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/ControllOrders.vue?");
 
 /***/ }),
 
@@ -2360,6 +2503,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/Assets/js/components/buttons/AcceptOrder.vue?vue&type=template&id=64c40f72":
+/*!****************************************************************************************!*\
+  !*** ./src/Assets/js/components/buttons/AcceptOrder.vue?vue&type=template&id=64c40f72 ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_AcceptOrder_vue_vue_type_template_id_64c40f72__WEBPACK_IMPORTED_MODULE_0__.render)\n/* harmony export */ });\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_AcceptOrder_vue_vue_type_template_id_64c40f72__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0]!./AcceptOrder.vue?vue&type=template&id=64c40f72 */ \"./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/AcceptOrder.vue?vue&type=template&id=64c40f72\");\n\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/AcceptOrder.vue?");
+
+/***/ }),
+
 /***/ "./src/Assets/js/components/buttons/CreateOrder.vue?vue&type=template&id=15fe55fe":
 /*!****************************************************************************************!*\
   !*** ./src/Assets/js/components/buttons/CreateOrder.vue?vue&type=template&id=15fe55fe ***!
@@ -2368,6 +2522,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_CreateOrder_vue_vue_type_template_id_15fe55fe__WEBPACK_IMPORTED_MODULE_0__.render)\n/* harmony export */ });\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_CreateOrder_vue_vue_type_template_id_15fe55fe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0]!./CreateOrder.vue?vue&type=template&id=15fe55fe */ \"./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/CreateOrder.vue?vue&type=template&id=15fe55fe\");\n\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/CreateOrder.vue?");
+
+/***/ }),
+
+/***/ "./src/Assets/js/components/buttons/DeclineOrder.vue?vue&type=template&id=7e55125c":
+/*!*****************************************************************************************!*\
+  !*** ./src/Assets/js/components/buttons/DeclineOrder.vue?vue&type=template&id=7e55125c ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"render\": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_DeclineOrder_vue_vue_type_template_id_7e55125c__WEBPACK_IMPORTED_MODULE_0__.render)\n/* harmony export */ });\n/* harmony import */ var _node_modules_babel_loader_lib_index_js_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_DeclineOrder_vue_vue_type_template_id_7e55125c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0]!./DeclineOrder.vue?vue&type=template&id=7e55125c */ \"./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0]!./src/Assets/js/components/buttons/DeclineOrder.vue?vue&type=template&id=7e55125c\");\n\n\n//# sourceURL=webpack://diplom/./src/Assets/js/components/buttons/DeclineOrder.vue?");
 
 /***/ }),
 
