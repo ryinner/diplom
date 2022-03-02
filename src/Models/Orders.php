@@ -23,7 +23,11 @@ class Orders extends BaseModel
         $this->setSource('orders');
 
         $this->belongsTo('user_id', Users::class, 'id', ['alias' => 'users']);
-        $this->belongsTo('manager_id', Users::class, 'id', ['alias' => 'users']);
         $this->belongsTo('house_id', Houses::class, 'id', ['alias' => 'houses']);
+    }
+
+    public function getManager()
+    {
+        return Users::findFirst($this->manager_id);
     }
 }

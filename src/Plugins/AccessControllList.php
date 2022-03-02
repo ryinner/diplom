@@ -44,7 +44,10 @@ class AccessControllList
 
         $managersResource  = [];
 
-        $usersResource  = [];
+        $usersResource  = [
+            '_Profile'  => ['*'],
+            '_Orders'   => ['*'],
+        ];
 
         $publicResource = [
             '_Index'        =>  ['*'],
@@ -61,6 +64,12 @@ class AccessControllList
         foreach ($publicResource as $resource => $actions) {
             $acl->addComponent(new Component($resource), $actions);
             $acl->allow('*', $resource, '*');
+        }
+
+        foreach ($usersResource as $resource => $actions) {
+            $acl->addComponent(new Component($resource), $actions);
+            $acl->allow('user', $resource, '*');
+            $acl->allow('admin', $resource, '*');
         }
 
         foreach ($adminsResource as $resource => $actions) {

@@ -4,11 +4,11 @@
 $router->add('/','Index::Index')->setName('Index');
 
 // Base
-$router->add('/:controller/Show/:params', [
+$router->add('/:controller/:action/:params', [
     'controller' => 1,
-    'action'     => 'Show',
-    'params'     => 2,
-])->setName('index-show');
+    'action'     => 2,
+    'params'     => 3,
+])->setName('param-action');
 
 // admin
 $router->add('/Cms/:controller/:action', [

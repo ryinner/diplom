@@ -70,7 +70,7 @@
                                 v-if="userConfig.auth"
                             >
                                 <ul>
-                                    <li><a href="/">Профиль</a></li>
+                                    <li><a href="/Profile/Index">Профиль</a></li>
                                     <li
                                         v-if="userConfig.isAdmin"
                                     ><a href="/Cms/Index/Index">CMS</a></li>
