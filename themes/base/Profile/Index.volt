@@ -14,7 +14,9 @@
     </div>
 {% endif %}
 
-<theme-change></theme-change>
+<div class="m-c-10">
+    <theme-change></theme-change>
+</div>
 
 <ul class="pagination">
     {% if paginator.items|length !== 0 %}

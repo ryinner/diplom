@@ -44,7 +44,8 @@ export default {
                     this.answer = "Заявка принята"
                     this.disabled = true
                 } else {
-                    this.answer = "Что пошло не так, повторите попытку позже"
+                    this.answer = response.data.errors
+                    console.log(response);
                 }
             });
         },

@@ -15,7 +15,7 @@
                     {{ house.adress }}
                 </div>
                 <div class="price">
-                    {{ house.price }} руб. {% if house.statuses.id == 2 == 2 %} в месяц {% endif %}
+                    {{ house.price }} руб. {% if house.statuses.id == 2 %} в месяц {% endif %}
                 </div>
             </a>
         </div>
