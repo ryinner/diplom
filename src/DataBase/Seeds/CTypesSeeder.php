@@ -3,7 +3,7 @@ namespace App\Seeds;
 
 use Phinx\Seed\AbstractSeed;
 
-class RolesSeeder extends AbstractSeed
+class CTypesSeeder extends AbstractSeed
 {
     /**
      * Run Method.
@@ -17,18 +17,15 @@ class RolesSeeder extends AbstractSeed
     {
         $data = [
             [
-                'role' => 'user'
+                'type' => 'Квартира'
             ],
             [
-                'role' => 'manager'
-            ],
-            [
-                'role' => 'admin'
+                'type' => 'Дом'
             ],
         ];
 
-        $this->table('roles')
-                ->insert($data)
-                ->saveData();
+        $typesTable = $this->table('types');
+        $typesTable->insert($data)
+                    ->saveData();
     }
 }

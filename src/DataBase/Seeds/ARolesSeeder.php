@@ -3,7 +3,7 @@ namespace App\Seeds;
 
 use Phinx\Seed\AbstractSeed;
 
-class StatusesSeeder extends AbstractSeed
+class ARolesSeeder extends AbstractSeed
 {
     /**
      * Run Method.
@@ -17,18 +17,18 @@ class StatusesSeeder extends AbstractSeed
     {
         $data = [
             [
-                'status' => 'Продается'
+                'role' => 'user'
             ],
             [
-                'status' => 'В аренду'
+                'role' => 'manager'
             ],
             [
-                'status' => 'Закрыто'
+                'role' => 'admin'
             ],
         ];
 
-        $statysesTable = $this->table('statuses');
-        $statysesTable->insert($data)
-                        ->saveData();
+        $this->table('roles')
+                ->insert($data)
+                ->saveData();
     }
 }

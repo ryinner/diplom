@@ -3,7 +3,7 @@ namespace App\Seeds;
 
 use Phinx\Seed\AbstractSeed;
 
-class ConfirmsEmailsSeeder extends AbstractSeed
+class FConfirmsEmailsSeeder extends AbstractSeed
 {
     /**
      * Run Method.

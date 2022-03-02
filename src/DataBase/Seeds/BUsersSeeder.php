@@ -3,7 +3,7 @@ namespace App\Seeds;
 
 use Phinx\Seed\AbstractSeed;
 
-class UsersSeeder extends AbstractSeed
+class BUsersSeeder extends AbstractSeed
 {
     /**
      * Run Method.
@@ -18,7 +18,7 @@ class UsersSeeder extends AbstractSeed
         $data = [
             [
                 'username'     => 'admin',
-                'login'        => 'login',
+                'email'        => 'login@email.ry',
                 'password'     => '$2y$10$JJE0T6vRlqyV3cvVXwO5keG.HoYtSl5fzDwvhe7lvMJhiSaIX6eFy',
                 'first_name'   => 'Админ',
                 'last_name'    => 'Админских',

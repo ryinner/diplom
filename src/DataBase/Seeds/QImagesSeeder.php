@@ -3,7 +3,7 @@ namespace App\Seeds;
 
 use Phinx\Seed\AbstractSeed;
 
-class ImagesSeeder extends AbstractSeed
+class QImagesSeeder extends AbstractSeed
 {
     /**
      * Run Method.
@@ -39,6 +39,38 @@ class ImagesSeeder extends AbstractSeed
             [
                 'path'   => 'picture6.jpg',
                 'house_id' => '2'
+            ],
+            [
+                'path'   => 'picture7.jpg',
+                'house_id' => '3'
+            ],
+            [
+                'path'   => 'picture8.jpg',
+                'house_id' => '3'
+            ],
+            [
+                'path'   => 'picture9.jpg',
+                'house_id' => '4'
+            ],
+            [
+                'path'   => 'picture10.jpg',
+                'house_id' => '4'
+            ],
+            [
+                'path'   => 'picture11.jpg',
+                'house_id' => '5'
+            ],
+            [
+                'path'   => 'picture12.jpg',
+                'house_id' => '5'
+            ],
+            [
+                'path'   => 'picture13.jpg',
+                'house_id' => '6'
+            ],
+            [
+                'path'   => 'picture14.jpg',
+                'house_id' => '6'
             ],
         ];
 

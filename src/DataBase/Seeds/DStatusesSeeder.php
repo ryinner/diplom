@@ -3,7 +3,7 @@ namespace App\Seeds;
 
 use Phinx\Seed\AbstractSeed;
 
-class TypesSeeder extends AbstractSeed
+class DStatusesSeeder extends AbstractSeed
 {
     /**
      * Run Method.
@@ -17,15 +17,18 @@ class TypesSeeder extends AbstractSeed
     {
         $data = [
             [
-                'type' => 'Квартира'
+                'status' => 'Продается'
             ],
             [
-                'type' => 'Дом'
+                'status' => 'В аренду'
+            ],
+            [
+                'status' => 'Закрыто'
             ],
         ];
 
-        $typesTable = $this->table('types');
-        $typesTable->insert($data)
-                    ->saveData();
+        $statysesTable = $this->table('statuses');
+        $statysesTable->insert($data)
+                        ->saveData();
     }
 }
