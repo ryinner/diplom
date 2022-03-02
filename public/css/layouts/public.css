@@ -101,7 +101,7 @@ blockquote h1, blockquote h2 {
     height: 300px;
 }
 
-.desription p, .desription ul li, .desription ol li{
+.desription p, .desription ul li, .desription ol li, .contact-house p{
     text-indent: 30px;
     line-height: 30px;
     font-size: 18px;

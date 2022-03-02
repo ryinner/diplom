@@ -1,7 +1,7 @@
 <template>
     <div class="leftbar d-table-cell">
         <div class="logo d-flex space-around y-center" :class="{leftbar__active: isActive}">
-            <a href="/Cms/index/index" class="text-active no-mobile"><h2 class="text-active">CMS</h2></a>
+            <a href="/Cms/index/index" class="text-active no-mobile"><h2 class="text-active">Cms</h2></a>
             <img src="/img/helpers/burger-menu.svg" class="logo-icon" @click.prevent="open">
         </div>
         <div class="navs" :class="{leftbar__active: isActive}">
@@ -85,7 +85,7 @@ export default {
         height: 100%;
         background: var(--dark);
         color: var(--white);
-
+        border-right: 1px solid var(--gray);
         &__active  .text-active {
             display: block;
         }

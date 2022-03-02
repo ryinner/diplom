@@ -16,5 +16,6 @@ app.component('slider', require('./components/Slider').default)
 app.component('createorder', require('./components/buttons/CreateOrder').default)
 app.component('controll-orders', require('./components/ControllOrders').default)
 app.component('deleteorder', require('./components/buttons/DeleteOrder').default)
+app.component('theme-change', require('./components/buttons/ChangeTheme').default)
 
 app.mount('#app')

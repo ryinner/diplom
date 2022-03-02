@@ -18,7 +18,7 @@
         >
         </vueper-slide>
     </vueper-slides>
-    <div class="m-c-10">
+    <div class="m-c-10 no-mobile">
         <vueper-slides
             class="no-shadow thumbnails"
             ref="vueperslides2"
@@ -85,13 +85,15 @@ export default {
 <style lang="scss">
 .thumbnails {
     margin: auto;
-    max-width: 300px;
+    width: 60%;
     & .vueperslide {
         box-sizing: border-box;
         border: 1px solid #fff;
         transition: 0.3s ease-in-out;
         opacity: 0.7;
         cursor: pointer;
+        min-width: 200px;
+        max-width: 300px;
     }
     & .vueperslide--active {
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);

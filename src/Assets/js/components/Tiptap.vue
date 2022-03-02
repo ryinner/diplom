@@ -123,7 +123,7 @@ export default {
     min-width: 250px;
     max-width: 800px;
     border-radius: 4px 0 0 4px;
-    border: 1px solid var(--dark);
+    border: 1px solid var(--text-color);
 
     ul li {
         list-style-type: circle;

@@ -239,7 +239,7 @@ export default {
                 this.squareError = { class: true, error: "Заполните площадь" };
             }
 
-            if (this.description == "") {
+            if (this.description == "<p></p>") {
                 this.valid = false;
                 this.descriptionError = {
                     class: true,

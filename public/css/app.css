@@ -214,6 +214,7 @@ button:hover {
 
 .btn-danger {
     background-color: var(--red);
+    color: var(--white);
 }
 
 /* Переменные */

@@ -47,6 +47,7 @@ class AccessControllList
         $usersResource  = [
             '_Profile'  => ['*'],
             '_Orders'   => ['*'],
+            '_Cookies'  => ['*'],
         ];
 
         $publicResource = [

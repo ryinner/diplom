@@ -151,15 +151,16 @@ export default {
     width: 25%;
     height: 100%;
     min-width: 200px;
-    background: var(--text-color);
-    color: var(--background-color);
+    background: var(--dark);
+    color: var(--white);
     transition: 500ms ease all;
     transform: translateX(calc(-100%));
     z-index: 9999;
+    border-right: 1px solid var(--gray);
 }
 
 #sidebar ul li a {
-    color: var(--background-color);
+    color: var(--white);
     transition: 300ms ease all;
     position: relative;
 }

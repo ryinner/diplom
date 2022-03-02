@@ -30,6 +30,10 @@ html[data-theme-style='dark'] table th {
     background: var(--placeholderColor);
 }
 
+html[data-theme-style='dark'] .contact-us {
+    border: 1px solid var(--gray);
+}
+
 /* @todo если будет время пользовательские темы */
 /* @todo --theme-color установка значения на цветовом круге для hsl прокидка js */
 /* :root {

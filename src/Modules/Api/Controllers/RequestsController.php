@@ -31,8 +31,11 @@ class RequestsController extends ControllerApiBase implements CRUDInterface
         $request->phone = $data->phone;
         $request->problem = $data->message;
 
-        $request->save();
-        return json_encode(['success' => true]);
+        if ($request->save()) {
+            return json_encode(['success' => true]);
+        } else {
+            return json_encode($request->getMessages());
+        }
     }
 
     public function updateAction($id): string|false

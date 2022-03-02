@@ -14,6 +14,8 @@
     </div>
 {% endif %}
 
+<theme-change></theme-change>
+
 <ul class="pagination">
     {% if paginator.items|length !== 0 %}
         {% if paginator.last != 1 %}

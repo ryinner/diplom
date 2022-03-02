@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Переделать на куку data-theme-style -->
-<html lang="ru" data-theme-style="master">
+<html lang="ru" data-theme-style="{% if this.cookies.get('theme') == 'dark' %}dark{% else %}master{% endif %}">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
