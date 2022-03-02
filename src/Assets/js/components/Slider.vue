@@ -85,15 +85,13 @@ export default {
 <style lang="scss">
 .thumbnails {
     margin: auto;
-    width: 60%;
+    width: 600px;
     & .vueperslide {
         box-sizing: border-box;
         border: 1px solid #fff;
         transition: 0.3s ease-in-out;
         opacity: 0.7;
         cursor: pointer;
-        min-width: 200px;
-        max-width: 300px;
     }
     & .vueperslide--active {
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);

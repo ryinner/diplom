@@ -9,13 +9,13 @@
                     {% endfor %}
                 </div>
                 <h4>
-                    {{ house.statuses.status }} {{ house.types.type }}, {{ house.square }} кв. м., {{ house.rooms }} {% if house.rooms == 1 %} комната {% elseif ((house.rooms == 2) OR (house.rooms == 3) OR ( house.rooms == 4)) %} комнаты {% else %} комнат{% endif %}.
+                    {{ house.statuses.status }} {{ house.types.type }}, {{ house.square }} кв. м., {{ house.rooms }} {% if house.rooms == 1 %} комната {% elseif ((house.rooms == 2) OR (house.rooms == 3) OR ( house.rooms == 4)) %} комнаты {% else %} комнат{% endif %}
                 </h4>
                 <div class="adress">
                     {{ house.adress }}
                 </div>
                 <div class="price">
-                    {{ house.price }} руб.
+                    {{ house.price }} руб. {% if house.statuses.id == 2 == 2 %} в месяц {% endif %}
                 </div>
             </a>
         </div>

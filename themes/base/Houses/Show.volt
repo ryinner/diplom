@@ -7,12 +7,14 @@
 
 <div class="d-flex space-between wrap-mobile">
     <div class="left width-70 width-mobile-100">
+        
         <div class="desription">
             {{ house.description }}
         </div>
     </div>
     
     <div class="contact-house width-30 width-mobile-100 d-flex column text-center">
+        <p>{{ house.price }} руб. {% if house.statuses.id == 2 %} в месяц {% endif %}</p>
         <p>Телефон: <a href="tel:{{ house.users.phone }}">{{ house.users.phone }}</a></p>
         <p>Имя менеджера: {{ house.users.first_name }} {{ house.users.last_name }}</p>
         
