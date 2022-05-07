@@ -224,6 +224,11 @@ button:disabled {
     color: var(--white);
 }
 
+.btn-success {
+    color: var(--white);
+    background-color: var(--green);
+}
+
 /* Переменные */
 :root {
     --red: #920000;
@@ -355,6 +360,11 @@ table td {
 .top-right {
     right: 0;
     top: 0;
+}
+
+.top-left {
+    top: 0;
+    left: 0;
 }
 
 /* Максимум высоты */
