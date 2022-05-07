@@ -35,7 +35,7 @@ class CreateTableStatuses extends AbstractMigration
     {
         $statusesTable = $this->table('statuses', ['id' => 'id']);
 
-        $statusesTable->addColumn('status', 'string', ['limit'=>56])
+        $statusesTable->addColumn('status', 'int', ['default' => 4])
                         ->addColumn('created_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
                         ->addColumn('updated_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
                         ->create();

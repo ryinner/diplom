@@ -6,6 +6,12 @@
         </div>
         <div class="navs" :class="{leftbar__active: isActive}">
             <ul>
+                <li>
+                    <a href="/" class="d-flex">
+                        <img src="/img/logo/logo_dark.svg" class="icon">
+                        <span class="text-active">На сайт</span>
+                    </a>
+                </li>
                 <!-- <li>
                     <a href="/Cms/Index/Index" class="d-flex">
                         <img src="/img/helpers/statistics_icon.svg" class="icon">

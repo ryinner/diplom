@@ -1,7 +1,10 @@
 <template>
-    <div v-show="isShow">
+    <div v-if="isShow">
         <orderaccept @success="isShow = false"></orderaccept>
         <orderdecline @success="isShow = false"></orderdecline>
+    </div>
+    <div v-else>
+        Решение вынесено
     </div>
 </template>
 

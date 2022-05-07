@@ -5,8 +5,8 @@
                 <p>{{ order.houses.adress }} {{ order.houses.types.type }} {{ order.houses.statuses.status }}</p>
                 <p>{{ order.houses.price }} руб. {% if order.houses.statuses.id == 2 %} в месяц {% endif %}</p>
                 <p>{{ order.getManager().first_name }} {{ order.getManager().last_name }} <a href="tel:{{ order.getManager().phone }}">{{ order.getManager().phone }}</a></p>
-                <p>{{ order.status }}</p>
-                {% if order.status == "В работе" %}
+                <p>{{ order.statuses.status }}</p>
+                {% if order.status == 4 %}
                     <deleteorder order="{{order.id}}"></deleteorder>
                 {% endif %}
             </div>

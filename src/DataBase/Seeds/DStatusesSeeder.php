@@ -25,6 +25,15 @@ class DStatusesSeeder extends AbstractSeed
             [
                 'status' => 'Закрыто'
             ],
+            [
+                'status' => 'В работе'
+            ],
+            [
+                'status' => 'Принято'
+            ],
+            [
+                'status' => 'Отклонено'
+            ]
         ];
 
         $statysesTable = $this->table('statuses');

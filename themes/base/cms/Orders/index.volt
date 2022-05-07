@@ -27,7 +27,7 @@
                     {{order.houses.adress}}
                 </td>
                 <td>
-                    {{order.status}}
+                    {{order.statuses.status}}
                 </td>
                 <td>
                     <controll-orders order={{order.id}}></controll-orders>

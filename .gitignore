@@ -4,6 +4,5 @@ var/logs
 var/cache
 composer.lock
 node_modules
-public/js/
 package-lock.json
 .env

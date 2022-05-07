@@ -15,7 +15,7 @@ class OrdersController extends ControllerCmsBase
         $paginator = new Paginator([
             'model'  => Orders::class,
             'parameters' => [
-                'manager_id = :id: AND status = "В работе"',
+                'manager_id = :id: AND status = ' . Orders::WORKING,
                 'bind' => ['id' => $this->auth->user()->id],
             ],
             'limit' => 30,
@@ -29,7 +29,7 @@ class OrdersController extends ControllerCmsBase
     {
         $order = Orders::findFirst((int)$id);
 
-        $order->status = "Принято";
+        $order->status = Orders::ACCEPTED;
 
         $house = Houses::findFirst($order->house_id);
         $house->status_id = 3;
@@ -45,7 +45,7 @@ class OrdersController extends ControllerCmsBase
     {
         $order = Orders::findFirst((int)$id);
 
-        $order->status = "Отклонено";
+        $order->status = Orders::DECLINED;
 
         if ($order->save()) {
             return json_encode(['success' => true]);

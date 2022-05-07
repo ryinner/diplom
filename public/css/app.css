@@ -200,6 +200,13 @@ button:hover {
     border: 1px solid var(--text-color);
 }
 
+button:disabled {
+    border: none;
+    color: #c0c0c0;
+    cursor: not-allowed;
+    background: var(--placeholderColor);
+}
+
 .button__negative {
     color: var(--text-color);
     background-color: var(--background-color);
