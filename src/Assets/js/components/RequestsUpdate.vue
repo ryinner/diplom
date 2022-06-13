@@ -1,5 +1,5 @@
 <template>
-    <span v-if="status == 0" @click.prevent="changeMenu" :class="{link__active: classActive}">
+    <span v-if="status == 0" @click="changeMenu" :class="{link__active: classActive}">
         <slot></slot>
         <div v-show="isMenuOpen" class="pos-absolute request-dropper">
             <div class="d-flex top-left request-question pos-relative">

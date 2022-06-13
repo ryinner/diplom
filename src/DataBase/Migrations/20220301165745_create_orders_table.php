@@ -38,7 +38,7 @@ class CreateOrdersTable extends AbstractMigration
         $orders->addColumn('user_id', 'integer')->addForeignKey('user_id', 'users', 'id', ['delete'=>'cascade','update' => 'cascade'])
                 ->addColumn('house_id', 'integer')->addForeignKey('house_id', 'houses', 'id', ['delete'=>'cascade','update' => 'cascade'])
                 ->addColumn('manager_id', 'integer')->addForeignKey('manager_id', 'users', 'id', ['delete'=>'cascade','update' => 'cascade'])
-                ->addColumn('status', 'string', ['default' => 'В работе'])
+                ->addColumn('status', 'integer', ['default' => '4'])
                 ->addColumn('created_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
                 ->addColumn('updated_at', 'timestamp', ['default' => 'CURRENT_TIMESTAMP'])
                 ->create();;

@@ -51,11 +51,11 @@ class HousesController extends ControllerApiBase implements CRUDInterface
 
             $image->save();
         }
-        // if (true) {
-        //     return json_encode(['success' => true]);
-        // } else {
-        //     return json_encode(['success' => false, 'error' => [$house->getMessages(), $image->getMessages()]]);
-        // }
+        if ($house->save()) {
+            return json_encode(['success' => true]);
+        } else {
+            return json_encode(['success' => false, 'error' => [$house->getMessages(), $image->getMessages()]]);
+        }
     }
 
     public function updateAction(int $id): string|false

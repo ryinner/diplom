@@ -20,7 +20,12 @@
         {% for requests in paginator.items %}
             <tr class="text-center">
                 <td>
-                    <update-requests id="{{ requests.id }}" status="{{ requests.status }}">{{ requests.phone }}</update-requests>
+                    <update-requests id="{{ requests.id }}" status="{{ requests.status }}">
+                        <a
+                        {% if (requests.status == 0) %}
+                            href="tel:{{ requests.phone }}" class="link__active"
+                        {% endif %}>{{ requests.phone }}</a>
+                </update-requests>
                 </td>
                 <td>
                     {{ requests.name }}

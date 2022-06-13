@@ -13,7 +13,7 @@ class Mailer
     public function __construct($config)
     {
         $this->mail = new PHPMailer(true);
-        // $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $this->mail->isSMTP();                                            //Send using SMTP
         $this->mail->Host      = $config->host;                        //Set the SMTP server to send through
         $this->mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -33,18 +33,18 @@ class Mailer
 
     public function send(string $adress, string $name, string $subject, string $message):void
     {
-        $this->mail->setFrom('realtor@realtor.com', 'Mailer');
+        $this->mail->setFrom('realtor.diplom@rambler.ru', 'Mailer');
         $this->mail->addAddress($adress, $name);
-        $this->mail->addReplyTo('info@example.com', 'Information');
+        $this->mail->addReplyTo('realtor.diplom@rambler.ru', 'Реэлтор');
         $this->mail->addCC($adress);
         $this->mail->isHTML(true);                                  //Set email format to HTML
         $this->mail->Subject =  $subject;
         $this->mail->Body    =  $message;
         $this->mail->AltBody = 'Спасибо, что работате с нами';
-        // try {
+        try {
             $this->mail->send();
-        // } catch (Exception $e) {
-        //     var_dump($this->mail->ErrorInfo);
-        // }
+        } catch (Exception $e) {
+            var_dump($this->mail->ErrorInfo);
+        }
     }
 }

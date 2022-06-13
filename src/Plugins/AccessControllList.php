@@ -55,6 +55,7 @@ class AccessControllList
             '_Users'        =>  ['*'],
             '_Error'        =>  ['*'],
             '_Houses'       =>  ['*'],
+            '_Contacts'     =>  ['*'],
             'Api_Index'     =>  ['*'],
             'Api_Houses'    =>  ['*'],
             'Api_Requests'  =>  ['*'],

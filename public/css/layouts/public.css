@@ -121,6 +121,15 @@ blockquote h1, blockquote h2 {
     margin-left: 70px;
 }
 
+/* contacts page */
+.contacts_h1 {
+    font-size: 60px;
+}
+
+.contacts_h2 {
+    font-size: 30px;
+}
+
 @media screen and (max-width: 500px) {
     .question__h1 {
         margin: 0;

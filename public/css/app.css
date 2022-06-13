@@ -560,6 +560,10 @@ table td {
     word-break: break-word;
 }
 
+.red-line {
+    text-indent: 18px;
+}
+
 /* Ссылки */
 
 .link__active {

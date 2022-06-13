@@ -23,16 +23,16 @@
                 <a href="/Houses/Index">Недвижимость</a>
             </li>
 
-            <li>
+            <!-- <li>
                 <a href="/">Заявка на продажу</a>
-            </li>
+            </li> -->
 
-            <li>
+            <!-- <li>
                 <a href="/">Услуги</a>
-            </li>
+            </li> -->
 
             <li>
-                <a href="/">Контакты</a>
+                <a href="/Contacts/Index">Контакты</a>
             </li>
         </ul>
     </div>
