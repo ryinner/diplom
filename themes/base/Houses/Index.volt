@@ -1,6 +1,10 @@
-<div class="row">
+<div class="m-c-10">
+    <search></search>
+</div>
+
+<div class="grid-row gap-6">
     {% for house in paginator.items %}
-        <div class="item m-c-10">
+        <div class="item grid-col-3">
             <a href="/Houses/Show/{{ house.id }}">
                 <div class="width-100">
                     {% for image in house.images %}

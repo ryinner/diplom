@@ -151,6 +151,10 @@ input[type="radio"]:checked + label:before {
     width: 120px !important;
 }
 
+.input__big {
+    width: 400px !important;
+}
+
 textarea {
     resize: none;
     outline: none;
@@ -316,6 +320,11 @@ table td {
     align-content: center;
 }
 
+.grid-row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
 /* Перенос */
 
 .flex-wrap {
@@ -459,6 +468,36 @@ table td {
     width: calc(100% / var(--columns-count) * 12);
 }
 
+/* grid */
+
+.grid-col-1 {
+    grid-column: 1 span;
+}
+
+.grid-col-2 {
+    grid-column: 2 span;
+}
+
+.grid-col-3 {
+    grid-column: 3 span;
+}
+
+.grid-col-4 {
+    grid-column: 4 span;
+}
+
+.grid-col-5 {
+    grid-column: 5 span;
+}
+
+.grid-col-6 {
+    grid-column: 6 span;
+}
+
+.grid-col-12 {
+    grid-column: 12 span;
+}
+
 /* Дисплеи */
 
 .d-flex {
@@ -527,6 +566,18 @@ table td {
 
 .m-c-25 {
     margin: 25px 0;
+}
+
+/* Весь */
+
+.m-10 {
+    margin: 10px;
+}
+
+/* gap */
+
+.gap-6 {
+    gap: 6px;
 }
 
 /* icons */
