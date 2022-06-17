@@ -10,8 +10,8 @@
                 placeholder="Введите адрес"
                 class="input__big"
             />
-            <datalist id="search_results" v-for="item in search" :key="item.id">
-                <option :value="item.adress">{{ item.adress }}</option>
+            <datalist id="search_results">
+                <option v-for="item in search" :key="item.id" :value="item.adress">{{ item.adress }}</option>
             </datalist>
         </form>
     </div>
