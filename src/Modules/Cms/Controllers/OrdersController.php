@@ -2,9 +2,10 @@
 
 namespace App\Modules\Cms\Controllers;
 
-use App\Models\Houses;
 use App\Models\Orders;
+use App\Models\Statuses;
 use Phalcon\Paginator\Adapter\Model as Paginator;
+use Throwable;
 
 class OrdersController extends ControllerCmsBase
 {
@@ -14,43 +15,10 @@ class OrdersController extends ControllerCmsBase
 
         $paginator = new Paginator([
             'model'  => Orders::class,
-            'parameters' => [
-                'manager_id = :id: AND status = ' . Orders::WORKING,
-                'bind' => ['id' => $this->auth->user()->id],
-            ],
             'limit' => 30,
             'page'  => $currentPage
         ]);
 
         $this->view->setVar('paginator', $paginator->paginate());
-    }
-
-    public function acceptAction($id)
-    {
-        $order = Orders::findFirst((int)$id);
-
-        $order->status = Orders::ACCEPTED;
-
-        $house = Houses::findFirst($order->house_id);
-        $house->status_id = 3;
-
-        if ($house->save() && $order->save()) {
-            return json_encode(['success' => true]);
-        } else {
-            return json_encode(['success' => false]);
-        }
-    }
-
-    public function declineAction($id)
-    {
-        $order = Orders::findFirst((int)$id);
-
-        $order->status = Orders::DECLINED;
-
-        if ($order->save()) {
-            return json_encode(['success' => true]);
-        } else {
-            return json_encode(['success' => false]);
-        }
     }
 }

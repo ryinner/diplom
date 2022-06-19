@@ -26,8 +26,12 @@ h3 {
     font-size: 1.8em;
 }
 
-span {
+p {
     font-size: 1.2em;
+}
+
+span {
+    font-size: 1.1em;
 }
 
 a {
@@ -605,6 +609,14 @@ table td {
     gap: 10px;
 }
 
+.gap-14 {
+    gap: 14px;
+}
+
+.gap-18 {
+    gap: 18px;
+}
+
 /* icons */
 
 .icon {
@@ -638,6 +650,18 @@ table td {
 
 .red-line {
     text-indent: 18px;
+}
+
+.text-focus {
+    color: var(--second-color);
+}
+
+.text-success {
+    color: var(--green);
+}
+
+.text-danger {
+    color: var(--red);
 }
 
 /* Ссылки */

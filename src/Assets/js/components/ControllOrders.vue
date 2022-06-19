@@ -1,35 +1,46 @@
 <template>
-    <div v-if="isShow">
-        <orderaccept @success="isShow = false"></orderaccept>
-        <orderdecline @success="isShow = false"></orderdecline>
-    </div>
-    <div v-else>
-        Решение вынесено
-    </div>
+    <select v-model="order_status" @change="changeStatus">
+        <option v-for="item in statuses" :key="item.id" :value="item.id">{{item.status}}</option>
+    </select>
 </template>
 
 <script>
-import orderaccept from "./buttons/AcceptOrder.vue";
-import orderdecline from "./buttons/DeclineOrder.vue";
+import axios from 'axios'
+
 
 export default {
-    components: {
-        orderaccept,
-        orderdecline,
-    },
-
     props: {
         order: {
             required: true,
+        },
+        status: {
+            required: true
         }
     },
 
-    emits: ['accepted'],
 
     data() {
         return {
-            isShow: true,
+            items: {},
+            statuses: '',
+            order_status: "",
         }
+    },
+
+    methods: {
+        changeStatus() {
+            axios.post(`/Api/Orders/ChangeStatus/${this.order}`, {status: this.order_status})
+        }
+    },
+
+    created() {
+        this.order_status = this.status
+        axios.post('/Api/Orders/Statuses')
+        .then((response) => {
+            if (response.data.success === true) {
+                this.statuses = response.data.statuses
+            }
+        })
     }
 }
 </script>

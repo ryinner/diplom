@@ -3,6 +3,7 @@
 namespace App\Modules\Api\Controllers;
 
 use App\Models\Orders;
+use App\Models\Statuses;
 
 class OrdersController extends ControllerApiBase
 {
@@ -32,5 +33,21 @@ class OrdersController extends ControllerApiBase
         } else {
             return json_encode(['success' => false, 'errors' => "Вы уже подали заявку"]);
         }
+    }
+
+    public function statusesAction()
+    {
+        $statuses = Statuses::find(['columns' => 'id, status',
+        'id IN (4, 5, 6)'
+        ]);
+
+        return json_encode(['success' => true, 'statuses' => $statuses]);
+    }
+
+    public function changeStatusAction($id)
+    {
+        $status = Orders::findFirst($id);
+        $status->status = json_decode(file_get_contents('php://input'))->status;
+        $status->save();
     }
 }

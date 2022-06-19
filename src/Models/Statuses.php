@@ -4,9 +4,9 @@ namespace App\Models;
 
 class Statuses extends BaseModel
 {
-    public int $id;
-
-    public string $status;
+    public $id;
+    
+    public $status;
 
     public $created_at;
     

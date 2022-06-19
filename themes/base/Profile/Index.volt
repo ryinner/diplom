@@ -3,10 +3,10 @@
         {% for order in paginator.items %}
             <div class="text-center grid-col-4 order d-flex xy-center" data-order-id="{{ order.id }}">
                 <div class="fix">
-                    <p class="m-c-6">{{ order.houses.adress }} {{ order.houses.types.type }} {{ order.houses.statuses.status }}</p>
+                    <p class="m-c-6">{{ order.houses.adress }} {{ order.houses.types.type }} (<span class="text-focus">{{ order.houses.statuses.status }}</span>)</p>
                     <p class="m-c-6">{{ order.houses.price }} руб. {% if order.houses.statuses.id == 2 %} в месяц {% endif %}</p>
                     <p class="m-c-6">{{ order.getManager().first_name }} {{ order.getManager().last_name }} <a href="tel:{{ order.getManager().phone }}">{{ order.getManager().phone }}</a></p>
-                    <p class="m-c-6">{{ order.statuses.status }}</p>
+                    <p class="m-c-6 {% if order.status == 5 %}text-success{% elseif order.status == 6 %}text-danger{% endif %}">{{ order.statuses.status }}</p>
                     {% if order.status == 4 %}
                         <deleteorder order="{{order.id}}"></deleteorder>
                     {% endif %}
@@ -15,6 +15,7 @@
         {% endfor %}
     </div>
 {% endif %}
+
 
 <div class="m-c-10">
     <theme-change></theme-change>

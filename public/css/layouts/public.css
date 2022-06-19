@@ -98,6 +98,7 @@ blockquote h1, blockquote h2 {
 
 .item {
     height: 300px;
+    line-height: 1.5;
 }
 
 .item img {
@@ -105,9 +106,9 @@ blockquote h1, blockquote h2 {
 }
 
 .desription p, .desription ul li, .desription ol li, .contact-house p{
-    text-indent: 30px;
+    text-indent: 50px;
     line-height: 30px;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .desription ul li {
@@ -134,6 +135,7 @@ blockquote h1, blockquote h2 {
 .order {
     padding: 20px 0;
     min-height: 300px;
+    border-radius: 4px;
     border: 1px solid var(--text-color);
 }
 

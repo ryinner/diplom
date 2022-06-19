@@ -30,7 +30,7 @@
                     {{order.statuses.status}}
                 </td>
                 <td>
-                    <controll-orders order={{order.id}}></controll-orders>
+                    <controll-orders order={{order.id}} status="{{order.status}}"></controll-orders>
                 </td>
             </tr>
         {% endfor %}
