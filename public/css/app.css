@@ -233,6 +233,23 @@ button:disabled {
     background-color: var(--green);
 }
 
+/* input-group */
+
+.input-group {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+.input-group img {
+    position: absolute;
+    margin-left: -50px;
+    margin-top: 2px;
+    max-width: 50px;
+    max-height: 40px;
+}
+
 /* Переменные */
 :root {
     --red: #920000;

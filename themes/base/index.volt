@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/logo/logo_dark.svg">
     <title>Realtor</title>
+    <script src="https://kit.fontawesome.com/d5f097effc.js" crossorigin="anonymous"></script>
     {{ assets.outputJs('main_js') }}
     {{ assets.outputCss('main_css') }}
 </head>
