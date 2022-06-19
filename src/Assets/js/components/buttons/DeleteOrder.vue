@@ -1,5 +1,5 @@
 <template>
-    <button @click.prevent="deleteOrder">Отменить</button>
+    <button @click.prevent="deleteOrder" class="m-c-10">Отменить</button>
 </template>
 
 <script>

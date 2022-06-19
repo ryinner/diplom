@@ -4,19 +4,26 @@ namespace App\Controllers;
 
 use App\Models\Houses;
 use Phalcon\Paginator\Adapter\Model as Paginator;
+use Throwable;
 
 class HousesController extends ControllerBase
 {
     public function indexAction()
     {
-        $currentPage = $this->request->getQuery('page', 'int') ?? 1;
+        $currentPage = $this->request->getQuery('page', 'int', 1);
+        $search = $this->request->get('search', 'string');
+
+        $parametrs = ['status_id != 3'];
+        
+        if (!empty($search)) {
+            $parametrs[0] .= ' AND adress LIKE (:search:)';
+            $parametrs['bind'] = ['search' => '%'.$search.'%'];
+        }
 
         $paginator = new Paginator([
             'model'  => Houses::class,
-            'parameters' => [
-                'status_id != 3'
-            ],
-            'limit' => 16,
+            'parameters' => $parametrs,
+            'limit' => 8,
             'page'  => $currentPage
         ]);
 

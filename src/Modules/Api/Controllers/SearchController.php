@@ -16,6 +16,7 @@ class SearchController extends ControllerApiBase
         ->columns(['h.id','h.adress'])
         ->from(['h' => Houses::class])
         ->where('h.adress LIKE (:query:)', ['query' => "%{$query}%"])
+        ->andWhere('h.status_id != 3')
         ->limit(8)
         ->getQuery()
 

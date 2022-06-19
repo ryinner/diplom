@@ -2,7 +2,7 @@
 	<div class="index__block pos-relative">
 		<img src="/img/index/city.jpg" class="main-img" draggable="false">
 		<blockquote class="xy-center column no-mobile">
-			<h1>Мы риелтор</h1>
+			<h1>Риелтор</h1>
 			<h2>Для вас все просто</h2>
 		</blockquote>
 		<h2 class="center">Почему именно мы?</h2>

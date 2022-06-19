@@ -577,6 +577,10 @@ table td {
 
 /* Вверх-низ */
 
+.m-c-6 {
+    margin: 6px 0;
+}
+
 .m-c-10 {
     margin: 10px 0;
 }
@@ -595,6 +599,10 @@ table td {
 
 .gap-6 {
     gap: 6px;
+}
+
+.gap-10 {
+    gap: 10px;
 }
 
 /* icons */

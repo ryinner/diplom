@@ -1,7 +1,19 @@
 <div class="m-c-10">
     <search></search>
 </div>
-
+{% if this.request.get('search')  %}
+<h2>По вашему запросу "{{ this.request.get('search') }}" найдено: {{paginator.total_items}}
+    {% if paginator.total_items == 1 %}
+        место
+    {% endif %}
+    {% if paginator.total_items <= 4 and paginator.total_items > 1 %}
+        места
+    {% endif %}
+    {% if paginator.total_items > 4 or  paginator.total_items == 0 %}
+        мест
+    {% endif %}
+</h2>
+{% endif %}
 <div class="grid-row gap-6">
     {% for house in paginator.items %}
         <div class="item grid-col-3">
@@ -27,7 +39,7 @@
 </div>
 
 <ul class="pagination">
-    {% if paginator.last != 1 %}
+    {% if paginator.last != 1 and paginator.total_items !== 0 %}
         {% if paginator.current != 1 %}
             <li>
                 <a href="/Houses/Index?page=1">&laquo;</a>
